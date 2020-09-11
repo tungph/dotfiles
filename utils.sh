@@ -42,6 +42,7 @@ install_vim_plug() {
     echo ">>> Installing vim plug..."
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "DONE curl -fLo ~/.vim/autoload/plug.vim..."
   fi
   echo ""
 }
