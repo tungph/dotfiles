@@ -18,6 +18,7 @@ install_carlos_dotfiles() {
 add_my_customization() {
   install fzy
   install tldr
+  install trash-cli
   install_diff_so_fancy
 
   # attach personal settings
