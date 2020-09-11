@@ -1,5 +1,5 @@
 #!/bin/zsh
-export PATH="/usr/local/sbin:$HOME/.dotfiles/others/diff-so-fancy:$PATH"
+export PATH="/usr/local/sbin:$HOME/.local/diff-so-fancy:$PATH"
 
 #### FUNCTIONS #####
 function j() {

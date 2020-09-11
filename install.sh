@@ -11,8 +11,8 @@ install_requirements() {
 }
 
 install_carlos_dotfiles() {
-  git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles/carlos
-  cd ~/.dotfiles/carlos && ./script/bootstrap
+  git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles
+  cd ~/.dotfiles && ./script/bootstrap
 }
 
 add_my_customization() {
@@ -21,13 +21,13 @@ add_my_customization() {
 
   # diff-so-fancy
   if ! command -v diff-so-fancy >/dev/null 2>&2; then
-    git clone https://github.com/so-fancy/diff-so-fancy.git ~/.dotfiles/others/diff-so-fancy
-    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+    git clone https://github.com/so-fancy/diff-so-fancy.git ~/.local/diff-so-fancy
+    git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
   fi
 
   # attach personal settings
-  [ -f ~/.localrc ] && rm -f ~/.localrc
-  ln -s ./localrc ~/.localrc
+  rm -f ~/.localrc
+  ln -s ~/.local/dotfiles/localrc ~/.localrc
 
 }
 
