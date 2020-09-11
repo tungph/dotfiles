@@ -3,11 +3,17 @@
 . ./utils.sh
 
 install_requirements() {
-  #  git, curl, tar, zsh
-  command -v git >/dev/null 2>&2 || sudo apt install -y git
-  command -v tar >/dev/null 2>&2 || sudo apt install -y tar
-  command -v zsh >/dev/null 2>&2 || sudo apt install -y zsh
-  command -v curl >/dev/null 2>&2 || sudo apt install -y curl
+  install git
+  install tar
+  install zsh
+  install curl
+
+  install unzip
+
+  install fzy
+  install tldr
+  install trash-cli
+  install_diff_so_fancy
 }
 
 install_carlos_dotfiles() {
@@ -16,11 +22,6 @@ install_carlos_dotfiles() {
 }
 
 add_my_customization() {
-  install fzy
-  install tldr
-  install trash-cli
-  install_diff_so_fancy
-
   # attach personal settings
   rm -f ~/.localrc
   ln "$BASE_DIR"/localrc ~/.localrc
