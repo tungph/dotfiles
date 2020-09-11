@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-. ./utils.sh
-
 install_requirements() {
   install git
   install tar
@@ -30,6 +28,8 @@ add_my_customization() {
 }
 
 # ENTRY POINT
+. ./utils.sh
+
 install_requirements
 install_carlos_dotfiles
 add_my_customization
