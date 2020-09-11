@@ -21,7 +21,7 @@ add_my_customization() {
 
   # diff-so-fancy
   if ! command -v diff-so-fancy >/dev/null 2>&2; then
-    git clone https://github.com/so-fancy/diff-so-fancy.git ~/.local/diff-so-fancy
+    git clone https://github.com/so-fancy/diff-so-fancy.git ~/.local/dotfiles/dependencies/diff-so-fancy
     git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
   fi
 
