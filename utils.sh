@@ -6,8 +6,10 @@ BASE_DIR="$LOCAL_DIR/dotfiles"
 
 install() {
   PACKAGE=$1
+  COMMAND=$PACKAGE
+  [ "$PACKAGE" = "trash-cli" ] && COMMAND="trash"
 
-  if ! command -v "$PACKAGE" >/dev/null 2>&2; then
+  if ! command -v "$COMMAND" >/dev/null 2>&2; then
     [ "$(uname)" = "Darwin" ] && brew install "$PACKAGE"
     [ "$(uname)" = "Linux" ] && sudo apt install -y "$PACKAGE"
 
