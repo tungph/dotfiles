@@ -19,6 +19,7 @@ install_z() {
   PACKAGE=z
   if ! command -v "$PACKAGE" >/dev/null 2>&2; then
     git clone https://github.com/rupa/z.git "$DEP_DIR/$PACKAGE"
+    . "$DEP_DIR"/z/z.sh
     echo ". $DEP_DIR/z/z.sh" >>"$INSTALL_DIR"/localrc
   else
     echo "$PACKAGE has already installed on your system"
