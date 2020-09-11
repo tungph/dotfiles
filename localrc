@@ -1,17 +1,17 @@
 export PATH="/usr/local/sbin:$HOME/.local/dotfiles/dependencies/diff-so-fancy:$PATH"
 
 #### FUNCTIONS #####
-function j() {
+function j {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
   cd "$target" || exit
 }
 
-function jj() {
+function jj {
   target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
   cd "$target" || exit
 }
 
-function tl() {
+function tl {
   if [ $# -gt 1 ]; then
     # shellcheck disable=SC2068
     tldr "${@:1:1}" | ag -C 1 ${@:2}
