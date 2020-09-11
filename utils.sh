@@ -2,6 +2,8 @@
 LOCAL_DIR="$HOME/.local"
 BASE_DIR="$LOCAL_DIR/dotfiles"
 
+[ "$(uname)" = "Linux" ] && sudo apt update
+
 install() {
   PACKAGE=$1
 
