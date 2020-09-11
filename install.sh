@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-source ./utils.sh
+. ./utils.sh
 
 install_requirements() {
   #  git, curl, tar, zsh
@@ -16,18 +16,9 @@ install_carlos_dotfiles() {
 }
 
 add_my_customization() {
-
-  #  diff-so-fancy
-  if not command -v diff-so-fancy >/dev/null 2>&2; then
-    git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dotfiles/others/diff-so-fancy
-    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-  fi
-
-  # fzf
-  if not command -v fzy >/dev/null 2>&2; then
-    [ "$(uname)" = "Darwin" ] && brew install fzy
-    [ "$(uname)" = "Linux" ] && sudo apt install fzy
-  fi
+  install diff-so-fancy
+  install fzy
+  install tldr
 
   # attach personal settings
   ln -s ./localrc ~/.localrc
