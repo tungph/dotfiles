@@ -44,6 +44,8 @@ install_vim_plug() {
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     echo "DONE curl -fLo ~/.vim/autoload/plug.vim..."
     realpath ~/.vim/autoload/plug.vim
+    echo ls /home/shawn/.vim/autoload/plug.vim
+    ls /home/shawn/.vim/autoload/plug.vim
   fi
   echo ""
 }
