@@ -16,9 +16,14 @@ install_carlos_dotfiles() {
 }
 
 add_my_customization() {
-  install diff-so-fancy
   install fzy
   install tldr
+
+  # diff-so-fancy
+  if ! command -v diff-so-fancy >/dev/null 2>&2; then
+    git clone https://github.com/so-fancy/diff-so-fancy.git ~/.dotfiles/others/diff-so-fancy
+    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+  fi
 
   # attach personal settings
   ln -s ./localrc ~/.localrc
