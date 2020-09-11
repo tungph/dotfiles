@@ -27,7 +27,7 @@ add_my_customization() {
 
   # attach personal settings
   rm -f ~/.localrc
-  ln -s ~/.local/dotfiles/localrc ~/.localrc
+  ln ~/.local/dotfiles/localrc ~/.localrc
 
 }
 
