@@ -24,3 +24,8 @@ add_my_customization() {
   ln -s ./localrc ~/.localrc
 
 }
+
+# ENTRY POINT
+install_requirements
+install_carlos_dotfiles
+add_my_customization
