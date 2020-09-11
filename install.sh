@@ -18,12 +18,11 @@ install_carlos_dotfiles() {
 add_my_customization() {
   install fzy
   install tldr
-  install_z
   install_diff_so_fancy
 
   # attach personal settings
   rm -f ~/.localrc
-  ln ~/.local/dotfiles/shawn/localrc ~/.localrc
+  ln "$BASE_DIR"/localrc ~/.localrc
 
 }
 
