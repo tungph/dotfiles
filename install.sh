@@ -14,6 +14,7 @@ install_requirements() {
   install tldr
   install trash-cli
   install_diff_so_fancy
+  install_vim_plug
 }
 
 install_carlos_dotfiles() {
