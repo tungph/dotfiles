@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+
 LOCAL_DIR="$HOME/.local"
 BASE_DIR="$LOCAL_DIR/dotfiles"
 
