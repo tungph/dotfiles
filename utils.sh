@@ -13,7 +13,6 @@ install() {
   if ! command -v "$COMMAND" >/dev/null 2>&2; then
     [ "$(uname)" = "Darwin" ] && brew install "$PACKAGE"
     [ "$(uname)" = "Linux" ] && sudo apt install -y "$PACKAGE"
-
   else
     echo "$PACKAGE has already installed on your system"
   fi
