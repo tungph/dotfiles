@@ -26,7 +26,7 @@ add_my_customization() {
   fi
 
   # attach personal settings
-  [ -f ~/.localrc ] && mv -f ~/.localrc ~/.localrc.backup
+  [ -f ~/.localrc ] && rm -f ~/.localrc
   ln -s ./localrc ~/.localrc
 
 }
