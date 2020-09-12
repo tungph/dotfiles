@@ -23,7 +23,7 @@ function tl() {
 
 #### ALIASES #####
 alias ss="(cd ~/.local/dotfiles && git add -u . && git commit -m \"sync\" && git push)"
-alias pp="(cd ~/.local/dotfiles && git pull)"
+alias pp="(cd ~/.local/dotfiles && git pull && rm -f ~/.localrc && ln localrc ~/.localrc)"
 alias diff="diff-so-fancy"
 alias zz="vim ~/.localrc && rl"
 alias rl="exec zsh"
