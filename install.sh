@@ -11,7 +11,6 @@ install_requirements() {
 
 	install fzy
 	install tldr
-	install trash-cli
 	install_diff_so_fancy
 }
 
