@@ -11,7 +11,6 @@ install_requirements() {
   install fzy
   install tldr
   install trash-cli
-  install_vim_plug
   install_diff_so_fancy
 }
 
@@ -22,6 +21,8 @@ install_carlos_dotfiles() {
 }
 
 add_my_customization() {
+  install_vim_plug
+
   # attach personal settings
   rm -f ~/.localrc
   ln "$BASE_DIR"/localrc ~/.localrc
