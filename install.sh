@@ -25,7 +25,7 @@ add_my_customization() {
 
 # ENTRY POINT
 BASE_DIR="$(dirname "$0")"
-"$BASE_DIR"/utils.sh
+. "$BASE_DIR"/utils.sh
 
 install_requirements
 install_carlos_dotfiles
