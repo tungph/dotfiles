@@ -16,6 +16,7 @@ install_requirements() {
 }
 
 install_carlos_dotfiles() {
+  mv -fv ~/.dotfiles ~/.dotfiles.backup
   git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles && ./script/bootstrap
 }
