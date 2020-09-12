@@ -7,8 +7,8 @@ install_requirements() {
   install curl
 
   install unzip
-  install neovim
-
+  install nvim
+  install ag
   install fzy
   install tldr
   install_diff_so_fancy
