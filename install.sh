@@ -7,7 +7,7 @@ install_requirements() {
 	install curl
 
 	install unzip
-	install neovim
+#	install neovim
 
 	install fzy
 	install tldr
