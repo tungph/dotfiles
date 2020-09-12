@@ -35,13 +35,8 @@ setup_gitconfig() {
 	info 'setup gitconfig'
 	# if there is no user.email, we'll assume it's a new machine/setup and ask it
 	if [ -z "$(git config --global --get user.email)" ]; then
-		user ' - What is your github author name?'
-		read -r user_name
-		user ' - What is your github author email?'
-		read -r user_email
-
-		git config --global user.name "$user_name"
-		git config --global user.email "$user_email"
+		git config --global user.name "shawn"
+		git config --global user.email "shawn@cinnamon.is"
 	elif [ "$(git config --global --get dotfiles.managed)" != "true" ]; then
 		# if user.email exists, let's check for dotfiles.managed config. If it is
 		# not true, we'll backup the gitconfig file and set previous user.email and
