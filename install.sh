@@ -24,7 +24,7 @@ add_my_customization() {
 }
 
 # ENTRY POINT
-. ~/.dotfiles/utils.sh
+. utils.sh
 
 install_requirements
 install_carlos_dotfiles
