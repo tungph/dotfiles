@@ -1,3 +1,6 @@
+[user]
+  name = Shawn
+  email = shawn@cinnamon.is
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
 [alias]

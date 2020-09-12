@@ -45,3 +45,4 @@ install_vim_plug() {
 	fi
 	echo ""
 }
+
