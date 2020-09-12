@@ -26,6 +26,7 @@ alias ss="(cd ~/.local/dotfiles && git add -u . && git commit -m \"sync\" && git
 alias pp="(cd ~/.local/dotfiles && git pull && rm -f ~/.localrc && ln localrc ~/.localrc)"
 alias diff="diff-so-fancy"
 alias zz="vi ~/.localrc && rl"
+alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
 alias rl="exec zsh"
 alias tm="tmux a -t local || tmux new -s local"
 
