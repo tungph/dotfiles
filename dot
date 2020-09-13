@@ -30,7 +30,6 @@ install_carlos_dotfiles() {
   ~/.dotfiles/script/bootstrap
 }
 
-# ENTRY POINT
 init() {
   echo ">>> Installing dotfiles to $HOME/.dotfiles"
 
@@ -60,7 +59,11 @@ show_update_log() {
   less ${TMPDIR:-/tmp}/dot_update.log
 }
 
-[ $# -ne 1 ] && usage
-[ "$1" = "init" ] && init
-[ "$1" = "update" ] && update
-[ "$1" = "update-log" ] && show_update_log
+# ENTRY POINT
+if [ $# -eq 1 ]; then
+  [ "$1" = "init" ] && init && exit
+  [ "$1" = "update" ] && update && exit
+  [ "$1" = "update-log" ] && show_update_log && exit
+fi
+
+usage
