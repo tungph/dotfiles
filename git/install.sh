@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ -z "$(git config --global --get user.email)" ]; then
+  git config --global user.name "shawn"
+  git config --global user.email "shawn@cinnamon.is"
+fi
+
 # Don't ask ssh password all the time
 if [ "$(uname -s)" = "Darwin" ]; then
 	git config --global credential.helper osxkeychain
