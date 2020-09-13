@@ -12,6 +12,8 @@ install_requirements() {
   install fzy
   install tldr
   install_diff_so_fancy
+
+  echo "<<< all the requirements has been installed"
 }
 
 install_carlos_dotfiles() {

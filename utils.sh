@@ -28,10 +28,10 @@ install_diff_so_fancy() {
   if ! command -v "$PACKAGE" >/dev/null 2>&2; then
     [ -d "$LOCAL_DIR/$PACKAGE" ] || git clone https://github.com/so-fancy/diff-so-fancy.git "$LOCAL_DIR/$PACKAGE"
     git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
+    echo "Done"
   else
     echo "$PACKAGE has already installed on your system"
   fi
-  echo ""
 }
 
 install_vim_plug() {
