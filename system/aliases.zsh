@@ -1,12 +1,12 @@
 #!/bin/sh
 if [ "$(uname -s)" = "Darwin" ]; then
-	alias ls="ls -FG"
+	alias ls="ls -FGt"
 else
-	alias ls="ls -F --color"
+	alias ls="ls -Ft --color"
 fi
-alias ll="ls -lAh"
+alias ll="ls -lAhl"
 alias la="ls -A"
-alias l="ls -c"
+alias l="ls"
 
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"
