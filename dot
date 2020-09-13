@@ -8,6 +8,7 @@ usage() {
   echo "    - update: pull and apply new change from the git repo"
   echo "    - update-log: view update log"
   echo "    - push: push local change to github"
+  echo "    - pull: pull change from github"
 
   exit 1
 }
@@ -57,12 +58,20 @@ push() {
   cd ~/.local/dotfiles && git add -u . && git commit -m \"sync\" && git push
 }
 
+pull() {
+  cd ~/.dotfiles || return 1
+  git stash
+  git pull
+  git stash pop
+}
+
 # ENTRY POINT
 if [ $# -eq 1 ]; then
-  [ "$1" = "init" ] && init && exit
+  [ "$1" = "init" ] && pull && init && exit
   [ "$1" = "update" ] && update && exit
   [ "$1" = "update-log" ] && show_update_log && exit
   [ "$1" = "push" ] && push && exit
+  [ "$1" = "pull" ] && pull && exit
 fi
 
 usage
