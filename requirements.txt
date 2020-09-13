@@ -7,3 +7,4 @@ nvim
 ag
 fzy
 tldr
+tree

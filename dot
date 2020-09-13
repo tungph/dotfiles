@@ -14,7 +14,7 @@ usage() {
 
 install_requirements() {
   while IFS="" read -r p || [ -n "$p" ]; do
-    printf '%s\n' "$p"
+    install "$p"
   done <"$HOME"/.dotfiles/requirements.txt
 
   install_fzf
