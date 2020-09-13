@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
-LOCAL_DIR="$HOME/.local"
-
 [ "$(uname)" = "Linux" ] && sudo apt update
+
+install_package() {
+  COMMAND=$1
+  PACKAGE=$2
+  if ! command -v "$COMMAND" >/dev/null 2>&2; then
+    [ "$(uname)" = "Darwin" ] && brew install "$PACKAGE"
+    [ "$(uname)" = "Linux" ] && sudo apt install -y "$PACKAGE"
+  else
+    echo "$PACKAGE has already installed on your system"
+  fi
+}
 
 install_fzf() {
   if [ -d ~/.local/fzf ]; then
@@ -13,20 +22,18 @@ install_fzf() {
 }
 
 install() {
+  echo ">>> Installing $1..."
+  declare -A CMD_PKG
   COMMAND=$1
-  PACKAGE=$COMMAND
-  [ "$COMMAND" = "trash" ] && PACKAGE="trash-cli"
-  [ "$COMMAND" = "nvim" ] && PACKAGE="neovim"
-  [ "$COMMAND" = "ag" ] && PACKAGE="silversearcher-ag"
-  [ "$COMMAND" = 'fzf' ] && install_fzf | return
+  CMD_PKG=(["trash"]="trash-cli" ["nvim"]="neovim" ["ag"]="silversearcher-ag")
 
-  echo ">>> Installing $PACKAGE..."
-
-  if ! command -v "$COMMAND" >/dev/null 2>&2; then
-    [ "$(uname)" = "Darwin" ] && brew install "$PACKAGE"
-    [ "$(uname)" = "Linux" ] && sudo apt install -y "$PACKAGE"
+  if [ "$COMMAND" = 'fzf' ]; then
+    install_fzf
   else
-    echo "$PACKAGE has already installed on your system"
+    PACKAGE=$COMMAND
+    [[ -z ${CMD_PKG["$COMMAND"]} ]] && PACKAGE=CMD_PKG["$COMMAND"]
+    install_package "$COMMAND" "$PACKAGE"
   fi
+
   echo ""
 }
