@@ -41,8 +41,6 @@ init() {
   install_requirements
   install_carlos_dotfiles
 
-  exec zsh
-
   echo "<<< dotfiles has been installed to $HOME/.dotfiles"
 }
 
@@ -50,7 +48,6 @@ update() {
   echo ">>> Updating dotfile"
   # shellcheck disable=SC1090
   . ~/.dotfiles/bin/dot_update
-  exec zsh
 
   echo "<<< dotfile has been updated"
 }
