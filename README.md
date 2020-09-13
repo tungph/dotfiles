@@ -3,7 +3,7 @@
 <h4>To setup and sync settings across devices.</h4>
 </div>
 
-Folder structure and meaning of the files:
+Meaning of the files:
  - `dot` the main script, run `dot --help` for detail
  - `config.zshrc` holds the common settings. Local settings must be placed in *~/.localrc*
  - `requirements.txt` holds the commands to be install when run `dot init`
