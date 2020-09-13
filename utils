@@ -8,8 +8,6 @@ install_package() {
   if ! command -v "$COMMAND" >/dev/null 2>&2; then
     [ "$(uname)" = "Darwin" ] && brew install "$PACKAGE"
     [ "$(uname)" = "Linux" ] && sudo apt install -y "$PACKAGE"
-  else
-    echo "$PACKAGE has already installed on your system"
   fi
 }
 
@@ -18,13 +16,11 @@ install_fzf() {
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/fzf
     # shellcheck disable=SC1090
     . ~/.local/fzf/install
-  else
-    echo "fzf has already installed on your system"
   fi
 }
 
 install() {
-  echo "> installing $1"
+  echo "> $1"
   declare -A CMD_PKG
   COMMAND=$1
   CMD_PKG=(["trash"]="trash-cli" ["nvim"]="neovim" ["ag"]="silversearcher-ag")
