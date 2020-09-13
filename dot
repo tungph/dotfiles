@@ -69,14 +69,15 @@ pull() {
 
 # ENTRY POINT
 if [ $# -eq 1 ]; then
-  [ "$1" = "init" ] && init
-  [ "$1" = "update" ] && update
-  [ "$1" = "update-log" ] && show_update_log
-  [ "$1" = "push" ] && push
-  [ "$1" = "pull" ] && pull
-  [ "$1" = "sync" ] && pull && push
-  [ "$1" = "-h" ] && usage
-  [ "$1" = "--help" ] && usage
+  case "$1" in
+  init) init ;;
+  update) update ;;
+  update-log) show_update_log ;;
+  push) push ;;
+  pull) pull ;;
+  sync) pull && push ;;
+  *) usage ;;
+  esac
 else
   usage
 fi
