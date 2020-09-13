@@ -18,7 +18,7 @@ install() {
   [ "$COMMAND" = "trash" ] && PACKAGE="trash-cli"
   [ "$COMMAND" = "nvim" ] && PACKAGE="neovim"
   [ "$COMMAND" = "ag" ] && PACKAGE="silversearcher-ag"
-  [ "$COMMAND" = 'fzf' ] && install_fzf, return
+  [ "$COMMAND" = 'fzf' ] && install_fzf | return
 
   echo ">>> Installing $PACKAGE..."
 
