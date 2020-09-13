@@ -9,6 +9,7 @@ usage() {
   echo "    - update-log: view update log"
   echo "    - push: push local change to github"
   echo "    - pull: pull change from github"
+  echo "    - sync: sync with the remote repo"
 
   exit 1
 }
@@ -76,6 +77,7 @@ if [ $# -eq 1 ]; then
   [ "$1" = "update-log" ] && show_update_log && exit
   [ "$1" = "push" ] && push && exit
   [ "$1" = "pull" ] && pull && exit
+  [ "$1" = "sync" ] && pull && push && exit
 fi
 
 usage
