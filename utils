@@ -21,7 +21,7 @@ install_fzf() {
 
 install() {
   echo "> $1"
-  declare -A CMD_PKG
+  declare -a CMD_PKG
   COMMAND=$1
   CMD_PKG=(["trash"]="trash-cli" ["nvim"]="neovim" ["ag"]="silversearcher-ag")
 

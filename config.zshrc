@@ -24,7 +24,6 @@ function tl() {
 #### ALIASES #####
 alias dot="~/.dotfiles/dot"
 alias ss="(cd ~/.dotfiles && git add -u . && git commit -m \"sync\" && git push)"
-alias pp="(cd ~/.dotfiles && git pull && rm -f ~/.localrc && ln localrc ~/.localrc)"
 alias diff="diff-so-fancy"
 alias vi='nvim'
 alias zz="vi ~/.localrc && rl"
