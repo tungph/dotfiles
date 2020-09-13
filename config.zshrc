@@ -27,9 +27,7 @@ function tl() {
     # apps #
 alias diff="diff-so-fancy"
 alias vi='nvim'
-alias of='open'
 alias rp='realpath'
-alias xc='exercism'
 alias fl='flutter'
 alias tm="tmux a -t local || tmux new -s local"
 
