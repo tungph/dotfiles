@@ -24,6 +24,8 @@ install_requirements() {
   install fzy
   install tldr
 
+  install_fzf
+
   echo "<<< all the requirements has been installed"
 }
 
