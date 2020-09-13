@@ -1,4 +1,4 @@
-export PATH="/usr/local/sbin:$HOME/.local/dotfiles/dependencies/diff-so-fancy:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 #### FUNCTIONS #####
 function j() {
