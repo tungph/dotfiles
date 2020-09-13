@@ -39,8 +39,7 @@ alias del='rm -rf'
     # config #
 alias vl="vi ~/.localrc && rl"
 alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
-alias vz='vi ~/.dotfiles/config.zshrc'
-alias dotc='charm ~/.dotfiles'
+alias vz='vi ~/.dotfiles/config.zshrc && rl'
 
     # docker #
 alias dc='docker-compose'
