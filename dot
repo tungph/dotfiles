@@ -7,6 +7,7 @@ usage() {
   echo "    - init: install dotfiles to the system"
   echo "    - update: pull and apply new change from the git repo"
   echo "    - update-log: view update log"
+  echo "    - push: push local change to github"
 
   exit 1
 }
@@ -59,11 +60,16 @@ show_update_log() {
   less ${TMPDIR:-/tmp}/dot_update.log
 }
 
+push() {
+  cd ~/.local/dotfiles && git add -u . && git commit -m \"sync\" && git push
+}
+
 # ENTRY POINT
 if [ $# -eq 1 ]; then
   [ "$1" = "init" ] && init && exit
   [ "$1" = "update" ] && update && exit
   [ "$1" = "update-log" ] && show_update_log && exit
+  [ "$1" = "push" ] && push && exit
 fi
 
 usage
