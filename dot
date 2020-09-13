@@ -13,11 +13,9 @@ usage() {
 }
 
 install_requirements() {
-  for p in (requirement.txt)
-do
-    echo "${p}"
-    install "${p}"
-done
+  while IFS="" read -r p || [ -n "$p" ]; do
+    printf '%s\n' "$p"
+  done <requirements.txt
 
   install_fzf
 
