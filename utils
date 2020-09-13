@@ -31,7 +31,7 @@ install() {
     install_fzf
   else
     PACKAGE=$COMMAND
-    [[ -z ${CMD_PKG["$COMMAND"]} ]] && PACKAGE=${CMD_PKG["$COMMAND"]}
+    [[ -z ${CMD_PKG["$COMMAND"]} ]] || PACKAGE=${CMD_PKG["$COMMAND"]}
     install_package "$COMMAND" "$PACKAGE"
   fi
 
