@@ -15,13 +15,13 @@ usage() {
 
 install_requirements() {
   echo ""
-  echo ">> Installing required packages..."
+  echo ">> Installing common commands..."
 
   while IFS="" read -r p || [ -n "$p" ]; do
     install "$p"
   done <"$HOME"/.dotfiles/requirements.txt
 
-  echo "<< all the requirements has been installed"
+  echo "<< installed"
   echo ""
 }
 
