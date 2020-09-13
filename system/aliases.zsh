@@ -4,9 +4,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
 else
 	alias ls="ls -F --color"
 fi
-alias l="ls -lAh"
+alias ll="ls -lAh"
 alias la="ls -A"
-alias ll="ls -l"
+alias l="ls -1"
 
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"

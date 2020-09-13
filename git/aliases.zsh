@@ -3,9 +3,8 @@ if command -v hub >/dev/null 2>&1; then
 	alias git='hub'
 fi
 
-alias gl='git pull --prune'
-alias glg="git log --graph --decorate --oneline --abbrev-commit"
-alias glga="glg --all"
+alias gl="git log --graph --decorate --oneline --abbrev-commit"
+alias gla="glg --all"
 alias gp='git push origin HEAD'
 alias gpa='git push origin --all'
 alias gd='git diff'
