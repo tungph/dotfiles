@@ -28,7 +28,7 @@ git clone https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot 
 - Beware of hardcode:
   1. installation path must be `~/.dotfiles`
   1. additional installation will be placed under `~/.locals`
-  1. git username and email will be set to my account if not preconfigured
+  1. git username and email will be set to mine if not preconfigured
 
 
 ### Acknowledgement
