@@ -463,6 +463,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:vim_json_syntax_conceal = 0
 
 " ==================== Completion =========================
+deoplete#custom#source()
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('ignore_sources', {'_': ['buffer', 'member', 'tag', 'file', 'neosnippet']})
 let g:deoplete#sources#go#sort_class = ['func', 'type', 'var', 'const']
