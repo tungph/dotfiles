@@ -4,13 +4,14 @@
  - `config.zshrc` holds the common settings. Local settings must be placed in *~/.localrc*
  - `requirements.txt` holds the commands to be install when run `dot init`
 
-For heavy configuration app like vim, antibody..., create a folder with this kind of structure:
+For heavy configuration app like vim, antibody... create a folder with this structure:
 ```text
-git
+module
 ├── aliases.zsh
-├── gitconfig.local.symlink
-├── gitignore.symlink
-└── install.sh
+├── config_dir_sample.symlink
+├── config_file_sample.symlink
+├── install.sh
+└── path.zsh
 ```
 - `aliases.zsh` holds the aliases for the app
 - `*.symlink` will create a symbolic link to the targeted folder
