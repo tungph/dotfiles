@@ -39,8 +39,9 @@ alias ff='ag -g'
 alias del='rm -rf'
 
     # config #
-alias zz="vi ~/.localrc && rl"
+alias vl="vi ~/.localrc && rl"
 alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
+alias vc='vi ~/.dotfiles/config.zshrc'
 alias dotc='charm ~/.dotfiles'
 
     # docker #
