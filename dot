@@ -15,7 +15,7 @@ usage() {
 
 install_requirements() {
   echo ""
-  echo ">> Installing commands..."
+  echo ">> installing..."
 
   while IFS="" read -r p || [ -n "$p" ]; do
     install "$p"
