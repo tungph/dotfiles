@@ -28,7 +28,7 @@ add_my_customization() {
 # ENTRY POINT
 BASE_DIR="$(dirname "$0")"
 # shellcheck disable=SC1090,SC2039
-source "$BASE_DIR/utils.sh"
+source "$BASE_DIR/utils"
 
 install_requirements
 install_carlos_dotfiles

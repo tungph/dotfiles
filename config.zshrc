@@ -30,6 +30,7 @@ alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
 alias rl="exec zsh"
 alias tm="tmux a -t local || tmux new -s local"
 
+alias vi='nvim'
 alias del='rm -rf'
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
@@ -53,7 +54,6 @@ alias dp='docker ps'
 
 # LOCAL ONLY
 if [ "$(uname)" = "Darwin" ]; then
-	alias vi='nvim'
 	alias del="trash"
 	alias xclip='pbcopy'
 	alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister'
