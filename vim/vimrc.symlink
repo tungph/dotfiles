@@ -38,7 +38,9 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'moll/vim-bbye'
 
 " Colors
-" Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -411,6 +413,8 @@ set wildignore+=*.orig                           " Merge resolution files
 " ----------------------------------------- "
 " Plugin configs 			    			"
 " ----------------------------------------- "
+" ==================== AirlineTheme ====================
+let g:airline_theme='lucius'
 
 
 " ==================== terraform====================
