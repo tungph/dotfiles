@@ -1,0 +1,9 @@
+git
+tar
+zsh
+curl
+unzip
+nvim
+ag
+fzy
+tldr

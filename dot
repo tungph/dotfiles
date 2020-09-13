@@ -13,16 +13,11 @@ usage() {
 }
 
 install_requirements() {
-  install git
-  install tar
-  install zsh
-  install curl
-
-  install unzip
-  install nvim
-  install ag
-  install fzy
-  install tldr
+  for p in (requirement.txt)
+do
+    echo "${p}"
+    install "${p}"
+done
 
   install_fzf
 
