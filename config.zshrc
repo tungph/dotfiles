@@ -34,6 +34,8 @@ alias fl='flutter'
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
+alias dupdate='dot pull && rl'
+alias dpush='dot push'
 
     # config #
 alias vl="vi ~/.localrc && rl"
