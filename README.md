@@ -18,7 +18,7 @@ module
 └── path.zsh
 ```
 - `aliases.zsh` holds the aliases for the app
-- `*.symlink` will create a symbolic link to the targeted folder
+- `*.symlink` will create a symbolic link to the targeted file/folder
 - `install.sh` will be run when **init** or **update**
 - `path.zsh` hold command to append system path variable
 
