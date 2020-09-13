@@ -1,5 +1,5 @@
 ## Shawn's dotfiles
-To setup and sync settings across devices.
+->To setup and sync settings across devices.<-
  - `dot` the main script, run `dot --help` for detail
  - `config.zshrc` holds the common settings. Local settings must be placed in *~/.localrc*
  - `requirements.txt` holds the commands to be install when run `dot init`
