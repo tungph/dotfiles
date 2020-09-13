@@ -29,7 +29,6 @@ alias diff="diff-so-fancy"
 alias vi='nvim'
 alias rp='realpath'
 alias fl='flutter'
-alias tm="tmux a -t local || tmux new -s local"
 
     # utils #
 alias f="ls -ltra | grep -i"
