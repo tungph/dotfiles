@@ -24,7 +24,7 @@ install_fzf() {
 }
 
 install() {
-  echo ">>> Installing $1..."
+  echo "> installing $1"
   declare -A CMD_PKG
   COMMAND=$1
   CMD_PKG=(["trash"]="trash-cli" ["nvim"]="neovim" ["ag"]="silversearcher-ag")
@@ -36,6 +36,4 @@ install() {
     [[ -z ${CMD_PKG["$COMMAND"]} ]] || PACKAGE=${CMD_PKG["$COMMAND"]}
     install_package "$COMMAND" "$PACKAGE"
   fi
-
-  echo ""
 }
