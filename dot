@@ -75,7 +75,7 @@ if [ $# -eq 1 ]; then
   [ "$1" = "init" ] && init && exit
   [ "$1" = "update" ] && update && exit
   [ "$1" = "update-log" ] && show_update_log && exit
-  [ "$1" = "push" ] && push && exit
+  [ "$1" = "push" ] && push | exit
   [ "$1" = "pull" ] && pull && exit
   [ "$1" = "sync" ] && pull && push && exit
 fi
