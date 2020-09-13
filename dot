@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+usage() {
+  echo
+  echo "Usage: $ OPTION"
+  echo "  OPTION:"
+  echo "    - init: install dotfiles to the system"
+  echo "    - update: pull and apply new change from the git repo"
+  echo "    - update-log: view update log"
+
+  exit 1
+}
+
+install_requirements() {
+  install git
+  install tar
+  install zsh
+  install curl
+
+  install unzip
+  install nvim
+  install ag
+  install fzy
+  install tldr
+  install_diff_so_fancy
+
+  echo "<<< all the requirements has been installed"
+}
+
+install_carlos_dotfiles() {
+  ~/.dotfiles/script/bootstrap
+}
+
+add_my_customization() {
+  install_vim_plug
+
+}
+
+# ENTRY POINT
+init() {
+  echo ">>> Installing dotfiles to $HOME/.dotfiles"
+
+  BASE_DIR="$(dirname "$0")"
+  # shellcheck disable=SC1090,SC2039
+  source "$BASE_DIR/utils"
+
+  install_requirements
+  install_carlos_dotfiles
+  add_my_customization
+
+  echo "<<< dotfiles has been installed to $HOME/.dotfiles"
+}
+
+update() {
+  echo ">>> Updating dotfile"
+  . ~/.dotfiles/bin/dot_update
+
+  echo "<<< dotfile has been updated"
+}
+
+show_update_log() {
+  less ${TMPDIR:-/tmp}/dot_update.log
+}
+
+reinstall() {
+  rm -rf ~/.dotfiles
+  init
+}
+
+[ $# -ne 1 ] && usage
+[ "$1" = "init" ] && init
+[ "$1" = "update" ] && update
+[ "$1" = "update-log" ] && show_update_log

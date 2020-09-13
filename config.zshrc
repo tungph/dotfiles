@@ -25,12 +25,12 @@ function tl() {
 alias ss="(cd ~/.local/dotfiles && git add -u . && git commit -m \"sync\" && git push)"
 alias pp="(cd ~/.local/dotfiles && git pull && rm -f ~/.localrc && ln localrc ~/.localrc)"
 alias diff="diff-so-fancy"
+alias vi='nvim'
 alias zz="vi ~/.localrc && rl"
 alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
 alias rl="exec zsh"
 alias tm="tmux a -t local || tmux new -s local"
 
-alias vi='nvim'
 alias del='rm -rf'
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
