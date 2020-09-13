@@ -414,9 +414,7 @@ set wildignore+=*.orig                           " Merge resolution files
 " Plugin configs 			    			"
 " ----------------------------------------- "
 " ==================== AirlineTheme ====================
-let g:airline_theme='badwolf'
-set t_Co=256
-set background=dark
+let g:airline_theme='jellybeans'
 
 " ==================== terraform====================
 let g:terraform_align=1
