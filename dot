@@ -17,8 +17,6 @@ install_requirements() {
     install "$p"
   done <"$HOME"/.dotfiles/requirements.txt
 
-  install_fzf
-
   echo "<<< all the requirements has been installed"
 }
 
