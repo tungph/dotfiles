@@ -22,18 +22,12 @@ install_requirements() {
   install ag
   install fzy
   install tldr
-  install_diff_so_fancy
 
   echo "<<< all the requirements has been installed"
 }
 
 install_carlos_dotfiles() {
   ~/.dotfiles/script/bootstrap
-}
-
-add_my_customization() {
-  install_vim_plug
-
 }
 
 # ENTRY POINT
@@ -53,6 +47,7 @@ init() {
 
 update() {
   echo ">>> Updating dotfile"
+  # shellcheck disable=SC1090
   . ~/.dotfiles/bin/dot_update
 
   echo "<<< dotfile has been updated"
@@ -60,11 +55,6 @@ update() {
 
 show_update_log() {
   less ${TMPDIR:-/tmp}/dot_update.log
-}
-
-reinstall() {
-  rm -rf ~/.dotfiles
-  init
 }
 
 [ $# -ne 1 ] && usage
