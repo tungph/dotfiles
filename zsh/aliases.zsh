@@ -1,2 +1,3 @@
 #!/bin/sh
-alias reload!='exec "$SHELL" -l'
+alias dot="~/.dotfiles/dot"
+alias rl='exec "$SHELL" -l'

@@ -23,8 +23,6 @@ function tl() {
 }
 
 #### ALIASES #####
-alias dot="~/.dotfiles/dot"
-alias rl="exec zsh"
 
     # apps #
 alias diff="diff-so-fancy"
@@ -40,9 +38,10 @@ alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
 
-    # edit config #
+    # config #
 alias zz="vi ~/.localrc && rl"
 alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
+alias dotc='charm ~/.dotfiles'
 
     # docker #
 alias dc='docker-compose'
