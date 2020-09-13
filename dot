@@ -39,7 +39,6 @@ init() {
 
   install_requirements
   install_carlos_dotfiles
-  add_my_customization
 
   exec zsh
 
