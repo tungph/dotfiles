@@ -5,8 +5,7 @@ fi
 
 alias gl="git log --graph --decorate --oneline --abbrev-commit"
 alias gla="glg --all"
-alias gp='git push origin HEAD'
-alias gpa='git push origin --all'
+alias gp='git pull'
 alias gd='git diff'
 alias gc='git commit -s'
 alias gca='git commit -s -a'
