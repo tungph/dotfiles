@@ -415,7 +415,8 @@ set wildignore+=*.orig                           " Merge resolution files
 " ----------------------------------------- "
 " ==================== AirlineTheme ====================
 let g:airline_theme='lucius'
-
+set t_Co=256
+set background=dark
 
 " ==================== terraform====================
 let g:terraform_align=1
