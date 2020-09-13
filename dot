@@ -2,7 +2,7 @@
 
 usage() {
   echo
-  echo "Usage: $ OPTION"
+  echo "Usage: $0 OPTION"
   echo "  OPTION:"
   echo "    - init: install dotfiles to the system"
   echo "    - update: pull and apply new change from the git repo"
