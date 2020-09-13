@@ -20,7 +20,9 @@ git remote add updates https://github.com/tungph/dotfiles.git 2>/dev/null
 
 # Update repo
 echo "› git update"
+git stash
 git pull --rebase --stat updates "$(git rev-parse --abbrev-ref HEAD)"
+git stash pop
 
 # Update submodules
 echo "› submodules update"
