@@ -1,6 +1,6 @@
 ## Shawn's dotfiles
 <div align="center">
-To setup and sync settings across devices.
+<h4>To setup and sync settings across devices.</h4>
 </div>
 
  - `dot` the main script, run `dot --help` for detail
