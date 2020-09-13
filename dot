@@ -14,6 +14,7 @@ usage() {
 }
 
 install_requirements() {
+  echo ""
   echo ">> Installing required packages..."
 
   while IFS="" read -r p || [ -n "$p" ]; do
@@ -21,9 +22,11 @@ install_requirements() {
   done <"$HOME"/.dotfiles/requirements.txt
 
   echo "<< all the requirements has been installed"
+  echo ""
 }
 
 install_carlos_dotfiles() {
+  echo ">> installing carlo dotfiles"
   ~/.dotfiles/script/bootstrap
 }
 
