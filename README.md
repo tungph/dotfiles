@@ -22,5 +22,14 @@ git
 ```shell script
 git clone https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
 ```
+
+### Limitation
+- Fork this repo to be able to customize and sync your settings
+- Beware of hardcode:
+  1. installation path must be `~/.dotfiles`
+  1. additional installation will be placed under `~/.locals`
+  1. git username and email will be set to my account if not preconfigured
+
+
 ### Acknowledgement
 The philosophy and a lot of settings were copied from [Carlos' dotfiles](https://github.com/caarlos0/dotfiles)
