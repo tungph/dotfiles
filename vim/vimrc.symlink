@@ -38,12 +38,12 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'moll/vim-bbye'
 
 " Colors
-Plug 'dracula/vim', {'as': 'dracula'}
+"Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
-
+colorscheme dracula
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
