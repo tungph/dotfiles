@@ -1,4 +1,4 @@
 ## Shawn's dotfiles
 ```shell script
-git clone https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh
+rm -rf ~/.dotfiles; git clone https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh
 ```
