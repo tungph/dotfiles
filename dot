@@ -4,7 +4,7 @@ usage() {
   echo
   echo "Usage: $0 OPTION"
   echo "  OPTION:"
-  echo "    - init: install dotfiles to the system"
+  echo "    - [init|install]: install dotfiles to the system"
   echo "    - update: pull and apply new change from the git repo"
   echo "    - update-log: view update log"
   echo "    - push: push local change to github"
@@ -71,6 +71,7 @@ pull() {
 if [ $# -eq 1 ]; then
   case "$1" in
   init) init ;;
+  install) init ;;
   update) update ;;
   update-log) show_update_log ;;
   push) push ;;
