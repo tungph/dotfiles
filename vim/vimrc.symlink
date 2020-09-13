@@ -1,17 +1,12 @@
 " load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoInstallBinaries' }
 Plug 'nsf/gocode', {'rtp': 'vim'}
 
 " auto-complete for golang et al
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " provides insert mode auto-completion for quotes, parens, brackets, etc.
@@ -48,7 +43,7 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'moll/vim-bbye'
 
 " Colors
-Plug 'dracula/vim', {'as': 'dracula'}
+" Plug 'dracula/vim', {'as': 'dracula'}
 
 call plug#end()
 
@@ -571,3 +566,34 @@ autocmd BufWritePre * StripWhitespace
 let g:rainbow_active = 1
 
 " vim:ts=2:sw=2:et
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+syntax enable           " enable syntax processing
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+let mapleader = ";"
+
+" persistent undo
+set undofile
+set undodir=~/.config/nvim/undodir
+
+" set tabsize and tabstop
+set ts=2 sw=2
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+
