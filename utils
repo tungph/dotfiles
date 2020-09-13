@@ -4,6 +4,14 @@ LOCAL_DIR="$HOME/.local"
 
 [ "$(uname)" = "Linux" ] && sudo apt update
 
+install_fzf() {
+  if [ -d ~/.local/fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/fzf
+    # shellcheck disable=SC1090
+    . ~/.local/fzf/install
+  fi
+}
+
 install() {
   COMMAND=$1
   PACKAGE=$COMMAND
@@ -21,12 +29,4 @@ install() {
     echo "$PACKAGE has already installed on your system"
   fi
   echo ""
-}
-
-install_fzf() {
-  if [ -d ~/.local/fzf ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/fzf
-    # shellcheck disable=SC1090
-    . ~/.local/fzf/install
-  fi
 }
