@@ -67,7 +67,7 @@ pull() {
 
 # ENTRY POINT
 if [ $# -eq 1 ]; then
-  [ "$1" = "init" ] && pull && init && exit
+  [ "$1" = "init" ] && init && exit
   [ "$1" = "update" ] && update && exit
   [ "$1" = "update-log" ] && show_update_log && exit
   [ "$1" = "push" ] && push && exit
