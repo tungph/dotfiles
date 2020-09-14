@@ -22,6 +22,10 @@ function tl() {
 	fi
 }
 
+mkc() {
+  [ $# -eq 1 ] && mkdir $1 && cd $1
+}
+
 #### ALIASES #####
 
     # apps #
