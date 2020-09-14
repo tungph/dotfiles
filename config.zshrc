@@ -36,10 +36,11 @@ alias ff='ag -g'
 alias del='rm -rf'
 
     # config #
-alias vl="vi ~/.localrc && rl"
-alias vz='vi ~/.dotfiles/config.zshrc && rl'
-alias vv="vi ~/.vimrc ~/.config/nvim/init.vim"
-alias vg='vi ~/.gitconfig.local'
+alias ez="vi ~/.localrc && rl"
+alias ec='vi ~/.dotfiles/config.zshrc && rl'
+alias ev="vi ~/.vimrc ~/.config/nvim/init.vim"
+alias eg='vi ~/.gitconfig.local'
+alias et='vi ~/.tmux.conf'
 
     # docker #
 alias dc='docker-compose'

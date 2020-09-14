@@ -1,1 +1,1 @@
-alias tm="tmux a -t shawn || tmux new -s shawn"
+alias tm=" tmux new -A -s  shawn"
