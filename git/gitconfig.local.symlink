@@ -24,7 +24,7 @@
 	excludesfile = ~/.gitignore
 	editor = vim
 	compression = -1
-	autocrlf = input
+	autocrlf = true
 	whitespace = trailing-space,space-before-tab
 	precomposeunicode = true
 [apply]
