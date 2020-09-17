@@ -9,4 +9,5 @@ else
     sudo apt install -y "$1"
 fi
 
+echo ""
 exit 0
