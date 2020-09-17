@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 if ! sudo apt install -qqy fzf; then
     if ! command -v fzf >/dev/null 2>&2; then
         if ! [ -d ~/.local/fzf ]; then
