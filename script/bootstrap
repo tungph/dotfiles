@@ -88,6 +88,7 @@ setup_gitconfig
 install_dotfiles
 
 info "installing dependencies"
+echo "PWD: $PWD"
 if ./bin/dot_update; then
 	success "dependencies installed"
 else
