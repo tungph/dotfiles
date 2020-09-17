@@ -27,7 +27,7 @@ module
 
 ### Installation
 ```shell script
-git clone https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
+git clone -qhttps://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
 ```
 
 ### Limitation

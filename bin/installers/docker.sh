@@ -2,11 +2,11 @@ command -v docker >/dev/null 2>&2 && echo "docker command has already exist" && 
 
 echo "> installing docker..."
 
-sudo apt-get remove -qq docker docker-engine docker.io containerd runc
+sudo apt-get remove -qqy docker docker-engine docker.io containerd runc
 
 sudo apt-get update -qq
 
-sudo apt-get install -qq \
+sudo apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -22,7 +22,7 @@ stable"
 
 sudo apt-get update -qq
 
-sudo apt-get install -qq docker-ce docker-ce-cli containerd.io
+sudo apt-get install -qqy docker-ce docker-ce-cli containerd.io
 
 sudo groupadd docker
 
