@@ -59,8 +59,10 @@ init() {
     install_requirements
     install_carlos_dotfiles
 
-    echo "Post isntallation"
+    echo ""
+    echo ">>> POST INSTALLATION"
     cat "$DOT_HOME/post_installation.txt"
+    echo ""
 }
 
 update() {
