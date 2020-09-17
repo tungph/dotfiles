@@ -6,9 +6,9 @@ unzip
 nvim
 ag
 fzy
-fzf
 tldr
 tree
 tmux
 bat
 docker
+fzf
