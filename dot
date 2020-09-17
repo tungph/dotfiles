@@ -28,11 +28,9 @@ fail() {
 install_requirements() {
     echo ">> installing the predefined packages"
 
-    echo "> apt update"
-    sudo apt update >/dev/null 2>&1
-    sudo apt auto-remove -qqy >/dev/null 2>&1
+    sudo apt update >/dev/null 2>&1 && success "..apt update"
+    sudo apt auto-remove -qqy >/dev/null 2>&1 && success "..apt auto-remove"
 
-    echo "> installing..."
     while IFS="" read -r p || [ -n "$p" ]; do
         if "$DOT_HOME/bin/package_installer" "$p" >/dev/null 2>&1; then
             success "$p"
