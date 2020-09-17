@@ -22,7 +22,7 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 	compression = -1
 	autocrlf = false
   eol = lf
