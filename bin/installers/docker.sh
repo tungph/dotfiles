@@ -22,7 +22,7 @@ stable"
 
 sudo apt-get update
 
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -qq docker-ce docker-ce-cli containerd.io
 
 sudo groupadd docker
 

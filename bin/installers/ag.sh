@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-sudo apt install -y silversearcher-ag
-
+sudo apt install -qq silversearcher-ag

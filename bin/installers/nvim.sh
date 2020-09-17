@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo apt install -y neovim
+sudo apt install -qq neovim

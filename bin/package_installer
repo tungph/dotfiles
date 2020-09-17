@@ -6,7 +6,7 @@ if [ -f "$CMD" ]; then
     echo "Running $CMD"
     . "$CMD" >/dev/null
 else
-    sudo apt install -y "$1" >/dev/null
+    sudo apt install -qq "$1" >/dev/null
 fi
 
 echo ""
