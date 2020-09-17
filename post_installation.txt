@@ -1,1 +1,2 @@
 pi fzf
+pi conda
