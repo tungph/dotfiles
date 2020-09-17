@@ -19,6 +19,7 @@ install_requirements() {
   echo ""
   echo ">> installing..."
 
+  sudo apt update
   while IFS="" read -r p || [ -n "$p" ]; do
     "$DOT_HOME/bin/package_installer" "$p"
   done <"$HOME"/.dotfiles/requirements.txt
