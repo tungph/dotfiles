@@ -53,6 +53,7 @@ alias fl='flutter'
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
+alias pi='package_installer'
 
     # config #
 alias dotfiles='cd ~/.dotfiles'
