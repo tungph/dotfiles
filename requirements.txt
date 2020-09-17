@@ -8,5 +8,4 @@ ag
 fzy
 tldr
 tree
-fzf
 tmux

@@ -11,14 +11,6 @@ install_package() {
   fi
 }
 
-install_fzf() {
-  if ! [ -d ~/.local/fzf ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/fzf
-    # shellcheck disable=SC1090
-    . ~/.local/fzf/install
-  fi
-}
-
 install() {
   echo "> $1"
   declare -a CMD_PKG
