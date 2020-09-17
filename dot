@@ -15,6 +15,11 @@ usage() {
     exit 1
 }
 
+info() {
+    # shellcheck disable=SC2059
+    printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
 success() {
     # shellcheck disable=SC2059
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
@@ -28,8 +33,8 @@ fail() {
 install_requirements() {
     echo ">> installing the predefined packages"
 
-    sudo apt update >/dev/null 2>&1 && success "..apt update"
-    sudo apt auto-remove -qqy >/dev/null 2>&1 && success "..apt auto-remove"
+    sudo apt update >/dev/null 2>&1 && info "apt update"
+    sudo apt auto-remove -qqy >/dev/null 2>&1 && info "apt auto-remove"
 
     while IFS="" read -r p || [ -n "$p" ]; do
         if "$DOT_HOME/bin/package_installer" "$p" >/dev/null 2>&1; then
