@@ -19,7 +19,6 @@ if [ -f "$CMD" ]; then
     . "$CMD" >/dev/null 2>&2
 else
     sudo apt install -qqy "$1" >/dev/null 2>&2
-
 fi
 
 if [ $? -eq 0 ]; then
