@@ -16,9 +16,9 @@ set -e
 
 CMD="$HOME/.dotfiles/bin/installers/$1.sh"
 if [ -f "$CMD" ]; then
-    . "$CMD" >/dev/null 2>&2
+    . "$CMD" 2>&1 >/dev/null
 else
-    sudo apt install -qqy "$1" >/dev/null 2>&2
+    sudo apt install -qqy "$1" 2>&1 >/dev/null
 fi
 
 if [ $? -eq 0 ]; then
