@@ -4,7 +4,7 @@ echo "> $1"
 CMD="$HOME/.dotfiles/bin/installers/$1.sh"
 if [ -f "$CMD" ]; then
     echo "Running $CMD"
-    . "$CMD" >/dev/null
+    . "$CMD" 2>&1 >/dev/null
 else
     sudo apt install -y "$1"
 fi
