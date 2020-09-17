@@ -51,3 +51,5 @@ unset config_files updated_at
 [ -f ~/.localrc ] && . ~/.localrc
 
 # zprof
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
