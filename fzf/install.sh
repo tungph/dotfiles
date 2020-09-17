@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 [ -d ~/.local/fzf ] && rm -rf ~/.local/fzf
 
