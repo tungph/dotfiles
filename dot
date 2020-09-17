@@ -57,7 +57,7 @@ show_update_log() {
 }
 
 push() {
-    cd ~/.dotfiles && git add -u . && git commit -m "sync" --quiet && git push --quiet
+    cd ~/.dotfiles && git add -u . && git commit -m "sync" --quiet && git push
 }
 
 pull() {
