@@ -43,7 +43,7 @@ done
 
 unset config_files updated_at
 
-source "$DOTFILES/config.zshrc"
+. "$DOTFILES/config.zshrc"
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
