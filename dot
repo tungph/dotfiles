@@ -28,7 +28,7 @@ install_requirements() {
 
 install_carlos_dotfiles() {
   echo ">> installing carlo dotfiles"
-  ~/.dotfiles/script/bootstrap
+  . ~/.dotfiles/script/bootstrap
 }
 
 init() {
