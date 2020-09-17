@@ -18,12 +18,8 @@ usage() {
 install_requirements() {
     echo ""
     echo ">> installing..."
-
-    echo "..apt update"
-    sudo apt update > /dev/null
-
-    echo "..atp auto-remove"
-    sudo apt auto-remove -qqy > /dev/null
+    sudo apt update >/dev/null 2>&2
+    sudo apt auto-remove -qqy >/dev/null 2>&2
 
     while IFS="" read -r p || [ -n "$p" ]; do
         "$DOT_HOME/bin/package_installer" "$p"
