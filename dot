@@ -15,6 +15,16 @@ usage() {
     exit 1
 }
 
+success() {
+    # shellcheck disable=SC2059
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail() {
+    # shellcheck disable=SC2059
+    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+}
+
 install_requirements() {
     echo ""
     echo ">> installing..."
@@ -22,7 +32,11 @@ install_requirements() {
     sudo apt auto-remove -qqy >/dev/null 2>&1
 
     while IFS="" read -r p || [ -n "$p" ]; do
-        "$DOT_HOME/bin/package_installer" "$p"
+        if "$DOT_HOME/bin/package_installer" "$p" >/dev/null 2>&1; then
+            success "$p"
+        else
+            fail "$p"
+        fi
     done <"$HOME"/.dotfiles/requirements.txt
 
     echo "<< completed."
@@ -69,6 +83,8 @@ pull() {
 }
 
 # ENTRY POINT
+set -e
+
 if [ $# -eq 1 ]; then
     case "$1" in
     init) init ;;
