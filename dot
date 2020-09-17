@@ -99,6 +99,8 @@ if [ $# -eq 1 ]; then
     st) cd ~/.dotfiles && git status -s;;
     diff) cd ~/.dotfiles && git diff ;;
     stash) cd ~/.dotfiles && git stash list ;;
+    e) pycharm ~/.dotfiles ;;
+    code) code ~/.dotfiles ;;
     *) usage ;;
     esac
 else
