@@ -2,86 +2,86 @@
 DOT_HOME="$HOME/.dotfiles"
 
 usage() {
-  echo
-  echo "Usage: $0 OPTION"
-  echo "  OPTION:"
-  echo "    - [init|install]: install dotfiles to the system"
-  echo "    - update: pull and apply new change from the git repo"
-  echo "    - update-log: view update log"
-  echo "    - push: push local change to github"
-  echo "    - pull: pull change from github"
-  echo "    - sync: sync with the remote repo"
+    echo
+    echo "Usage: $0 OPTION"
+    echo "  OPTION:"
+    echo "    - [init|install]: install dotfiles to the system"
+    echo "    - update: pull and apply new change from the git repo"
+    echo "    - update-log: view update log"
+    echo "    - push: push local change to github"
+    echo "    - pull: pull change from github"
+    echo "    - sync: sync with the remote repo"
 
-  exit 1
+    exit 1
 }
 
 install_requirements() {
-  echo ""
-  echo ">> installing..."
+    echo ""
+    echo ">> installing..."
 
-  sudo apt update -qq
-  sudo apt auto-remove -qq
+    sudo apt update -qq
+    sudo apt auto-remove -qq
 
-  while IFS="" read -r p || [ -n "$p" ]; do
-    "$DOT_HOME/bin/package_installer" "$p"
-  done <"$HOME"/.dotfiles/requirements.txt
+    while IFS="" read -r p || [ -n "$p" ]; do
+        "$DOT_HOME/bin/package_installer" "$p"
+    done <"$HOME"/.dotfiles/requirements.txt
 
-  echo "<< completed."
-  echo ""
+    echo "<< completed."
+    echo ""
 }
 
 install_carlos_dotfiles() {
-  echo ">> installing carlo dotfiles"
-  "$DOT_HOME/script/bootstrap"
+    echo ">> installing carlo dotfiles"
+    "$DOT_HOME/script/bootstrap"
 }
 
 init() {
-  echo ">>> Installing dotfiles to $HOME/.dotfiles"
+    echo ">>> Installing dotfiles to $HOME/.dotfiles"
 
-  install_requirements
-  install_carlos_dotfiles
+    install_requirements
+    install_carlos_dotfiles
 
-  echo "<<< dotfiles has been installed to $HOME/.dotfiles"
+    echo "<<< dotfiles has been installed to $HOME/.dotfiles"
 }
 
 update() {
-  echo ">>> Updating dotfile"
-  # shellcheck disable=SC1090
-  . ~/.dotfiles/bin/dot_update
+    echo ">>> Updating dotfile"
+    # shellcheck disable=SC1090
+    . ~/.dotfiles/bin/dot_update
 
-  echo "<<< dotfile has been updated"
+    echo "<<< dotfile has been updated"
 }
 
 show_update_log() {
-  less ${TMPDIR:-/tmp}/dot_update.log
+    less ${TMPDIR:-/tmp}/dot_update.log
 }
 
 push() {
-  cd ~/.dotfiles && git add -u . && git commit -m "sync" && git push
+    cd ~/.dotfiles && git add -u . && git commit -m "sync" --quiet && git push --quiet
 }
 
 pull() {
-  cd ~/.dotfiles || return 1
-  git stash
-  git pull
-  git stash pop
+    cd ~/.dotfiles || return 1
+    git stash --quiet
+    git pull --quiet
+    git stash pop --quiet
 }
 
 # ENTRY POINT
 if [ $# -eq 1 ]; then
-  case "$1" in
-  init) init ;;
-  install) init ;;
-  update) update ;;
-  update-log) show_update_log ;;
-  push) push ;;
-  pull) pull ;;
-  sync) pull && push ;;
-  st) cd ~/.dotfiles && git status ;;
-  diff) cd ~/.dotfiles && git diff;;
-  stash) cd ~/.dotfiles && git stash list ;;
-  *) usage ;;
-  esac
+    case "$1" in
+    init) init ;;
+    install) init ;;
+    update) update ;;
+    update-log) show_update_log ;;
+    push) push ;;
+    pull) pull ;;
+    sync) pull && push ;;
+    st) cd ~/.dotfiles && git status ;;
+    diff) cd ~/.dotfiles && git diff ;;
+    stash) cd ~/.dotfiles && git stash list ;;
+    *) usage ;;
+    esac
 else
-  usage
+    usage
 fi
