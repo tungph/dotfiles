@@ -77,9 +77,9 @@ if [ $# -eq 1 ]; then
   push) push ;;
   pull) pull ;;
   sync) pull && push ;;
-  st) cd ~/.dotfiles && gs ;;
-  gd) cd ~/.dotfiles && gd ;;
-  stash) cd ~/.dotfiles && git stash ;;
+  st) cd ~/.dotfiles && git status ;;
+  diff) cd ~/.dotfiles && git diff;;
+  stash) cd ~/.dotfiles && git stash list ;;
   *) usage ;;
   esac
 else

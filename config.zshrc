@@ -55,8 +55,9 @@ alias ff='ag -g'
 alias del='rm -rf'
 
     # config #
-alias ez="vi ~/.localrc && rl"
+alias dotfile='cd ~/.dotfiles'
 alias ec='vi ~/.dotfiles/config.zshrc && rl'
+alias ez="vi ~/.localrc && rl"
 alias ev="vi ~/.vimrc ~/.config/nvim/init.vim"
 alias eg='vi ~/.gitconfig.local'
 alias et='vi ~/.tmux.conf'
