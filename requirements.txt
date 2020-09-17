@@ -9,4 +9,5 @@ fzy
 tldr
 tree
 tmux
+bat
 docker
