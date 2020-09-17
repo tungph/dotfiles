@@ -19,23 +19,27 @@ install_requirements() {
     echo ""
     echo ">> installing..."
 
-    sudo apt update -qq
-    sudo apt auto-remove -qqy
+    echo "..apt update"
+    sudo apt update > /dev/null
+
+    echo "..atp auto-remove"
+    sudo apt auto-remove -qqy > /dev/null
 
     while IFS="" read -r p || [ -n "$p" ]; do
         "$DOT_HOME/bin/package_installer" "$p"
     done <"$HOME"/.dotfiles/requirements.txt
 
     echo "<< completed."
-    echo ""
 }
 
 install_carlos_dotfiles() {
+    echo ""
     echo ">> installing carlo dotfiles"
     "$DOT_HOME/script/bootstrap"
 }
 
 init() {
+    echo ""
     echo ">>> Installing dotfiles to $HOME/.dotfiles"
 
     install_requirements
@@ -45,6 +49,7 @@ init() {
 }
 
 update() {
+    echo ""
     echo ">>> Updating dotfile"
     # shellcheck disable=SC1090
     . ~/.dotfiles/bin/dot_update
