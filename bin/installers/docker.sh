@@ -24,6 +24,5 @@ sudo apt-get install -qqy docker-ce docker-ce-cli containerd.io
 
 sudo groupadd docker
 
+# shellcheck disable=SC2086
 sudo usermod -aG docker $USER
-
-echo "< docker has been installed."
