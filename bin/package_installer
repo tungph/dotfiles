@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-CMD="$HOME/.dotfiles/bin/installers/$1.sh"
-echo "Running $CMD"
 
-. "$CMD"
+CMD="$HOME/.dotfiles/bin/installers/$1.sh"
+if [ -f "$CMD" ]; then
+    echo "Running $CMD"
+    . "$CMD"
+else
+    sudo apt install -y "$1"
+fi
 
 exit 0
