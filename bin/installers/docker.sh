@@ -1,7 +1,5 @@
 command -v docker >/dev/null 2>&2 && echo "docker command has already exist" && exit 0
 
-echo "> installing docker..."
-
 sudo apt-get remove -qqy docker docker-engine docker.io containerd runc
 
 sudo apt-get update -qq
