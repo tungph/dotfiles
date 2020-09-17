@@ -13,7 +13,7 @@ install_package() {
 
 install() {
   echo "> $1"
-  declare -a CMD_PKG
+  declare -A CMD_PKG
   COMMAND=$1
   CMD_PKG=(["trash"]="trash-cli" ["nvim"]="neovim" ["ag"]="silversearcher-ag")
 
