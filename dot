@@ -27,7 +27,7 @@ fail() {
 
 install_requirements() {
     echo ""
-    echo ">> installing..."
+    echo ">> installing the predefined packages"
     sudo apt update >/dev/null 2>&1
     sudo apt auto-remove -qqy >/dev/null 2>&1
 
@@ -39,7 +39,6 @@ install_requirements() {
         fi
     done <"$HOME"/.dotfiles/requirements.txt
 
-    echo "<< completed."
 }
 
 install_carlos_dotfiles() {
@@ -54,8 +53,6 @@ init() {
 
     install_requirements
     install_carlos_dotfiles
-
-    echo "<<< dotfiles has been installed to $HOME/.dotfiles"
 }
 
 update() {
