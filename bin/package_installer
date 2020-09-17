@@ -4,9 +4,9 @@ echo "> $1"
 CMD="$HOME/.dotfiles/bin/installers/$1.sh"
 if [ -f "$CMD" ]; then
     echo "Running $CMD"
-    . "$CMD" 2>&1 >/dev/null
+    . "$CMD" >/dev/null
 else
-    sudo apt install -y "$1"
+    sudo apt install -y "$1" >/dev/null
 fi
 
 echo ""
