@@ -20,7 +20,7 @@ install_requirements() {
     echo ">> installing..."
 
     sudo apt update -qq
-    sudo apt auto-remove -qq
+    sudo apt auto-remove -qqy
 
     while IFS="" read -r p || [ -n "$p" ]; do
         "$DOT_HOME/bin/package_installer" "$p"
