@@ -55,7 +55,7 @@ alias ff='ag -g'
 alias del='rm -rf'
 
     # config #
-alias dotfile='cd ~/.dotfiles'
+alias dotfiles='cd ~/.dotfiles'
 alias ec='vi ~/.dotfiles/config.zshrc && rl'
 alias ez="vi ~/.localrc && rl"
 alias ev="vi ~/.vimrc ~/.config/nvim/init.vim"
