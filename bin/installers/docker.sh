@@ -1,4 +1,4 @@
-#command -v docker >/dev/null 2>&2 && echo "docker command has already exist" && exit 0
+command -v docker >/dev/null 2>&2 && echo "docker command has already exist" && exit 0
 
 echo "> installing docker..."
 

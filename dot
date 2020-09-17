@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+DOT_HOME="$HOME/.dotfiles"
 
 usage() {
   echo
@@ -19,7 +20,7 @@ install_requirements() {
   echo ">> installing..."
 
   while IFS="" read -r p || [ -n "$p" ]; do
-    install "$p"
+    "$DOT_HOME/bin/package_installer" "$p"
   done <"$HOME"/.dotfiles/requirements.txt
 
   echo "<< completed."
@@ -28,15 +29,11 @@ install_requirements() {
 
 install_carlos_dotfiles() {
   echo ">> installing carlo dotfiles"
-  . ~/.dotfiles/script/bootstrap
+  "$DOT_HOME/script/bootstrap"
 }
 
 init() {
   echo ">>> Installing dotfiles to $HOME/.dotfiles"
-
-  BASE_DIR="$(dirname "$0")"
-  # shellcheck disable=SC1090,SC2039
-  source "$BASE_DIR/utils"
 
   install_requirements
   install_carlos_dotfiles

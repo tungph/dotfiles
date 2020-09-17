@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 CMD="$HOME/.dotfiles/bin/installers/$1.sh"
 if [ -f "$CMD" ]; then
     echo "Running $CMD"
