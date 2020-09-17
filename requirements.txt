@@ -2,6 +2,7 @@ zsh
 git
 tar
 curl
+zip
 unzip
 nvim
 ag
@@ -11,4 +12,3 @@ tree
 tmux
 bat
 docker
-fzf

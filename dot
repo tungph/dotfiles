@@ -96,7 +96,7 @@ if [ $# -eq 1 ]; then
     push) push ;;
     pull) pull ;;
     sync) pull && push ;;
-    st) cd ~/.dotfiles && git status ;;
+    st) cd ~/.dotfiles && git status -s;;
     diff) cd ~/.dotfiles && git diff ;;
     stash) cd ~/.dotfiles && git stash list ;;
     *) usage ;;
