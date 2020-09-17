@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CMD="$HOME/.dotfiles/bin/installers/$1.sh"
+echo "Running $CMD"
+
+. "$CMD"
+
+exit 0
