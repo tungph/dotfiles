@@ -45,7 +45,7 @@ install_requirements() {
     done <"$HOME"/.dotfiles/bundles_silient.txt
 
     while IFS="" read -r p || [ -n "$p" ]; do
-        zsh -c "$DOT_HOME/bin/package_installer $p"
+        sh -c "$DOT_HOME/bin/package_installer $p"
     done <"$HOME"/.dotfiles/bundles.txt
 
 }
@@ -89,7 +89,7 @@ pull() {
 }
 
 # ENTRY POINT
-set -e
+#set -e
 
 if [ $# -eq 1 ]; then
     case "$1" in

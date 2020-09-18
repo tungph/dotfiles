@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 command -v docker >/dev/null 2>&2 && echo "docker command has already exist" && exit 0
 
 sudo apt-get remove -qqy docker docker-engine docker.io containerd runc
