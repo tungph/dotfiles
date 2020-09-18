@@ -1,4 +1,4 @@
-export PATH="$HOME/.miniconda3/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 #### FUNCTIONS #####
 function j() {
