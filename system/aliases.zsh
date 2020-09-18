@@ -4,16 +4,17 @@ if [ "$(uname -s)" = "Darwin" ]; then
 else
 	alias ls="ls -Ft --color"
 fi
-alias ll="ls -lAh"
-alias lt="ls -ltr"
+alias l="ls -1"
 alias la="ls -A"
-alias l="ls"
+alias ll="ls -lh"
+alias lla="ls -lAh"
 
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"
 alias less="less -r"
 
-alias cdr='cd "$(git rev-parse --show-toplevel)"'
+alias ..="cd .."
+alias ..r='cd "$(git rev-parse --show-toplevel)"'
 
 # quick hack to make watch work with aliases
 alias watch='watch -c -d -t '

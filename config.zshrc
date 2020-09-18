@@ -2,57 +2,59 @@ export PATH="/usr/local/sbin:$PATH"
 
 #### FUNCTIONS #####
 function j() {
-	target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
-	cd "$target" || exit
+  target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
+  cd "$target" || exit
 }
 
 # jump to a sub-directory
 function jj() {
-	target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
-	cd "$target" || exit
+  target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
+  cd "$target" || exit
 }
 
 function tl() {
-	if [ $# -gt 1 ]; then
-		# shellcheck disable=SC2068
-		tldr "${@:1:1}" | ag -C 1 ${@:2}
-	else
-		# shellcheck disable=SC2068
-		tldr $@ | less
-	fi
+  if [ $# -gt 1 ]; then
+    # shellcheck disable=SC2068
+    tldr "${@:1:1}" | ag -C 1 ${@:2}
+  else
+    # shellcheck disable=SC2068
+    tldr $@ | less
+  fi
 }
 
-mkc() {
-  [ $# -eq 1 ] && mkdir $1 && cd $1
+mkd() {
+  # shellcheck disable=SC2164
+  [ $# -eq 1 ] && mkdir "$1" && cd "$1"
 }
 
 #### ALIASES #####
 
-    # apps #
+# apps #
 alias diff="diff-so-fancy"
 alias vi='nvim'
 alias rp='realpath'
 alias fl='flutter'
 
-    # utils #
+# utils #
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
 alias pi='package_installer'
 
-    # config #
+# config #
 alias dotfiles='cd ~/.dotfiles'
 alias ec='vi ~/.dotfiles/config.zshrc && rl'
-alias ez="vi ~/.localrc && rl"
+alias ez='vi ~/.zshrc && rl'
+alias el="vi ~/.localrc && rl"
 alias ev="vi ~/.vimrc ~/.config/nvim/init.vim"
 alias eg='vi ~/.gitconfig.local'
 alias et='vi ~/.tmux.conf'
 
-    # docker #
+# docker #
 alias dc='docker-compose'
 alias di='docker images'
 alias dif='di | grep -i'
-alias dl='docker logs -f'
+alias dl='docker logs'
 alias dp='docker ps'
-alias dpf='docker ps | grep -i'
+alias dpf='dp | grep -i'
 alias dpr='docker_prune'
