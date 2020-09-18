@@ -6,7 +6,7 @@ function j() {
   cd "$target" || exit
 }
 
-# jump to a sub-directory
+# jump to a child-directory
 function jj() {
   target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
   cd "$target" || exit
