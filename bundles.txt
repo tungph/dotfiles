@@ -1,2 +1,14 @@
-conda
-fzf
+zsh
+git
+tar
+curl
+zip
+unzip
+nvim
+ag
+fzy
+tldr
+tree
+tmux
+bat
+docker

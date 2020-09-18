@@ -1,2 +1,0 @@
-pi fzf
-pi conda

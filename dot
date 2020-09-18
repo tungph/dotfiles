@@ -42,13 +42,7 @@ install_requirements() {
         else
             fail "$p"
         fi
-    done <"$HOME"/.dotfiles/bundles_silient.txt
-
-    #    while IFS="" read -r p || [ -n "$p" ]; do
-    #        bash -c "$DOT_HOME/bin/package_installer $p"
-    #    done <"$HOME"/.dotfiles/bundles.txt
-    bash -c "$DOT_HOME/bin/package_installer conda"
-    bash -c "$DOT_HOME/bin/package_installer fzf"
+    done <"$HOME"/.dotfiles/bundles.txt
 
 }
 
