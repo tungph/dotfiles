@@ -60,8 +60,8 @@ init() {
     install_carlos_dotfiles
 
     echo ""
-    echo ">>> POST INSTALLATION"
-    cat "$DOT_HOME/post_installation.txt"
+    echo ">>> NEED MANUAL INSTALLATION"
+    cat "$DOT_HOME/manual_installation.txt"
     echo ""
 }
 
