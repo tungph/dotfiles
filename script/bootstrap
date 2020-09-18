@@ -82,10 +82,9 @@ else
 fi
 
 zsh="$(find_zsh)"
-test -z "$TRAVIS_JOB_ID" &&
-	test "$(expr "$SHELL" : '.*/\(.*\)')" != "zsh" &&
+test "$(expr "$SHELL" : '.*/\(.*\)')" != "zsh" &&
 	command -v chsh >/dev/null 2>&1 &&
-	sudo chsh -s "$zsh" &&
+	sudo chsh -s "$zsh" "$USER" &&
 	success "set $("$zsh" --version) at $zsh as default shell"
 
 echo ''
