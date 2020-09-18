@@ -37,7 +37,7 @@ install_requirements() {
     sudo apt auto-remove -qqy >/dev/null 2>&1 && info "apt auto-remove"
 
     while IFS="" read -r p || [ -n "$p" ]; do
-        if "$DOT_HOME/bin/package_installer" "$p" >/dev/null 2>&1; then
+        if "$DOT_HOME/bin/package_installer" "$p" >"${TMPDIR:-/tmp}/dot_update.log" 2>&1; then
             success "$p"
         else
             fail "$p"
@@ -101,7 +101,7 @@ if [ $# -eq 1 ]; then
     push) push ;;
     pull) pull ;;
     sync) pull && push ;;
-    st) cd ~/.dotfiles && git status -s;;
+    st) cd ~/.dotfiles && git status -s ;;
     diff) cd ~/.dotfiles && git diff ;;
     stash) cd ~/.dotfiles && git stash list ;;
     e) pycharm ~/.dotfiles ;;
