@@ -20,6 +20,11 @@ info() {
     printf "\r  [ \033[00;34m..\033[0m ] $1\n"
 }
 
+stall() {
+    # shellcheck disable=SC2059
+    printf "\r  [ \033[00;34m  \033[0m ] $1"
+}
+
 success() {
     # shellcheck disable=SC2059
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
@@ -33,10 +38,12 @@ fail() {
 install_requirements() {
     echo ">> installing the predefined packages"
 
-    sudo apt update >/dev/null 2>&1 && info "apt update"
-    sudo apt auto-remove -qqy >/dev/null 2>&1 && info "apt auto-remove"
+    stall "apt update" && sudo apt update >/dev/null 2>&1 && info "apt update"
+    stall "apt auto-remove" && sudo apt auto-remove -qqy >/dev/null 2>&1 && info "apt auto-remove"
 
     while IFS="" read -r p || [ -n "$p" ]; do
+        stall "$p"
+
         if "$DOT_HOME/bin/package_installer" "$p" >"${TMPDIR:-/tmp}/dot_update.log" 2>&1; then
             success "$p"
         else
