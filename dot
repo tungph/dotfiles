@@ -10,7 +10,8 @@ usage() {
     echo "    - update-log: view update log"
     echo "    - push: push local change to github"
     echo "    - pull: pull change from github"
-    echo "    - sync: sync with the remote repo"
+    echo "    - st: view the status of the local repo"
+    echo "    - diff: show detail change in the local repo"
 
     exit 1
 }
@@ -102,7 +103,6 @@ if [ $# -eq 1 ]; then
     update-log) show_update_log ;;
     push) push ;;
     pull) pull ;;
-    sync) pull && push ;;
     st) cd ~/.dotfiles && git status -s ;;
     diff) cd ~/.dotfiles && git diff ;;
     stash) cd ~/.dotfiles && git stash list ;;
