@@ -29,10 +29,10 @@ module
 - Fork this repo to be able to customize and sync your settings.
 - Beware of hardcode:
   1. installation path must be `~/.dotfiles`.
-  1. additional installation will be placed under `~/.locals`.
+  1. some installation that can not be installed with the package manager, will be placed under `~/.locals`.
   1. git username and email will be set to mine, if not preconfigured.
 
-Edit this command to use your repo:
+Install with this command, but replace the repo with yours.
 ```shell script
 git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
 ```
