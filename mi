@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-pi fzf
-pi conda
+package_installer fzf
+package_installer conda
