@@ -58,3 +58,8 @@ alias dl='docker logs'
 alias dp='docker ps'
 alias dpf='dp | grep -i'
 alias dpr='docker_prune'
+
+# conda #
+alias ccre='conda create --name'
+alias cati='conda activate `conda env list -q | cut -d " " -f 1 | fzy`'
+alias cdea='conda deactivate'
