@@ -44,7 +44,7 @@ install_requirements() {
     while IFS="" read -r p || [ -n "$p" ]; do
         stall "$p"
 
-        if "$DOT_HOME/bin/package_installer" "$p" >"${TMPDIR:-/tmp}/dot_update.log" 2>&1; then
+        if "$DOT_HOME/bin/package_installer" "$p" >"${TMPDIR:-/tmp}/dotfiles_$USER.log" 2>&1; then
             success "$p"
         else
             fail "$p"
@@ -77,7 +77,7 @@ update() {
 }
 
 show_update_log() {
-    less ${TMPDIR:-/tmp}/dot_update.log
+    less "${TMPDIR:-/tmp}/dotfiles_$USER.log"
 }
 
 push() {
