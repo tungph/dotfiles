@@ -64,7 +64,7 @@ init() {
     cat "$DOT_HOME/manual_installation.txt"
     echo ""
 
-    mi
+    zsh -c "$HOME/mi"
 }
 
 update() {
