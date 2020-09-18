@@ -6,7 +6,7 @@
 Meaning of the files:
  - `dot` the main script, run `dot --help` for detail.
  - `config.zshrc` holds the common settings. Local settings must be placed in *~/.localrc*.
- - `requirements.txt` holds the commands to be install when run `dot init`.
+ - `bundels.txt` holds the commands to be installed when run `dot init`.
 
 For heavy configuration app like vim, antibody... create a folder with this structure:
 ```text
@@ -26,17 +26,16 @@ module
 
 
 ### Installation
-```shell script
-git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
-```
-
-### Limitation
 - Fork this repo to be able to customize and sync your settings.
 - Beware of hardcode:
   1. installation path must be `~/.dotfiles`.
   1. additional installation will be placed under `~/.locals`.
   1. git username and email will be set to mine, if not preconfigured.
 
+Edit this command to use your repo:
+```shell script
+git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
+```
 
 ### Acknowledgement
 The philosophy and a lot of settings were copied from [Carlos' dotfiles](https://github.com/caarlos0/dotfiles).
