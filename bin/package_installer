@@ -2,7 +2,7 @@
 
 CMD="$HOME/.dotfiles/bin/installers/$1.sh"
 if [ -f "$CMD" ]; then
-    . "$CMD"
+    bash -c "$CMD"
 else
     sudo apt install -qqy "$1"
 fi

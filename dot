@@ -45,7 +45,7 @@ install_requirements() {
     done <"$HOME"/.dotfiles/bundles_silient.txt
 
     while IFS="" read -r p || [ -n "$p" ]; do
-        sh -c "$DOT_HOME/bin/package_installer $p"
+        bash -c "$DOT_HOME/bin/package_installer $p"
     done <"$HOME"/.dotfiles/bundles.txt
 
 }
