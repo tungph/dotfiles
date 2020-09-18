@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-package_installer fzf
-package_installer conda

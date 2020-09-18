@@ -42,7 +42,11 @@ install_requirements() {
         else
             fail "$p"
         fi
-    done <"$HOME"/.dotfiles/requirements.txt
+    done <"$HOME"/.dotfiles/bundles_silient.txt
+
+    while IFS="" read -r p || [ -n "$p" ]; do
+        zsh -c "$DOT_HOME/bin/package_installer $p"
+    done <"$HOME"/.dotfiles/bundles.txt
 
 }
 
@@ -58,13 +62,6 @@ init() {
 
     install_requirements
     install_carlos_dotfiles
-
-    echo ""
-    echo ">>> NEED MANUAL INSTALLATION"
-    cat "$DOT_HOME/manual_installation.txt"
-    echo ""
-
-    zsh -c "$DOT_HOME/mi"
 }
 
 update() {
