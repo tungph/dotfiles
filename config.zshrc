@@ -61,6 +61,4 @@ alias dpr='docker_prune'
 
 # pipenv + conda #
 alias pe='python3 -m pipenv'
-alias cre='conda create --name'
-alias ac='conda activate `conda env list -q | cut -d " " -f 1 | fzy`'
-alias da='conda deactivate'
+alias acti='conda activate `conda env list -q | cut -d " " -f 1 | fzy`'
