@@ -1,30 +1,31 @@
 export PATH="/usr/local/sbin:$PATH"
+export PIPENV_SKIP_LOCK=true
 
 #### FUNCTIONS #####
 function j() {
-  target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
-  cd "$target" || exit
+    target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
+    cd "$target" || exit
 }
 
 # jump to a child-directory
 function jj() {
-  target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
-  cd "$target" || exit
+    target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
+    cd "$target" || exit
 }
 
 function tl() {
-  if [ $# -gt 1 ]; then
-    # shellcheck disable=SC2068
-    tldr "${@:1:1}" | ag -C 1 ${@:2}
-  else
-    # shellcheck disable=SC2068
-    tldr $@ | less
-  fi
+    if [ $# -gt 1 ]; then
+        # shellcheck disable=SC2068
+        tldr "${@:1:1}" | ag -C 1 ${@:2}
+    else
+        # shellcheck disable=SC2068
+        tldr $@ | less
+    fi
 }
 
 mkd() {
-  # shellcheck disable=SC2164
-  [ $# -eq 1 ] && mkdir "$1" && cd "$1"
+    # shellcheck disable=SC2164
+    [ $# -eq 1 ] && mkdir "$1" && cd "$1"
 }
 
 #### ALIASES #####
