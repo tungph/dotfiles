@@ -7,7 +7,7 @@ usage() {
     echo "  OPTION:"
     echo "    - [init|install]: install dotfiles to the system"
     echo "    - update: pull and apply the new change from the git repo"
-    echo "    - update-log: view update log"
+    echo "    - log: view update log"
     echo "    - push: push local change to github"
     echo "    - pull: pull change from github"
     echo "    - st: view the status of the local repo"
@@ -45,7 +45,7 @@ install_requirements() {
     while IFS="" read -r p || [ -n "$p" ]; do
         stall "$p"
 
-        if "$DOT_HOME/bin/package_installer" "$p" >"${TMPDIR:-/tmp}/dotfiles_$USER.log" 2>&1; then
+        if "$DOT_HOME/bin/package_installer" "$p" >> "${TMPDIR:-/tmp}/dotfiles_$USER.log" 2>&1; then
             success "$p"
         else
             fail "$p"
@@ -98,7 +98,7 @@ if [ $# -eq 1 ]; then
     init) init ;;
     install) init ;;
     update) update ;;
-    update-log) show_update_log ;;
+    logs) show_update_log ;;
     push) push ;;
     pull) pull ;;
     st) cd ~/.dotfiles && git status -s ;;
