@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pip3 install --user pipenv
+python3 -m pip install --user pipenv

@@ -58,3 +58,6 @@ alias dl='docker logs'
 alias dp='docker ps'
 alias dpf='dp | grep -i'
 alias dpr='docker_prune'
+
+# pipenv #
+alias pe='python3 -m pipenv'

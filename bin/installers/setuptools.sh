@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pip3 install --user setuptools
+python3 -m pip install --user setuptools
