@@ -40,6 +40,7 @@ alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
 alias pi='package_installer'
+alias e='exit'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
