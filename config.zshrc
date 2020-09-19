@@ -1,5 +1,6 @@
-export PATH="/usr/local/sbin:$PATH"
 export PIPENV_SKIP_LOCK=true
+export POETRY_HOME="$HOME/.local/portry"
+export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin"
 
 #### FUNCTIONS #####
 function j() {
