@@ -87,9 +87,7 @@ push() {
 
 pull() {
     cd ~/.dotfiles || return 1
-    git stash --quiet
     git pull
-    git stash pop --quiet
 }
 
 # ENTRY POINT
