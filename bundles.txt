@@ -15,4 +15,5 @@ docker
 python3-pip
 setuptools
 pipenv
+conda
 fzf
