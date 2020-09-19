@@ -59,5 +59,8 @@ alias dp='docker ps'
 alias dpf='dp | grep -i'
 alias dpr='docker_prune'
 
-# pipenv #
+# pipenv + conda #
 alias pe='python3 -m pipenv'
+alias cre='conda create --name'
+alias ac='conda activate `conda env list -q | cut -d " " -f 1 | fzy`'
+alias da='conda deactivate'
