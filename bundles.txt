@@ -12,5 +12,7 @@ tree
 tmux
 bat
 docker
-conda
+python3-pip
+setuptools
+pipenv
 fzf
