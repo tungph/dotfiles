@@ -1,6 +1,6 @@
 export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
-export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin"
+export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 #### FUNCTIONS #####
 function j() {
