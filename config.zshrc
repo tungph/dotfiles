@@ -60,6 +60,7 @@ alias dl='docker logs'
 alias dp='docker ps'
 alias dpf='dp | grep -i'
 alias dpr='docker_prune'
+alias au='/.aurora'
 
 # pipenv + conda #
 alias p='pipenv'
