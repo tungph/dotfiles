@@ -60,6 +60,7 @@ alias dif='di | grep -i'
 alias dl='docker logs'
 alias dp='docker ps'
 alias dpf='dp | grep -i'
+alias dr='dc up -d --build && dc logs -f'
 alias dpr='docker_prune'
 alias au='./aurora'
 
