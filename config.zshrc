@@ -65,5 +65,5 @@ alias dpr='docker_prune'
 alias au='./aurora'
 
 # pipenv + conda #
-alias p='pipenv'
+alias p='poetry'
 alias activate='conda activate `conda env list -q | cut -d " " -f 1 | fzy`'
