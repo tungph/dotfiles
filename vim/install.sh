@@ -1,9 +1,3 @@
 #!/bin/sh
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -sLf https://spacevim.org/install.sh | bash
 
-mkdir -p ~/.config/nvim/undodir
-
-ln -sf "$DOTFILES/vim/vimrc.symlink" ~/.config/nvim/init.vim
-nvim +'PlugInstall --sync' +qa
-nvim +'PlugUpdate' +qa
