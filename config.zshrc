@@ -34,6 +34,7 @@ mkd() {
 # apps #
 alias diff="diff-so-fancy"
 alias vi='nvim'
+alias m='bat'
 alias rp='realpath .'
 alias fl='flutter'
 
