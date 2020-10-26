@@ -50,7 +50,7 @@ alias dotfiles='cd ~/.dotfiles'
 alias ec='vi ~/.dotfiles/config.zshrc && rl'
 alias ez='vi ~/.zshrc && rl'
 alias el="vi ~/.localrc && rl"
-alias ev="vi ~/.vimrc ~/.config/nvim/init.vim"
+alias ev="vi ~/.SpaceVim.d/init.toml"
 alias eg='vi ~/.gitconfig.local'
 alias et='vi ~/.tmux.conf'
 

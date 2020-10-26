@@ -36,27 +36,21 @@ auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
 name = 'shell'
-default_position = 'top'
-default_height = 30
+default_position = 'bottom'
+default_height = 25
+
+[[layers]]
+  name = "sudo"
+
+[[layers]]
+  name = "leaderf"
 
 [[layers]]
 name = 'lang#python'
 enable = true
 
 [[layers]]
-name = 'lang#html'
-enable = true
-
-[[layers]]
-name = 'lang#javascript'
-enable = true
-
-[[layers]]
 name = 'lang#markdown'
-enable = true
-
-[[layers]]
-name = 'lang#vim'
 enable = true
 
 [[layers]]
