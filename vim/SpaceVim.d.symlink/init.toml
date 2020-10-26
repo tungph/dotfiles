@@ -22,7 +22,7 @@
   statusline_iseparator = "arrow"
   buffer_index_type = 4
   enable_tabline_filetype_icon = false
-  enable_statusline_mode = true
+  enable_statusline_mode = false
 
   relativenumber = false
   guifont = "CaskaydiaCove Nerd Font Mono:h11"
@@ -44,7 +44,6 @@
 
 [[layers]]
   name = "leaderf"
-
 
 [[layers]]
   name = 'lang#python'
