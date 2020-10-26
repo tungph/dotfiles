@@ -8,36 +8,36 @@
 
 # All SpaceVim option below [option] section
 [options]
-    # set spacevim theme. by default colorscheme layer is not loaded,
-    # if you want to use more colorscheme, please load the colorscheme
-    # layer
-    colorscheme = "SpaceVim"
-    colorscheme_bg = "dark"
-    # Disable guicolors in basic mode, many terminal do not support 24bit
-    # true colors
-    enable_guicolors = true
-    # Disable statusline separator, if you want to use other value, please
-    # install nerd fonts
-    statusline_separator = "arrow"
-    statusline_iseparator = "arrow"
-    buffer_index_type = 4
-    enable_tabline_filetype_icon = false
-    enable_statusline_mode = false
+  # set spacevim theme. by default colorscheme layer is not loaded,
+  # if you want to use more colorscheme, please load the colorscheme
+  # layer
+  colorscheme = "SpaceVim"
+  colorscheme_bg = "dark"
+  # Disable guicolors in basic mode, many terminal do not support 24bit
+  # true colors
+  enable_guicolors = true
+  # Disable statusline separator, if you want to use other value, please
+  # install nerd fonts
+  statusline_separator = "arrow"
+  statusline_iseparator = "arrow"
+  buffer_index_type = 4
+  enable_tabline_filetype_icon = false
+  enable_statusline_mode = true
 
-    relativenumber = false
-    guifont = "CaskaydiaCove Nerd Font Mono:h11"
+  relativenumber = false
+  guifont = "CaskaydiaCove Nerd Font Mono:h11"
 
 
 # Enable autocomplete layer
 [[layers]]
-name = 'autocomplete'
-auto_completion_return_key_behavior = "complete"
-auto_completion_tab_key_behavior = "smart"
+  name = 'autocomplete'
+  auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
-name = 'shell'
-default_position = 'bottom'
-default_height = 25
+  name = 'shell'
+  default_position = 'bottom'
+  default_height = 25
 
 [[layers]]
   name = "sudo"
@@ -45,19 +45,20 @@ default_height = 25
 [[layers]]
   name = "leaderf"
 
-[[layers]]
-name = 'lang#python'
-enable = true
 
 [[layers]]
-name = 'lang#markdown'
-enable = true
+  name = 'lang#python'
+  enable = true
 
 [[layers]]
-name = 'git'
-enable = true
+  name = 'lang#markdown'
+  enable = true
 
 [[layers]]
-name = "tmux"
-enable = true
+  name = 'git'
+  enable = true
+
+[[layers]]
+  name = "tmux"
+  enable = true
 
