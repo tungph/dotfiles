@@ -25,7 +25,7 @@
   enable_statusline_mode = false
 
   relativenumber = false
-  guifont = "CaskaydiaCove Nerd Font Mono:h11"
+  guifont = "Hack Nerd Font Mono:h14"
 
 
 # Enable autocomplete layer
