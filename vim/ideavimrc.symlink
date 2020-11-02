@@ -17,7 +17,7 @@ nmap H :action Back<CR>
 let mapleader=" "
 vmap <leader> <ESC><leader>
 
-nmap <leader>r :action Run<CR>
+nmap <leader>r :action RenameElement<CR>
 nmap <leader>d :action Debug<CR>
 
 nmap <leader>m :action ToggleBookmark<CR>

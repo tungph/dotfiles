@@ -45,6 +45,7 @@ alias ff='ag -g'
 alias del='rm -rf'
 alias pi='package_installer'
 alias df='df -h .'
+alias op='sudo netstat -tulpn | grep LISTEN'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
