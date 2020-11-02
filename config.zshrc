@@ -40,6 +40,7 @@ alias rp='realpath .'
 alias fl='flutter'
 
 # utils #
+alias h='history'
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
