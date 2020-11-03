@@ -65,6 +65,7 @@ alias dl='docker logs'
 alias dp='docker ps'
 alias dpf='dp | grep -i'
 alias dr='dc up -d --build --remove-orphans && dc logs --tail 33 -f'
+alias dk='dc up -d --remove-orphans'
 alias dpr='docker_prune'
 alias au='./aurora'
 
