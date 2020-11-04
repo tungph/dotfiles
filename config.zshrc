@@ -52,6 +52,7 @@ di() {
 #### ALIASES #####
 
 # apps #
+alias dot="~/.dotfiles/dot"
 alias diff="diff-so-fancy"
 alias vi='nvim'
 alias e='vi -p'
@@ -64,6 +65,7 @@ alias h='history'
 alias f="ls -ltra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
+alias rl='dot pull && exec "$SHELL" -l'
 alias pi='package_installer'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
