@@ -81,10 +81,15 @@ alias et='vi ~/.tmux.conf'
 
 # docker #
 alias dc='docker-compose'
+alias dcl='dc logs'
+alias dclf='dcl -f'
 alias dcu='dc up -d --remove-orphans'
-alias dcub='dc up -d --build --remove-orphans && dc logs --tail 33 -f'
+alias dcul='dc up -d --remove-orphans && dc logs -f'
+alias dcub='dcu --build'
+alias dcubl='dcub && dc logs --tail 33 -f'
 alias dpr='docker_prune'
 alias dl='docker logs'
+alias dlf='docker logs -f'
 alias au='./aurora'
 
 # pipenv + conda #
