@@ -1,5 +1,4 @@
 set ideajoin
-set ideaput
 set ideamarks
 set multiple-cursors
 set highlightedyank
@@ -11,7 +10,7 @@ set clipboard+=unnamed
 imap jk <Esc>
 
 
-nmap H :action Back<CR>
+nmap H :action Back<CR> 
 
 
 let mapleader=" "
@@ -25,7 +24,9 @@ nmap <leader>M :action ShowBookmarks<CR>
 
 nmap <leader>b :action ToggleLineBreakpoint<CR>
 
-nmap <leader>uu  :action PublishGroup.Upload<CR>
+nmap <leader>uu :action PublishGroup.Upload<CR>
 nmap <leader>ud :action PublishGroup.Download<CR>
 nmap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
+
+nmap <leader>' :action ActivateTerminalToolWindow<CR>
 
