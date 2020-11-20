@@ -53,7 +53,6 @@ di() {
 
 # apps #
 alias dot="~/.dotfiles/dot"
-alias diff="diff-so-fancy"
 alias vi='nvim'
 alias e='vi -p'
 alias v='bat'
