@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WEBHOOK_URL="https://hooks.slack.com/services/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"
+MESSAGE="It's Done!"
+
+# shellcheck disable=SC2124
+[ $# -gt 0 ] && MESSAGE="$@"
+curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
