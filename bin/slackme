@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-WEBHOOK_URL="https://hooks.slack.com/services/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"
 MESSAGE="It's Done!"
 
 # shellcheck disable=SC2124
