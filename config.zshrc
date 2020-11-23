@@ -71,9 +71,9 @@ slackme() {
   fi
 
   if [ $RESULT -eq 0 ]; then
-    MESSAGE="The task on $(hostname) has finished SUCESSFULLY"
+    MESSAGE=":white_check_mark: The task on \`$(hostname)\` has finished \`SUCESSFULLY\`"
   else
-    MESSAGE="The task on $(hostname) has finished with ERROR($RESULT)"
+    MESSAGE=":exclamation: The task on \`$(hostname)\` has finished with \`ERROR($RESULT)\`"
   fi
 
   # shellcheck disable=SC2124
