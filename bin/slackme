@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+if [ -z ${WEBHOOK_URL+x} ]; then
+  echo "WEBHOOK_URL doesn't set."
+  echo  "Get it here: https://api.slack.com/apps/A015FK5133K/incoming-webhooks"
+  echo  "export WEBHOOK_URL="
+  exit 1
+fi
+
 MESSAGE="It's Done!"
 
 # shellcheck disable=SC2124
