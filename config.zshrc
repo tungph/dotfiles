@@ -49,6 +49,40 @@ di() {
     fi
 }
 
+# copy content of a file
+copy() {
+  if [ $# -eq 1 ]; then
+    cat $@ | xclip
+    echo "The content of the file has been copied into the clipboard"
+  else
+    echo "Usage: COPY file_name"
+  fi
+}
+
+# Send a message to a slack webhook
+slackme() {
+  RESULT=$?
+
+  if [ -z ${WEBHOOK_URL+x} ]; then
+    echo "WEBHOOK_URL doesn't set."
+    echo "Get it here: https://api.slack.com/apps/A015FK5133K/incoming-webhooks"
+    echo "export WEBHOOK_URL="
+    return 1
+  fi
+
+  if [ $RESULT -eq 0 ]; then
+    MESSAGE="The task on $(hostname) has finished SUCESSFULLY"
+  else
+    MESSAGE="The task on $(hostname) has finished with ERROR($RESULT)"
+  fi
+
+  # shellcheck disable=SC2124
+  [ $# -gt 0 ] && MESSAGE="$@"
+
+  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+}
+
+
 #### ALIASES #####
 
 # apps #
