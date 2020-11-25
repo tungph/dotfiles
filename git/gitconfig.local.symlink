@@ -34,10 +34,9 @@
 	autocorrect = 1
 [merge]
 	tool = vimdiff 
-[mergetool "vimdiff"]
-	cmd = vimdiff --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
-	keepBackup = false
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
 [diff]
 	tool = vimdiff 
 [difftool]
