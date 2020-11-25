@@ -1,8 +1,8 @@
 [user]
   name = Shawn
   email = shawn@cinnamon.is
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
+[difftool "vimdiff"]
+	cmd = vimdiff $LOCAL $REMOTE
 [alias]
 	co = checkout
 	count = shortlog -sn
