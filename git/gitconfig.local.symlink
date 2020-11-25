@@ -33,13 +33,13 @@
 [help]
 	autocorrect = 1
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	tool = vimdiff 
+[mergetool "vimdiff"]
+	cmd = vimdiff --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
 	keepBackup = false
 [diff]
-	tool = diffmerge
+	tool = vimdiff 
 [difftool]
 	prompt = false
 [grep]
