@@ -100,6 +100,20 @@ copy() {
 
 }
 
+# Create a new conda env
+conda_env_create() {
+  if [ $# -eq 2 ]; then
+    NAME="$1"
+    VERSION="$2"
+
+    conda create --name "$NAME" python=$VERSION
+  elif [ $# -eq 1 ]; then
+    conda create --name "$1"
+  else
+    echo "USAGE: $(basename $0) <environment name> [python version]"
+  fi
+}
+
 #### ALIASES #####
 
 # apps #
@@ -152,4 +166,6 @@ alias au='./aurora'
 
 # pipenv + conda #
 alias p='poetry'
-alias activate='conda activate `conda env list -q | cut -d " " -f 1 | fzy`'
+alias cecre=conda_env_create
+alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)"'
+alias cedel='conda remove --name "$(conda env list -q | cut -d " " -f 1 | fzy)" --all && conda clean -all'
