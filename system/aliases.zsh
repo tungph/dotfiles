@@ -14,7 +14,7 @@ alias duf="du -sh * | sort -hr"
 alias less="less -r"
 
 alias ..="cd .."
-alias ..r='cd "$(git rev-parse --show-toplevel)"'
+alias ...='cd "$(git rev-parse --show-toplevel)"'
 
 # quick hack to make watch work with aliases
 alias watch='watch -c -d -t '
