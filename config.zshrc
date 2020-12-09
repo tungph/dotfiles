@@ -110,6 +110,7 @@ alias e='vi -p'
 alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
+alias ccat='imgcat'
 
 # utils #
 alias h='history'
