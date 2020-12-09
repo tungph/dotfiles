@@ -86,8 +86,7 @@ push() {
 }
 
 pull() {
-    cd ~/.dotfiles || return 1
-    git pull
+    cd ~/.dotfiles && git pull
 }
 
 # ENTRY POINT
