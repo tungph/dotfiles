@@ -51,16 +51,6 @@ di() {
   fi
 }
 
-# copy content of a file
-copy() {
-  if [ $# -eq 1 ]; then
-    cat "$@" | xclip
-    echo "The content of the file has been copied into the clipboard"
-  else
-    echo "Usage: COPY file_name"
-  fi
-}
-
 # Send a message to a slack webhook
 slackme() {
   RESULT=$?
@@ -88,7 +78,6 @@ slackme() {
 dl() {
   if ! type it2dl >/dev/null; then
     echo "it2dl does not found. Installing iterm 2 utility"
-    curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
   fi
 
   IT2DL="$HOME/.iterm2/it2dl"
@@ -98,8 +87,18 @@ dl() {
     "$IT2DL" "$ZIP_FILE"
     rm "$ZIP_FILE"
   else
-    "IT2DL" "$@"
+    "$IT2DL" "$@"
   fi
+}
+
+# Copy content of a file
+copy() {
+  IT2COPY="$HOME/.iterm2/it2copy"
+  IT2CHECK="$HOME/.iterm2/it2check"
+
+  # shellcheck disable=SC2015
+  "$IT2CHECK" && "$IT2COPY" "$@" || cat "$@" | xclip
+
 }
 
 #### ALIASES #####
@@ -111,7 +110,6 @@ alias e='vi -p'
 alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
-alias ccat='imgcat'
 
 # utils #
 alias h='history'
@@ -122,6 +120,9 @@ alias rl='dot pull && exec "$SHELL" -l'
 alias pi='package_installer'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
+alias ccat='imgcat'
+alias copy='it2copy'
+alias myip='curl ifconfig.me'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
