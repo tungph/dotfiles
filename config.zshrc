@@ -3,20 +3,19 @@ export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 #### FUNCTIONS #####
-j() {
+jj() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
   # shellcheck disable=SC2164
   cd "$target"
 }
 
 # jump to a child-directory
-jj() {
+j() {
   # shellcheck disable=SC2164
-  [ $# -gt 0 ] && cd "$(ls -1 | grep -i $@ | head -1)" || cd "$(ls -1 | fzy)"
-
-  # shellcheck disable=SC2164
-  cd "$target"
+  [ $# -gt 0 ] && cd "$(ls -1 | grep / | grep -i $@ | head -1)" || cd "$(ls -1 | grep / | fzy)"
 }
+
+alias jb='cd -'
 
 # to long dont read
 tl() {
@@ -115,7 +114,7 @@ alias fl='flutter'
 
 # utils #
 alias h='history'
-alias f="ls -ltra | grep -i"
+alias f="ls -1tra | grep -i"
 alias ff='ag -g'
 alias del='rm -rf'
 alias rl='dot pull && exec "$SHELL" -l'
