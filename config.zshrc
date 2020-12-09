@@ -4,55 +4,57 @@ export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 #### FUNCTIONS #####
 j() {
-    target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
-    cd "$target" || exit
+  target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
+  # shellcheck disable=SC2164
+  cd "$target"
 }
 
 # jump to a child-directory
 jj() {
-    target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
-    cd "$target" || exit
+  target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
+  # shellcheck disable=SC2164
+  cd "$target"
 }
 
 # to long dont read
 tl() {
-    if [ $# -gt 1 ]; then
-        # shellcheck disable=SC2068
-        tldr "${@:1:1}" | ag -C 1 ${@:2}
-    else
-        # shellcheck disable=SC2068
-        tldr $@ | less
-    fi
+  if [ $# -gt 1 ]; then
+    # shellcheck disable=SC2068
+    tldr "${@:1:1}" | ag -C 1 ${@:2}
+  else
+    # shellcheck disable=SC2068
+    tldr $@ | less
+  fi
 }
 
 # mkdir, then cd into the newly created directory
 mkd() {
-    # shellcheck disable=SC2164
-    [ $# -eq 1 ] && mkdir "$1" && cd "$1"
+  # shellcheck disable=SC2164
+  [ $# -eq 1 ] && mkdir "$1" && cd "$1"
 }
 
 # docker ps, perform search for any provided argument
 dp() {
-    if [ $# -eq 0 ]; then
-        docker ps
-    else
-        docker ps | grep -i "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    docker ps
+  else
+    docker ps | grep -i "$@"
+  fi
 }
 
 # docker images, perform search for any provided argument
 di() {
-    if [ $# -eq 0 ]; then
-        docker images
-    else
-        docker images | grep -i "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    docker images
+  else
+    docker images | grep -i "$@"
+  fi
 }
 
 # copy content of a file
 copy() {
   if [ $# -eq 1 ]; then
-    cat $@ | xclip
+    cat "$@" | xclip
     echo "The content of the file has been copied into the clipboard"
   else
     echo "Usage: COPY file_name"
@@ -82,6 +84,22 @@ slackme() {
   curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
 }
 
+# Extend the iterm 2 download utility it2dl
+dl() {
+  if ! command -v "it2dl" >/dev/null 2>&2; then
+    echo "it2dl does not found. Installing iterm 2 utility"
+    curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+  fi
+
+  if [ $# -eq 1 ] && [ -d "$1" ]; then
+    ZIP_FILE="/tmp/$1.zip"
+    zip -r "$ZIP_FILE" "$1"
+    it2dl "$ZIP_FILE"
+    rm "$ZIP_FILE"
+  else
+    it2dl "$@"
+  fi
+}
 
 #### ALIASES #####
 
@@ -125,7 +143,6 @@ alias dcub='dcu --build'
 alias dcubl='dcub && dc logs --tail 33 -f'
 alias dpr='docker_prune'
 alias dsp='docker system prune -y'
-alias dl='docker logs'
 alias dlf='docker logs -f'
 alias au='./aurora'
 
