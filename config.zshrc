@@ -86,18 +86,19 @@ slackme() {
 
 # Extend the iterm 2 download utility it2dl
 dl() {
-  if ! type it2dl > /dev/null; then
+  if ! type it2dl >/dev/null; then
     echo "it2dl does not found. Installing iterm 2 utility"
     curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
   fi
 
+  IT2DL="$HOME/.iterm2/it2dl"
   if [ $# -eq 1 ] && [ -d "$1" ]; then
     ZIP_FILE="/tmp/$1.zip"
     zip -r "$ZIP_FILE" "$1"
-    it2dl "$ZIP_FILE"
+    "$IT2DL" "$ZIP_FILE"
     rm "$ZIP_FILE"
   else
-    it2dl "$@"
+    "IT2DL" "$@"
   fi
 }
 
