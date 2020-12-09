@@ -15,8 +15,6 @@ j() {
   [ $# -gt 0 ] && cd "$(ls -1 | grep / | grep -i $@ | head -1)" || cd "$(ls -1 | grep / | fzy)"
 }
 
-alias jb='cd -'
-
 # to long dont read
 tl() {
   if [ $# -gt 1 ]; then
@@ -122,7 +120,9 @@ alias pi='package_installer'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias ccat='imgcat'
+alias upload='it2upload'
 alias myip='curl ifconfig.me'
+alias jb='cd -'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
