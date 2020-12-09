@@ -86,7 +86,7 @@ slackme() {
 
 # Extend the iterm 2 download utility it2dl
 dl() {
-  if ! command -v "it2dl" >/dev/null 2>&2; then
+  if ! type it2dl > /dev/null; then
     echo "it2dl does not found. Installing iterm 2 utility"
     curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
   fi
