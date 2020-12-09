@@ -11,7 +11,9 @@ j() {
 
 # jump to a child-directory
 jj() {
-  target="$(z -c | fzy | awk -F ' ' '{print $NF}')"
+  # shellcheck disable=SC2164
+  [ $# -gt 0 ] && cd "$(ls -1 | grep -i $@ | head -1)" || cd "$(ls -1 | fzy)"
+
   # shellcheck disable=SC2164
   cd "$target"
 }
@@ -75,9 +77,9 @@ slackme() {
 }
 
 # Extend the iterm 2 download utility it2dl
-dl() {
+download() {
   if ! type it2dl >/dev/null; then
-    echo "it2dl does not found. Installing iterm 2 utility"
+    echo "it2dl does not found. Installing with $(pi it2)"
   fi
 
   IT2DL="$HOME/.iterm2/it2dl"
@@ -121,7 +123,6 @@ alias pi='package_installer'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias ccat='imgcat'
-alias copy='it2copy'
 alias myip='curl ifconfig.me'
 
 # config #
@@ -146,6 +147,7 @@ alias dcub='dcu --build'
 alias dcubl='dcub && dc logs --tail 33 -f'
 alias dpr='docker_prune'
 alias dsp='docker system prune -y'
+alias dl='docker logs'
 alias dlf='docker logs -f'
 alias au='./aurora'
 
