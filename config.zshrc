@@ -12,7 +12,7 @@ jj() {
 # jump to a child-directory
 j() {
   # shellcheck disable=SC2164
-  [ $# -gt 0 ] && cd "$(ls -1 | grep / | grep -i $@ | head -1 | awk -F ' ' '{print $NF}')" || cd "$(ls -1 | grep / | fzy | awk -F ' ' '{print $NF}')"
+  [ $# -gt 0 ] && cd "$(command ls -1F | grep / | grep -i $@ | head -1)" || cd "$(command ls -1F | grep / | fzy)"
 }
 
 # to long dont read
