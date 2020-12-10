@@ -134,7 +134,7 @@ alias pi='package_installer'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias ccat='imgcat'
-alias upload='it2upload'
+alias upload='it2ul'
 alias myip='curl ifconfig.me'
 alias jb='cd -'
 
