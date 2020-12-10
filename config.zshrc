@@ -3,14 +3,19 @@ export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 #### FUNCTIONS #####
-jj() {
+j() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
   # shellcheck disable=SC2164
   cd "$target"
 }
 
+# jum to a child-directory
+jj() {
+  cd "$(z -c | fzy | awk -F ' ' '{print $NF}')"
+}
+
 # jump to a child-directory
-j() {
+jd() {
   # shellcheck disable=SC2164
   [ $# -gt 0 ] && cd "$(command ls -1F | grep / | grep -i $@ | head -1)" || cd "$(command ls -1F | grep / | fzy)"
 }
