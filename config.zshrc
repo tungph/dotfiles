@@ -169,4 +169,4 @@ alias p='poetry'
 alias cecre=conda_env_create
 alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)"'
 alias cedea='conda deactivate'
-alias cedel='conda remove --name "$(conda env list -q | cut -d " " -f 1 | fzy)" --all && conda clean -all'
+alias cedel='conda remove --name "$(conda env list -q | cut -d " " -f 1 | fzy)" --all && conda clean --all'
