@@ -12,12 +12,14 @@ j() {
 # jum to a child-directory
 jj() {
   cd "$(z -c | fzy | awk -F ' ' '{print $NF}')"
+  ls
 }
 
-# jump to a child-directory
+# jump to a direct child-directory
 jd() {
   # shellcheck disable=SC2164
   [ $# -gt 0 ] && cd "$(command ls -1F | grep / | grep -i $@ | head -1)" || cd "$(command ls -1F | grep / | fzy)"
+  ls
 }
 
 # to long dont read
