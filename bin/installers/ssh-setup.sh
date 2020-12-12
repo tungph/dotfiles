@@ -20,4 +20,4 @@ vim "$PRIVATE_KEY"
 chmod 600 "$PRIVATE_KEY"
 
 eval "$(ssh-agent -s)"
-ssh-add -K "$PRIVATE_KEY"
+ssh-add "$PRIVATE_KEY"
