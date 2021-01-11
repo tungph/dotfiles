@@ -37,5 +37,14 @@ Install with this command, but replace the repo with yours.
 git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
 ```
 
+```shell
+# With new user create
+sudo adduser shawn
+sudo usermod -aG sudo shawn
+sudo echo "shawn ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+sudo su - shawn
+git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
+```
+
 ### Acknowledgement
 The philosophy and a lot of settings were copied from [Carlos' dotfiles](https://github.com/caarlos0/dotfiles).

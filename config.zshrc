@@ -2,6 +2,8 @@ export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
+eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
+
 #### FUNCTIONS #####
 j() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
