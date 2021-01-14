@@ -2,7 +2,6 @@ export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
-eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
 
 #### FUNCTIONS #####
 j() {
@@ -126,9 +125,9 @@ conda_env_create() {
 #### ALIASES #####
 
 # apps #
+alias e='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
 alias dot="~/.dotfiles/dot"
 alias vi='nvim'
-alias e='vi -p'
 alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
