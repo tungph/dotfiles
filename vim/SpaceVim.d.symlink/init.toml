@@ -27,6 +27,8 @@
   relativenumber = false
   guifont = "Hack Nerd Font Mono:h14"
 
+[[layers]]
+  name = "default"
 
 # Enable autocomplete layer
 [[layers]]
