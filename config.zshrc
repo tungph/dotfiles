@@ -30,7 +30,7 @@ tl() {
     tldr "${@:1:1}" | ag -C 1 ${@:2}
   else
     # shellcheck disable=SC2068
-    tldr $@ | less
+    tldr $@ 
   fi
 }
 
