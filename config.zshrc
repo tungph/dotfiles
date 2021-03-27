@@ -2,7 +2,6 @@ export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
-
 #### FUNCTIONS #####
 j() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
@@ -11,13 +10,13 @@ j() {
 }
 
 # jum to a child-directory
-jj() {
+jd() {
   cd "$(z -c | fzy | awk -F ' ' '{print $NF}')"
   ls
 }
 
 # jump to a direct child-directory
-jd() {
+jc() {
   # shellcheck disable=SC2164
   [ $# -gt 0 ] && cd "$(command ls -1F | grep / | grep -i $@ | head -1)" || cd "$(command ls -1F | grep / | fzy)"
   ls
@@ -30,7 +29,7 @@ tl() {
     tldr "${@:1:1}" | ag -C 1 ${@:2}
   else
     # shellcheck disable=SC2068
-    tldr $@ 
+    tldr $@
   fi
 }
 
