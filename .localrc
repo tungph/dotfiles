@@ -3,8 +3,8 @@
 of() {
   [ $# -gt 0 ] && FILE="$(command ls -1F | fzy -q $@)" || FILE="$(command ls -1F | fzy)"
 
-  [ "$FILE" != "" ] && open $FILE || echo "Cancelled"
-
+  [ "$FILE" != "" ] && open $FILE || echo " >> Cancelled"
+    
 }
 
 alias xc='exercism'
