@@ -1,0 +1,55 @@
+
+# search for file to open
+of() {
+  [ $# -gt 0 ] && FILE="$(command ls -1F | fzy -q $@)" || FILE="$(command ls -1F | fzy)"
+
+  [ "$FILE" != "" ] && open $FILE || echo "Cancelled"
+
+}
+
+alias xc='exercism'
+alias dotc='charm ~/.dotfiles'
+
+alias del="trash"
+alias pi='pip install'
+alias xclip='pbcopy'
+alias rp='realpath . | xclip; echo ">>> copied `realpath .`"'
+alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister'
+alias cpsshpublic='cat ~/.ssh/id_rsa.pub | xclip'
+alias cpsshprivate='cat /Users/shawn/.ssh/id_ed25519 | xclip'
+alias cptungphdotfiles='echo "git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init" | xclip'
+
+
+# alias nn='ssh shawn@44.229.237.92'
+alias nn='ssh shawn@54.203.226.136'
+alias cb='ssh shawn@54.184.20.134'
+
+alias sshrosastg='ssh ubuntu@35.165.14.178'
+alias sshnathan='ssh -i ~/.ssh/servers/44.231.181.118.pem nathan@44.231.181.118'
+alias sshalps='ssh -i ~/.ssh/servers/ubuntu@34.208.151.226.pem ubuntu@34.208.151.226'
+alias sshnissay='ssh shawn@54.71.34.95'
+alias sshfullocrdemo='ssh shawn@44.235.212.208'
+alias sshtohmatsu='ssh shawn@34.121.163.195'
+
+alias sshgcpinstance='ssh -i ~/.ssh/id_rsa  tungph_hut_gmail_com@35.223.233.120'
+alias sshpersonalec2='ssh -i ~/.ssh/servers/personal_ec2.pem ubuntu@ec2-18-188-200-212.us-east-2.compute.amazonaws.com'
+
+alias ecrlogin='aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 533155507761.dkr.ecr.us-west-2.amazonaws.com'
+
+alias rl='. ~/.zshrc'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shawn/.local/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shawn/.local/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shawn/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shawn/.local/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Auto completion for aws-cli
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
+
+export WEBHOOK_URL="https://hooks.slack.com/services/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"
+alias cpslackhook="echo $WEBHOOK_URL | xclip"
+alias cpghtk="echo a72a9378ab2065cd45b3f18b40e26ae64a186401 | xclip"
+alias note='vi ~/.dotfiles/note.md'
+
