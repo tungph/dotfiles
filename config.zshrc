@@ -3,6 +3,12 @@ export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 #### FUNCTIONS #####
+# print out $PATH
+path(){
+  echo -e ${PATH//:/\\n}
+}
+
+# jump to a directory
 j() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
   # shellcheck disable=SC2164
@@ -118,6 +124,38 @@ conda_env_create() {
     conda create --name "$1"
   else
     echo "USAGE: $(basename $0) <environment name> [python version]"
+  fi
+}
+
+# ram <process-name> - Find how much RAM a process is taking.
+ram() {
+  local sum
+  local items
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+  else
+    sum=0
+    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
+      sum=$(($i + $sum))
+    done
+    sum=$(echo "scale=2; $sum / 1024.0" | bc)
+    if [[ $sum != "0" ]]; then
+      echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
+    else
+      echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
+    fi
+  fi
+}
+
+# Kill process
+fkil() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
   fi
 }
 
