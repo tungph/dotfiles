@@ -144,6 +144,7 @@ alias ccat='imgcat'
 alias upload='it2ul'
 alias myip='curl ifconfig.me'
 alias jb='cd -'
+alias count='ls -1 | wc -l'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
