@@ -28,7 +28,7 @@
           :delay   0
           ;; to_delayed_action_delay_milliseconds (def: 500)
           ;; time after which the key press is delayed
-          :alone   85
+          :alone   300
           ;; to_if_alone_timeout_milliseconds (def: 1000)
           ;; hold for .. ms to register single tap
           :held    500
@@ -43,10 +43,7 @@
                  :terminals ["com\\.apple\\.Terminal",
                              "com\\.googlecode\\.iterm2"]}
   :layers       {:hyper-mode {:key :caps_lock :alone {:key :escape}}}
-  :simlayers    {:tab-mode      {:key :tab}
-                 ;                 :a-mode        {:key :a}
-                 ;                 :s-mode        {:key :s}
-                 :spacebar-mode {:key :spacebar}}
+  :simlayers    {:tab-mode      {:key :tab}}
   :main         [;; each manipulator has a description and multiple rules
 
                 ;;{:des "..."                               ;; -> description
@@ -60,39 +57,53 @@
                 ;;        <from>    <to>      <conditions>         <other options>
                 ;;
                 ;; karabiner docs: ;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
-                ;; <other options> includs ~to_if_alone~, ~to_if_held_down~,~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
+                ;; <other options> includes ~to_if_alone~, ~to_if_held_down~,~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
                 ;;
 
-                ;; (custom variables) & modifiers -> Advanced
-                ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org#custom-variable
-                  {:des   "caps lock -> ESCAPE if alone else HYPER"
-                   :rules [[:##caps_lock :!CTOleft_shift nil {:alone :escape}]
-                           [:!Rcaps_lock :!Rgrave_accent_and_tilde]
-                           [:!Ccaps_lock :grave_accent_and_tilde]]}
+                ;; (custom variables) & modifiers -> advanced
+                ;; https://github.com/yqrashawn/gokurakujoudo/blob/master/examples.org#custom-variable
+                  {:des   "CapsLock Layer"
+                   :rules [:hyper-mode
+                        ;; Jetbrains specific
+                        [:n :!Oup_arrow [:jetbrains]] ;;extended select
+                        [:spacebar :!Sspacebar [:jetbrains]]
 
-                  {:des   "spacebar layer"
-                   :rules [:spacebar-mode
-                           ;; increamental select
-                           [:i :!Oup_arrow [:jetbrains]]
-                           [:u :!S5 [:jetbrains]]
-                           [:o :!Cdelete_or_backspace [:jetbrains]]
-                           [:j :!Sclose_bracket [:jetbrains]]
-                           [:k :!Sopen_bracket [:jetbrains]]
-                           [:quote :equal_sign [:jetbrains]]
+                        [:q :1] [:w :2] [:e :3] [:r :4] [:t :5] [:y :6] [:u :7] [:i :8] [:o :9] [:p :0]
 
-                           ;; abort
-                           [:u :!Tc]
-                           ;; save
-                           [:return_or_enter :!Cs]
-                           ;; save as
-                           [:!Treturn_or_enter :!CSs]
+                        [:a :a]
+                        [:s :s]
+                        [:d :d]
+                        [:f :f]
+                        [:g :g]
+                        [:h :h]
 
-                           [:o :delete_or_backspace]
+                        ;; Numeric operators
+                        [:j :!Sequal_sign] [:k :hyphen] [:l :!S8 ] [:semicolon :!S5 ] [:quote :equal_sign]
+                        ;;      +               -           *              %                    =
 
-                           ;; movement
-                           [:g :home]
-                           [:semicolon :end]
-                           [:j :down_arrow]
-                           [:k :up_arrow]
-                           [:l :!Oright_arrow]
-                           [:h :!Oleft_arrow]]}]}
+                        [:v :v]
+                        [:n :n]
+
+                        [:spacebar :spacebar]
+
+                        ;; Save and save-as
+                        [:return_or_enter :!Cs]
+                        [:!Creturn_or_enter :!CSs]
+
+                   ]}
+
+                  {:des   "Personal Shortcuts"
+                   :rules [
+                        [:!Sspacebar :!Oright_arrow]
+                        [:!CSspacebar :!Oleft_arrow]
+                        [:!Creturn_or_enter :up_arrow]
+                        [:!CSreturn_or_enter :down_arrow]
+                        [:!Sreturn_or_enter :end]
+
+                        [:!Rcaps_lock :!Rgrave_accent_and_tilde]
+                        [:!Ccaps_lock :grave_accent_and_tilde]
+
+                        [:quote :!Cf [:firefox]]
+                        [:!Rshift :!CTf]
+                   ]}
+  ]}
