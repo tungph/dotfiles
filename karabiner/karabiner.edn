@@ -1,6 +1,6 @@
 ;; edn spec https://github.com/edn-format/edn
 ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
-;;https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
 {;; !    | means mandatory
 ;; #  | means optional
 ;; !! | mandatory command + control + optional + shift (hyper)
@@ -28,7 +28,7 @@
           :delay   0
           ;; to_delayed_action_delay_milliseconds (def: 500)
           ;; time after which the key press is delayed
-          :alone   300
+          :alone  1500
           ;; to_if_alone_timeout_milliseconds (def: 1000)
           ;; hold for .. ms to register single tap
           :held    500
@@ -42,9 +42,9 @@
                  :finder    ["^com\\.apple\\.finder$"]
                  :terminals ["com\\.apple\\.Terminal",
                              "com\\.googlecode\\.iterm2"]}
-  :layers       {:hyper-mode {:key :caps_lock :alone {:key :escape}}
-                 :tab-mode   {:key :tab}}
-
+  :layers       {:caps-layer {:key :caps_lock :alone {:key :escape}}
+                 :tab-layer {:key :tab }
+                 :space-layer {:key :spacebar}}
   :main         [;; each manipulator has a description and multiple rules
 
                 ;;{:des "..."                               ;; -> description
@@ -64,35 +64,68 @@
                 ;; (custom variables) & modifiers -> advanced
                 ;; https://github.com/yqrashawn/gokurakujoudo/blob/master/examples.org#custom-variable
                   {:des   "Tab layer"
-                   :rules [:tab-mode
-                         [:q :!Ctab] [:j :!Ctab]
-                         [:w :!CStab] [:k :!CStab]
+                   :rules [:tab-layer
+                      [:q :!Ctab]
+                      [:w :!CStab]
+                      [:r :!Tc]
+
+                      [:u :!S2]
+                      [:!Cu :!S3]
+
+                      [:i :!Sequal_sign]
+                      [:!Ci :!S7]
+
+                      [:o :hyphen]
+                      [:!Co :!Shyphen]
+
+                      [:h :delete_or_backspace]
+                      [:!Ch :!Sup_arrow [:jetbrains]] ;;extended select
+
+                      ;; {}
+                      [:j :!Sopen_bracket]
+                      [:!Cj :!Sclose_bracket]
+
+                      ;; ()
+                      [:k :!S9]
+                      [:!Ck :!S0]
+
+                      ;; *|
+                      [:l :!S8]
+                      [:!Cl :!Sbackslash]
+
+                      ;; %\
+                      [:semicolon :!S5]
+                      [:!Csemicolon :backslash]
+
+                      ;; =!
+                      [:quote :equal_sign]
+                      [:!Cquote :!S1]
+
+                      [:n :!S6]
+                      [:!Cn :!S4]
                    ]}
 
                   {:des   "CapsLock layer"
-                   :rules [:hyper-mode
+                   :rules [:caps-layer
                         ;; Jetbrains specific
-                        [:v :!Oup_arrow [:jetbrains]] ;;extended select
                         [:spacebar :!Sspacebar [:jetbrains]]
-
-                        [:q :1] [:w :2] [:e :3] [:r :4] [:t :5] [:y :6] [:u :7] [:i :8] [:o :9] [:p :0]
-
-                        ;; a s d f g h
-                        ;; [ { ( ) } ]
-                        [:a :open_bracket] [:s :!Sopen_bracket] [:d :!S9] [:f :!S0] [:g :!Sclose_bracket] [:h :close_bracket]
-
-                        ;; j k l ; '
-                        ;; + - * % =
-                        [:j :!Sequal_sign] [:k :hyphen] [:l :!S8 ] [:semicolon :!S5 ] [:quote :equal_sign]
-
-                        [:c :!S1] [:m :!Shyphen];; c->! m->_
-                        [:v :home] [:n :delete_or_backspace]
 
                         ;; Save and save-as
                         [:return_or_enter :!Cs]
                         [:!Creturn_or_enter :!CSs]
 
                    ]}
+
+
+
+                   {:des    "Space layer"
+                    :rules [:space-layer
+                         [:a :1] [:s :2] [:d :3] [:f :4] [:g :5] [:h :6] [:j :7] [:k :8] [:l :9] [:semicolon :0] [:quote :equal_sign]
+
+                         [:w :!S8] [:e :!S5]
+                         [:i :!Sequal_sign] [:o :hyphen]
+                    ]}
+
 
                   {:des   "Personal Shortcuts"
                    :rules [
