@@ -28,7 +28,7 @@
           :delay   0
           ;; to_delayed_action_delay_milliseconds (def: 500)
           ;; time after which the key press is delayed
-          :alone  1500
+          :alone  1000
           ;; to_if_alone_timeout_milliseconds (def: 1000)
           ;; hold for .. ms to register single tap
           :held    500
@@ -45,100 +45,45 @@
   :layers       {:caps-layer {:key :caps_lock :alone {:key :escape}}
                  :tab-layer {:key :tab }
                  :space-layer {:key :spacebar}}
-  :main         [;; each manipulator has a description and multiple rules
+  :main [
+      {:des   "Tab layer"
+       :rules [:tab-layer
+          [:q :!Ctab] [:w :!CStab] [:r :!Tc]
+          [:u :!S2] [:!Cu :!S3]
+          [:i :!Sequal_sign] [:!Ci :!S7]
+          [:o :hyphen] [:!Co :!Shyphen]
+          [:h :delete_or_backspace] [:!Ch :!Sup_arrow [:jetbrains]] ;;extended select
+          [:j :!Sopen_bracket] [:!Cj :!Sclose_bracket]           ;; {}
+          [:k :!S9] [:!Ck :!S0]           ;; ()
+          [:l :!S8] [:!Cl :!Sbackslash]           ;; *|
+          [:semicolon :!S5] [:!Csemicolon :backslash]           ;; %\
+          [:quote :equal_sign] [:!Cquote :!S1]           ;; =!
+          [:n :!S6] [:!Cn :!S4]
+       ]}
 
-                ;;{:des "..."                               ;; -> description
-                ;; :rules[
-                ;;          [<from>  <to>  <conditions>]    ;; -> rule 1
-                ;;          [<from>  <to>  <conditions>]    ;; -> rule 2
-                ;; ]}
+      {:des   "CapsLock layer"
+       :rules [:caps-layer
+            [:spacebar :!Sspacebar [:jetbrains]] ;; go to next problem
+            [:return_or_enter :!Cs] ;; control + s
+            [:!Creturn_or_enter :!CSs] ;; control + shift + s
+       ]}
 
-                ;; rule [:period ["period-mode" 1] nil {:afterup ["period-mode" 0] :alone :period}]
-                ;;       |_____| |_______________| |_| |_________________________________________|
-                ;;        <from>    <to>      <conditions>         <other options>
-                ;;
-                ;; karabiner docs: ;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
-                ;; <other options> includes ~to_if_alone~, ~to_if_held_down~,~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
-                ;;
+       {:des    "Space layer"
+        :rules [:space-layer
+             [:a :1] [:s :2] [:d :3] [:f :4] [:g :5] [:h :6] [:j :7] [:k :8] [:l :9] [:semicolon :0] [:quote :equal_sign]
+             [:w :!S8] [:e :!S5]
+             [:i :!Sequal_sign] [:o :hyphen]
+        ]}
 
-                ;; (custom variables) & modifiers -> advanced
-                ;; https://github.com/yqrashawn/gokurakujoudo/blob/master/examples.org#custom-variable
-                  {:des   "Tab layer"
-                   :rules [:tab-layer
-                      [:q :!Ctab]
-                      [:w :!CStab]
-                      [:r :!Tc]
+      {:des   "Personal Shortcuts"
+       :rules [
+            [:!Sspacebar :!Oright_arrow] [:!CSspacebar :!Oleft_arrow]
+            [:!Creturn_or_enter :up_arrow] [:!CSreturn_or_enter :down_arrow]
+            [:!Sreturn_or_enter :end]
 
-                      [:u :!S2]
-                      [:!Cu :!S3]
+            [:!Rcaps_lock :!Rgrave_accent_and_tilde] [:!Ccaps_lock :grave_accent_and_tilde]
 
-                      [:i :!Sequal_sign]
-                      [:!Ci :!S7]
-
-                      [:o :hyphen]
-                      [:!Co :!Shyphen]
-
-                      [:h :delete_or_backspace]
-                      [:!Ch :!Sup_arrow [:jetbrains]] ;;extended select
-
-                      ;; {}
-                      [:j :!Sopen_bracket]
-                      [:!Cj :!Sclose_bracket]
-
-                      ;; ()
-                      [:k :!S9]
-                      [:!Ck :!S0]
-
-                      ;; *|
-                      [:l :!S8]
-                      [:!Cl :!Sbackslash]
-
-                      ;; %\
-                      [:semicolon :!S5]
-                      [:!Csemicolon :backslash]
-
-                      ;; =!
-                      [:quote :equal_sign]
-                      [:!Cquote :!S1]
-
-                      [:n :!S6]
-                      [:!Cn :!S4]
-                   ]}
-
-                  {:des   "CapsLock layer"
-                   :rules [:caps-layer
-                        ;; Jetbrains specific
-                        [:spacebar :!Sspacebar [:jetbrains]]
-
-                        ;; Save and save-as
-                        [:return_or_enter :!Cs]
-                        [:!Creturn_or_enter :!CSs]
-
-                   ]}
-
-
-
-                   {:des    "Space layer"
-                    :rules [:space-layer
-                         [:a :1] [:s :2] [:d :3] [:f :4] [:g :5] [:h :6] [:j :7] [:k :8] [:l :9] [:semicolon :0] [:quote :equal_sign]
-
-                         [:w :!S8] [:e :!S5]
-                         [:i :!Sequal_sign] [:o :hyphen]
-                    ]}
-
-
-                  {:des   "Personal Shortcuts"
-                   :rules [
-                        [:!Sspacebar :!Oright_arrow]
-                        [:!CSspacebar :!Oleft_arrow]
-                        [:!Creturn_or_enter :up_arrow]
-                        [:!CSreturn_or_enter :down_arrow]
-                        [:!Sreturn_or_enter :end]
-
-                        [:!Rcaps_lock :!Rgrave_accent_and_tilde]
-                        [:!Ccaps_lock :grave_accent_and_tilde]
-
-                        [:quote :!Cf [:firefox]]
-                        [:!Rshift :!CTf]
-                   ]}
+            [:quote :!Cf [:firefox]]
+            [:!Sright_shift :!TCf]
+       ]}
   ]}
