@@ -42,8 +42,9 @@
                  :finder    ["^com\\.apple\\.finder$"]
                  :terminals ["com\\.apple\\.Terminal",
                              "com\\.googlecode\\.iterm2"]}
-  :layers       {:hyper-mode {:key :caps_lock :alone {:key :escape}}}
-  :simlayers    {:tab-mode      {:key :tab}}
+  :layers       {:hyper-mode {:key :caps_lock :alone {:key :escape}}
+                 :tab-mode   {:key :tab}}
+
   :main         [;; each manipulator has a description and multiple rules
 
                 ;;{:des "..."                               ;; -> description
@@ -62,29 +63,30 @@
 
                 ;; (custom variables) & modifiers -> advanced
                 ;; https://github.com/yqrashawn/gokurakujoudo/blob/master/examples.org#custom-variable
-                  {:des   "CapsLock Layer"
+                  {:des   "Tab layer"
+                   :rules [:tab-mode
+                         [:q :!Ctab] [:j :!Ctab]
+                         [:w :!CStab] [:k :!CStab]
+                   ]}
+
+                  {:des   "CapsLock layer"
                    :rules [:hyper-mode
                         ;; Jetbrains specific
-                        [:n :!Oup_arrow [:jetbrains]] ;;extended select
+                        [:v :!Oup_arrow [:jetbrains]] ;;extended select
                         [:spacebar :!Sspacebar [:jetbrains]]
 
                         [:q :1] [:w :2] [:e :3] [:r :4] [:t :5] [:y :6] [:u :7] [:i :8] [:o :9] [:p :0]
 
-                        [:a :a]
-                        [:s :s]
-                        [:d :d]
-                        [:f :f]
-                        [:g :g]
-                        [:h :h]
+                        ;; a s d f g h
+                        ;; [ { ( ) } ]
+                        [:a :open_bracket] [:s :!Sopen_bracket] [:d :!S9] [:f :!S0] [:g :!Sclose_bracket] [:h :close_bracket]
 
-                        ;; Numeric operators
+                        ;; j k l ; '
+                        ;; + - * % =
                         [:j :!Sequal_sign] [:k :hyphen] [:l :!S8 ] [:semicolon :!S5 ] [:quote :equal_sign]
-                        ;;      +               -           *              %                    =
 
-                        [:v :v]
-                        [:n :n]
-
-                        [:spacebar :spacebar]
+                        [:c :!S1] [:m :!Shyphen];; c->! m->_
+                        [:v :home] [:n :delete_or_backspace]
 
                         ;; Save and save-as
                         [:return_or_enter :!Cs]
