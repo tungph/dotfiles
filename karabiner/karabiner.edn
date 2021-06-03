@@ -64,7 +64,7 @@
 
        {:des   "Personal Shortcuts"
         :rules [
-             [:open_bracket :equal_sign] [:!Sopen_bracket :semicolon] [:close_bracket :!S6] [:!Sclose_bracket :!S4]
+             [:!Oq :!CTq] [:open_bracket :equal_sign] [:!Sopen_bracket :semicolon] [:close_bracket :!S6] [:!Sclose_bracket :!S4]
 
              [:!Rcaps_lock :!Rgrave_accent_and_tilde] [:!Ccaps_lock :grave_accent_and_tilde]
              [:!Og :home] [:!Oh :left_arrow] [:!Oj :down_arrow] [:!Ok :up_arrow] [:!Ol :right_arrow][:!Osemicolon :end]
