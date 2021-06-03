@@ -53,7 +53,7 @@
 
       {:des   "CapsLock layer"
        :rules [:caps-layer
-            [:u :hyphen] [:i :equal_sign] [:o :!Sequal_sign]
+            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen] [:##o :##hyphen][:p :equal_sign]
             [:h :!Shyphen] [:j :!Sopen_bracket] [:k :!Sclose_bracket][:l :open_bracket][:semicolon :close_bracket][:quote :!Oup_arrow]
             [:v :!Oup_arrow] [:n :!S1]
             [:spacebar :!Ttab]
