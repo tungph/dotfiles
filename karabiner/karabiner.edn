@@ -1,13 +1,8 @@
-;; edn spec https://github.com/edn-format/edn
-;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
 ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
 {;; !    | means mandatory
 ;; #  | means optional
 ;; !! | mandatory command + control + optional + shift (hyper)
 ;; ## | optional any
-
-;; to understand better how modifiers work in karabiner
-;; https://pqrs.org/osx/karabiner/json.html#from-event-definition-modifiers
 
 ;; C  | left_command
 ;; T  | left_control
@@ -22,18 +17,10 @@
 
   :profiles
   {:goku {:default true
-          :sim     50
-          ;; simultaneous_threshold_milliseconds (def: 50)
-          ;; keys need to be pressed within this threshold to be considered simultaneous
+          :sim     50 ;; default: 50
           :delay   0
-          ;; to_delayed_action_delay_milliseconds (def: 500)
-          ;; time after which the key press is delayed
-          :alone   0
-          ;; to_if_alone_timeout_milliseconds (def: 1000)
-          ;; hold for .. ms to register single tap
-          :held    500
-          ;; to_if_held_down_threshold_milliseconds (def: 500)
-          ;; key is fired twice when 500ms is elapsed (otherwise seen as a hold command)
+          :alone   1000 ;; default: 1000
+          :held    500 ;; default: 500
           }}
    :templates {:launch     "osascript -e 'tell application \"Alfred 4\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
                :alf        "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\"'"
@@ -53,7 +40,7 @@
                  :terminals ["com\\.apple\\.Terminal",
                              "com\\.googlecode\\.iterm2"]}
   :layers       {
-                 :tab-layer {:key :tab }
+                 :tab-layer {:key :tab :alone [:key :escape]}
                  :caps-layer {:key :caps_lock }
                  }
   :main [
@@ -62,14 +49,14 @@
           [:e [:opena "edge"]][:r [:opena "Adobe Acrobat Reader DC"]][:i [:opena "iTerm"]][:o [:opena "preview"]][:p [:opena "pycharm"]]
           [:s [:opena "slack"]] [:d [:opena "finder"]] [:f [:opena "firefox"]][:g [:opena "github"]][:j :!CStab] [:k :!Ctab]
           [:c [:opena "calendar"]][:n [:opena "notes"]]
-          [:spacebar :!Ttab]
        ]}
+
       {:des   "CapsLock layer"
        :rules [:caps-layer
             [:u :hyphen] [:i :equal_sign] [:o :!Sequal_sign]
             [:h :!Shyphen] [:j :!Sopen_bracket] [:k :!Sclose_bracket][:l :open_bracket][:semicolon :close_bracket][:quote :!Oup_arrow]
             [:v :!Oup_arrow] [:n :!S1]
-            [:spacebar :escape]
+            [:spacebar :!Ttab]
 
             [:return_or_enter :!Cs] ;; control + s
             [:!Creturn_or_enter :!CSs] ;; control + shift + s
@@ -84,7 +71,7 @@
 
              [:##semicolon :##delete_or_backspace]
              [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]]
-             [:!Creturn_or_enter :up_arrow] [:!CSreturn_or_enter :down_arrow] [:!Sreturn_or_enter :end]
+             [:!Creturn_or_enter :up_arrow [:!jetbrains]] [:!CSreturn_or_enter :down_arrow [:!jetbrains]] [:!Sreturn_or_enter :end]
 
              [:!Sspacebar :!Oright_arrow] [:!CSspacebar :!Oleft_arrow]
              [:right_command :!TOCleft_shift] [:right_option :!Cleft_option]
