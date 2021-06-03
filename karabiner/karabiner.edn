@@ -53,27 +53,30 @@
 
       {:des   "CapsLock layer"
        :rules [:caps-layer
-            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen] [:##o :##hyphen][:p :!S5]
-            [:h :!Shyphen] [:j :!Sopen_bracket] [:k :!Sclose_bracket][:l :open_bracket][:semicolon :close_bracket][:quote :!Oup_arrow]
-            [:v :!Oup_arrow] [:n :!S1]
+            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen][:##o :##hyphen][:p :!S5]
+            [:h :!Shyphen][:j :!Sopen_bracket][:k :!Sclose_bracket][:l :!Oup_arrow][:semicolon :semicolon][:return_or_enter :end]
+            [:n :!S1]
             [:spacebar :!Ttab]
-
-            [:return_or_enter :!Cs] ;; control + s
-            [:!Creturn_or_enter :!CSs] ;; control + shift + s
        ]}
 
        {:des   "Personal Shortcuts"
         :rules [
-             [:!Oq :!CTq] [:open_bracket :equal_sign] [:!Sopen_bracket :semicolon] [:close_bracket :!S6] [:!Sclose_bracket :!S4]
-
-             [:!Rcaps_lock :!Rgrave_accent_and_tilde] [:!Ccaps_lock :grave_accent_and_tilde]
+             ;; Moving with Option key
              [:!Og :home] [:!Oh :left_arrow] [:!Oj :down_arrow] [:!Ok :up_arrow] [:!Ol :right_arrow][:!Osemicolon :end]
 
-             [:!Ssemicolon :!Ssemicolon] [:##semicolon :##delete_or_backspace] [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]] [:!Sreturn_or_enter :end]
+             ;; Grave accent and tilde with caps lock
+             [:!Rcaps_lock :!Rgrave_accent_and_tilde] [:!Ccaps_lock :grave_accent_and_tilde]
 
+             [:!Ssemicolon :!Ssemicolon] [:##semicolon :##delete_or_backspace]
+             [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]] [:!Sreturn_or_enter :end]
+
+             ;; left_shift + right_shift -> fullscreen
              [:!Sright_shift :!TCf]
 
+             ;; moving caret with space
              [:!Sspacebar :!Oright_arrow] [:!CSspacebar :!Oleft_arrow]
+
+             ;; right command -> Hyper, right option -> Meta
              [:right_command :!TOCleft_shift] [:right_option :!Cleft_option]
         ]}
   ]}
