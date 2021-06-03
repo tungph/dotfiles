@@ -40,7 +40,7 @@
                  :terminals ["com\\.apple\\.Terminal",
                              "com\\.googlecode\\.iterm2"]}
   :layers       {
-                 :tab-layer {:key :tab :alone [:key :escape]}
+                 :tab-layer {:key :tab }
                  :caps-layer {:key :caps_lock }
                  }
   :main [
@@ -54,7 +54,7 @@
       {:des   "CapsLock layer"
        :rules [:caps-layer
             [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen][:##o :##hyphen][:p :!S5]
-            [:h :!Shyphen][:j :!Sopen_bracket][:k :!Sclose_bracket][:l :!Oup_arrow][:semicolon :semicolon][:return_or_enter :end]
+            [:h :!Shyphen][:j :!Sopen_bracket][:k :!Sclose_bracket][:l :!Oup_arrow][:##semicolon :##semicolon][:quote :home][:return_or_enter :end]
             [:n :!S1]
             [:spacebar :!Ttab]
        ]}
@@ -67,7 +67,8 @@
              ;; Grave accent and tilde with caps lock
              [:!Rcaps_lock :!Rgrave_accent_and_tilde] [:!Ccaps_lock :grave_accent_and_tilde]
 
-             [:!Ssemicolon :!Ssemicolon] [:##semicolon :##delete_or_backspace]
+             ;; Delete key inplace of semicolon
+             [:!Ssemicolon :!Ssemicolon][:!Csemicolon :!Cdelete_or_backspace][:##semicolon :##delete_or_backspace]
              [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]] [:!Sreturn_or_enter :end]
 
              ;; left_shift + right_shift -> fullscreen
