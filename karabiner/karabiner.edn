@@ -53,7 +53,7 @@
 
       {:des   "CapsLock layer"
        :rules [:caps-layer
-            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen] [:##o :##hyphen][:p :equal_sign]
+            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen] [:##o :##hyphen][:p :!S5]
             [:h :!Shyphen] [:j :!Sopen_bracket] [:k :!Sclose_bracket][:l :open_bracket][:semicolon :close_bracket][:quote :!Oup_arrow]
             [:v :!Oup_arrow] [:n :!S1]
             [:spacebar :!Ttab]
@@ -64,14 +64,16 @@
 
        {:des   "Personal Shortcuts"
         :rules [
-             [:delete_or_backspace :!TCf] [:!Cdelete_or_backspace :!TCq]
-             [:open_bracket :!Ssemicolon] [:!Sopen_bracket :semicolon] [:close_bracket :!S5] [:!Sclose_bracket :!S6]
+             [:!Cdelete_or_backspace :!TCq]
+             [:open_bracket :equal_sign] [:!Sopen_bracket :semicolon] [:close_bracket :!S6] [:!Sclose_bracket :!S4]
 
              [:!Rcaps_lock :!Rgrave_accent_and_tilde] [:!Ccaps_lock :grave_accent_and_tilde]
 
+             [:!Ssemicolon :!Ssemicolon]
              [:##semicolon :##delete_or_backspace]
              [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]]
              [:!Creturn_or_enter :up_arrow [:!jetbrains]] [:!CSreturn_or_enter :down_arrow [:!jetbrains]] [:!Sreturn_or_enter :end]
+             [:!Sright_shift :!TCf]
 
              [:!Sspacebar :!Oright_arrow] [:!CSspacebar :!Oleft_arrow]
              [:right_command :!TOCleft_shift] [:right_option :!Cleft_option]
