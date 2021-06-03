@@ -64,7 +64,6 @@
           [:c [:opena "calendar"]][:n [:opena "notes"]]
           [:spacebar :!Ttab]
        ]}
-
       {:des   "CapsLock layer"
        :rules [:caps-layer
             [:u :hyphen] [:i :equal_sign] [:o :!Sequal_sign]

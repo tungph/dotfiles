@@ -14,7 +14,7 @@ imap jk <Esc>
 nmap H :action Back<CR> 
 
 
-let mapleader="."
+let mapleader=" "
 vmap <leader> <ESC><leader>
 
 nmap <leader>r :action RenameElement<CR>
@@ -29,7 +29,7 @@ nmap <leader>uu :action PublishGroup.Upload<CR>
 nmap <leader>ud :action PublishGroup.Download<CR>
 nmap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
 
-nmap " :action NextSplitter<CR>
+nmap ' :action NextSplitter<CR>
 nmap <leader>j :action PrevSplitter<CR>
 nmap <leader>f :action HideAllWindows<CR>
 
@@ -38,3 +38,4 @@ xmap <leader>n <Plug>NextWholeOccurrence
 nmap g<leader> <Plug>NextOccurrence
 xmap g<leader> <Plug>NextOccurrence
 
+nmap <leader>' :action ActivateTerminalToolWindow<CR>
