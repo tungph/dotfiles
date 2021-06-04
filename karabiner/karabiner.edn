@@ -70,7 +70,7 @@
 
              ;; Delete key inplace of semicolon
              [:!Ssemicolon :!Ssemicolon][:!Csemicolon :!Cdelete_or_backspace][:##semicolon :##delete_or_backspace]
-             [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]] [:!Sreturn_or_enter :equal_sign]
+             [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]]
 
              ;; left_shift + right_shift -> fullscreen
              [:!Sright_shift :!TCf]
