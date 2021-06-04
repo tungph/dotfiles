@@ -40,8 +40,8 @@
                  :terminals ["com\\.apple\\.Terminal",
                              "com\\.googlecode\\.iterm2"]}
   :layers       {
-                 :tab-layer {:key :tab }
-                 :caps-layer {:key :caps_lock }
+                 :tab-layer {:key :tab :alone {:key :escape}}
+                 :caps-layer {:key :caps_lock}
                  }
   :main [
       {:des   "Tab layer"
