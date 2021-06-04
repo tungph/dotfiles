@@ -49,14 +49,15 @@
           [:e [:opena "edge"]][:r [:opena "Adobe Acrobat Reader DC"]][:i [:opena "iTerm"]][:o [:opena "preview"]][:p [:opena "pycharm"]]
           [:s [:opena "slack"]] [:d [:opena "finder"]] [:f [:opena "firefox"]][:g [:opena "github"]][:j :!CStab] [:k :!Ctab]
           [:c [:opena "calendar"]][:n [:opena "notes"]]
+          [:spacebar :!Ttab]
        ]}
 
       {:des   "CapsLock layer"
        :rules [:caps-layer
-            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen][:##o :##hyphen][:p :!S5]
-            [:h :!Shyphen][:j :!Sopen_bracket][:k :!Sclose_bracket][:l :!Oup_arrow][:##semicolon :##semicolon][:quote :home][:return_or_enter :end]
-            [:n :!S1]
-            [:spacebar :!Ttab]
+            [:u :!S8][:i :!Sequal_sign][:##i :##equal_sign][:o :hyphen][:##o :##hyphen]
+            [:h :!Shyphen][:j :home][:k :end][:l :!S5][:##semicolon :##semicolon][:quote :!S1][:return_or_enter :!Cs][:!Creturn_or_enter :!CSs]
+            [:v :!Oup_arrow]
+            [:spacebar :equal_sign]
        ]}
 
        {:des   "Personal Shortcuts"
@@ -69,7 +70,7 @@
 
              ;; Delete key inplace of semicolon
              [:!Ssemicolon :!Ssemicolon][:!Csemicolon :!Cdelete_or_backspace][:##semicolon :##delete_or_backspace]
-             [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]] [:!Sreturn_or_enter :end]
+             [:quote :!Cf [:firefox]] [:quote :!Cf [:edge]] [:!Sreturn_or_enter :equal_sign]
 
              ;; left_shift + right_shift -> fullscreen
              [:!Sright_shift :!TCf]
@@ -79,5 +80,7 @@
 
              ;; right command -> Hyper, right option -> Meta
              [:right_command :!TOCleft_shift] [:right_option :!Cleft_option]
+
+             [[:up_arrow :down_arrow] :!TCq]
         ]}
   ]}
