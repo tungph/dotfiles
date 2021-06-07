@@ -71,7 +71,7 @@
             [:a :!Ca] [:x :!Cx] [:c :!Cc] [:v :!Cv]
 
             [:s :!Cs][:!Cs :!CSs][:h :!S5][:j :!Shyphen][:k :!S1][:l :!S8][:##semicolon :##semicolon][:quote :equal_sign][:return_or_enter :end][:!Creturn_or_enter :home]
-            [:spacebar :!Oright_arrow] [:!Cspacebar :!Oleft_arrow]
+            [:spacebar :tab][:!Cspacebar :!Stab]
        ]}
 
        {:des   "Personal Shortcuts"
@@ -89,7 +89,7 @@
              [:!Sright_shift :!TCf]
 
              ;; up/down with shift + space
-             [:!Sspacebar :up_arrow] [:!CSspacebar :down_arrow]
+             [:!Sspacebar :!Oright_arrow] [:!CSspacebar :!Oleft_arrow]
 
              ;; right command -> Hyper, right option -> Meta
              [:right_command :!TOleft_control] [:right_option :!Cleft_option]
