@@ -30,7 +30,7 @@ nmap <leader>ud :action PublishGroup.Download<CR>
 nmap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
 
 nmap ' :action NextSplitter<CR>
-nmap <leader>j :action PrevSplitter<CR>
+nmap " :action NextSplitter<CR>
 nmap <leader>f :action HideAllWindows<CR>
 
 nmap <leader>n <Plug>NextWholeOccurrence

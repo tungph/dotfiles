@@ -70,6 +70,7 @@
             ;; copy & paste
             [:a :!Ca] [:x :!Cx] [:c :!Cc] [:v :!Cv]
 
+            [:i :!Sequal_sign][:o :hyphen]
             [:s :!Cs][:!Cs :!CSs][:h :!S5][:j :!Shyphen][:k :!S1][:l :!S8][:##semicolon :##semicolon][:quote :equal_sign][:return_or_enter :end][:!Creturn_or_enter :home]
             [:spacebar :tab][:!Cspacebar :!Stab]
        ]}
