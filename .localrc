@@ -56,3 +56,6 @@ if [ -f '/Users/shawn/.local/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sh
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/shawn/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shawn/.local/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(direnv hook zsh)"
+

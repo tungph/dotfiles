@@ -46,7 +46,7 @@
   :main [
       {:des   "Tab layer"
        :rules [:tab-layer
-          [:w :tab][:e [:opena "edge"]][:r [:opena "Adobe Acrobat Reader DC"]][:i [:opena "iTerm"]][:o [:opena "preview"]][:p [:opena "pycharm"]]
+          [:w :tab][:e [:opena "Microsoft Edge"]][:r [:opena "Adobe Acrobat Reader DC"]][:i [:opena "iTerm"]][:o [:opena "preview"]][:p [:opena "pycharm"]]
           [:s [:opena "slack"]] [:d [:opena "finder"]] [:f [:opena "firefox"]][:g [:opena "github"]][:j :!CStab] [:k :!Ctab]
           [:c [:opena "calendar"]][:n [:opena "notes"]]
           [:spacebar :!Ttab]
@@ -54,6 +54,8 @@
 
       {:des   "CapsLock layer"
        :rules [:caps-layer
+            ;; common mistype
+            [:9 :!S9][:0 :!S0]
             ;; control area
             [:3 :!CTO3] [:!C3 :!CTSO3]
             [:q :!CTOq][:!Cq :!CTOSq]
@@ -90,6 +92,7 @@
              [:!Sright_shift :!TCf]
 
              ;; up/down with shift + space
+             [:!Sspacebar :right_arrow [:terminals]] [:!CSspacebar :left_arrow [:terminals]]
              [:!Sspacebar :!Oright_arrow] [:!CSspacebar :!Oleft_arrow]
 
              ;; right command -> Hyper, right option -> Meta
