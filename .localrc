@@ -1,3 +1,4 @@
+export ANTIBODY_HOME=~/Libary/antibody
 
 # search for file to open
 of() {
