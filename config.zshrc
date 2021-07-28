@@ -41,6 +41,18 @@ tl() {
   fi
 }
 
+# better man 
+man() {
+  if [ $# -gt 1 ]; then
+    # shellcheck disable=SC2068
+    command man "${@:1:1}" | ag -C 1 ${@:2}
+  else
+    # shellcheck disable=SC2068
+    command man $@
+  fi
+}
+
+
 # mkdir, then cd into the newly created directory
 mkd() {
   # shellcheck disable=SC2164
@@ -173,8 +185,10 @@ alias fl='flutter'
 
 # utils #
 alias h='history'
+alias gr='ag --no-numbers --ignore-case'
 alias f="ls -1tra | grep -i"
 alias ff='ag -g'
+alias fa='fzf | xargs -I _'
 alias del='rm -rf'
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'
