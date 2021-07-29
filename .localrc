@@ -14,7 +14,6 @@ alias xc='exercism'
 alias dotc='charm ~/.dotfiles'
 alias excel='open -a "/Applications/Microsoft Excel.app"'
 
-alias del="trash"
 alias pi='pip install'
 alias xclip='pbcopy'
 alias rp='realpath . | xclip; echo ">>> copied `realpath .`"'

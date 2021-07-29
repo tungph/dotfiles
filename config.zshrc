@@ -6,7 +6,7 @@ export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 bindkey -v
 
 #### FUNCTIONS ##### print out $PATH
-path(){
+path() {
   echo -e ${PATH//:/\\n}
 }
 
@@ -19,13 +19,14 @@ j() {
 
 # jum to a child-directory
 jd() {
-  cd "$(z -c | fzy | awk -F ' ' '{print $NF}')"
+  cd "$(z -c | fzy | awk -F ' ' '{print $NF}')" || exit
   ls
 }
 
 # jump to a direct child-directory
 jc() {
   # shellcheck disable=SC2164
+  # shellcheck disable=SC2068
   [ $# -gt 0 ] && cd "$(command ls -1F | grep / | grep -i $@ | head -1)" || cd "$(command ls -1F | grep / | fzy)"
   ls
 }
@@ -41,7 +42,7 @@ tl() {
   fi
 }
 
-# better man 
+# better man
 man() {
   if [ $# -gt 1 ]; then
     # shellcheck disable=SC2068
@@ -52,6 +53,16 @@ man() {
   fi
 }
 
+# del with fuzzy
+del() {
+  if ! type "trash" >/dev/null; then
+    # shellcheck disable=SC2068
+    [ $# -gt 0 ] && rm -rf $@ || rm "$(fzf)"
+  else
+    # shellcheck disable=SC2068
+    [ $# -gt 0 ] && trash -vF $@ || trash -vF "$(fzf)"
+  fi
+}
 
 # mkdir, then cd into the newly created directory
 mkd() {
@@ -97,7 +108,7 @@ slackme() {
   # shellcheck disable=SC2124
   [ $# -gt 0 ] && MESSAGE="$@"
 
-  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" "$WEBHOOK_URL"
 }
 
 # Extend the iterm 2 download utility it2dl
@@ -133,24 +144,23 @@ conda_env_create() {
     NAME="$1"
     VERSION="$2"
 
-    conda create --name "$NAME" python=$VERSION
+    conda create --name "$NAME" python="$VERSION"
   elif [ $# -eq 1 ]; then
     conda create --name "$1"
   else
-    echo "USAGE: $(basename $0) <environment name> [python version]"
+    echo "USAGE: $(basename "$0") <environment name> [python version]"
   fi
 }
 
 # ram <process-name> - Find how much RAM a process is taking.
 ram() {
   local sum
-  local items
   local app="$1"
   if [ -z "$app" ]; then
     echo "First argument - pattern to grep from processes"
   else
     sum=0
-    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
+    for i in $(ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'); do
       sum=$(($i + $sum))
     done
     sum=$(echo "scale=2; $sum / 1024.0" | bc)
@@ -167,8 +177,7 @@ fkil() {
   local pid
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
-  if [ "x$pid" != "x" ]
-  then
+  if [ "x$pid" != "x" ]; then
     echo $pid | xargs kill -${1:-9}
   fi
 }
@@ -189,7 +198,6 @@ alias gr='ag --no-numbers --ignore-case'
 alias f="ls -1tra | grep -i"
 alias ff='ag -g'
 alias fa='fzf | xargs -I _'
-alias del='rm -rf'
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'
 alias df='df -h .'
