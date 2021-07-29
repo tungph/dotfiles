@@ -14,10 +14,10 @@ path() {
 fa() {
   if [ $# -eq 1 ]; then
     # shellcheck disable=SC2068
-    fzf | xargs -I _ $@ _
+    ls -1tra | fzy | xargs -I _ $@ _
   else
     # shellcheck disable=SC2068
-    fzf | xargs -I _ $@
+    ls -1tra | fzy | xargs -I _ $@
   fi
 }
 
@@ -29,16 +29,15 @@ j() {
 }
 
 # jum to a child-directory
-jd() {
-  cd "$(z -c | fzy | awk -F ' ' '{print $NF}')" || exit
-  ls
-}
+cdf() {
+  if [ $# -gt 0 ]; then
+    # shellcheck disable=SC2164
+    builtin cd $(find . -type d -iname "*$@*" | fzy)
+  else
+    # shellcheck disable=SC2164
+    builtin cd "$(find . -type d | fzy)"
+  fi
 
-# jump to a direct child-directory
-jc() {
-  # shellcheck disable=SC2164
-  # shellcheck disable=SC2068
-  [ $# -gt 0 ] && cd "$(command ls -1F | grep / | grep -i $@ | head -1)" || cd "$(command ls -1F | grep / | fzy)"
   ls
 }
 
@@ -207,7 +206,7 @@ alias fl='flutter'
 alias h='history'
 alias gr='ag --no-numbers --ignore-case'
 alias f="ls -1tra | grep -i"
-alias ff='ag -g'
+alias ff='fzf | xargs'
 
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'
