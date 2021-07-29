@@ -10,6 +10,17 @@ path() {
   echo -e ${PATH//:/\\n}
 }
 
+# fuzzy search for the input argument
+fa() {
+  if [ $# -eq 1 ]; then
+    # shellcheck disable=SC2068
+    fzf | xargs -I _ $@ _
+  else
+    # shellcheck disable=SC2068
+    fzf | xargs -I _ $@
+  fi
+}
+
 # jump to a directory
 j() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
@@ -197,7 +208,7 @@ alias h='history'
 alias gr='ag --no-numbers --ignore-case'
 alias f="ls -1tra | grep -i"
 alias ff='ag -g'
-alias fa='fzf | xargs -I _'
+
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'
 alias df='df -h .'
