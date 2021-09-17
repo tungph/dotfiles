@@ -11,26 +11,27 @@ path() {
 }
 
 # fuzzy search for the input argument
-fa() {
+s() {
   if [ $# -eq 1 ]; then
     # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs $@
+    ls -1tra | fzy | xargs -r -t $@
+  elif [ $# -eq 0 ]; then
+    ls -1tra | fzy | xclip
   else
     # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs -I _ $@
+    ls -1tra | fzy | xargs -r -t -I _ $@
   fi
 }
 
 # jump to a directory
-j() {
+t() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
   # shellcheck disable=SC2164
   cd "$target"
 }
 
 # jum to a child-directory
-cdf() {
-
+tt() {
   [ $# -gt 0 ] && TARGET_DIR="$(find . -type d | fzy -q "$@")" || TARGET_DIR="$(find . -type d | fzy)"
   cd "$TARGET_DIR" || return
 
@@ -71,9 +72,19 @@ del() {
 }
 
 # mkdir, then cd into the newly created directory
-mkd() {
+n() {
   # shellcheck disable=SC2164
-  [ $# -eq 1 ] && mkdir "$1" && cd "$1"
+  [ $# -eq 1 ] && mkdir -p "$1"
+}
+N() {
+  # shellcheck disable=SC2164
+  [ $# -eq 1 ] && mkdir -p "$1" && cd "$1"
+}
+
+alias nf='touch'
+Nf() {
+  # shellcheck disable=SC2164
+  [ $# -eq 1 ] && touch "$1" && nvim "$1"
 }
 
 # docker ps, perform search for any provided argument
@@ -184,7 +195,7 @@ fkil() {
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
   if [ "x$pid" != "x" ]; then
-    echo $pid | xargs kill -${1:-9}
+    echo $pid | xargs -r -t kill -${1:-9}
   fi
 }
 
@@ -201,10 +212,8 @@ alias fl='flutter'
 # utils #
 alias h='history'
 alias gr='ag --no-numbers --ignore-case'
-alias f="ls -1tra | grep -i"
-alias fac='fa | xclip'
-alias ff='fzf | xargs'
-alias ffc='ff | xclip'
+alias f='fzf | xclip'
+alias F='fzf | xargs -rt0 '
 
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'

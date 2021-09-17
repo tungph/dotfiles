@@ -35,6 +35,10 @@ noremap [ :action EditorForwardParagraph<CR>
 noremap ( :action EditorBackwardParagraph<CR>
 noremap W :action EditorLineEnd<CR>
 noremap M :action EditorLineStart<CR>
+noremap $ gg
+noremap ) G
+
+noremap M :action EditorLineStart<CR>
 
 
 noremap h :action Back<CR>
@@ -42,8 +46,8 @@ noremap H :action Forward<CR>
 noremap : :action JumpToLastChange<CR>
 noremap f u
 noremap F :action RecentFiles<CR>
-noremap o :action GotoImplementation<CR>
-noremap O :action FindUsages<CR>
+noremap k :action GotoImplementation<CR>
+noremap K :action FindUsages<CR>
 
 noremap R :action Replace<CR>
 noremap / :action Find<CR>
@@ -53,14 +57,14 @@ nnoremap <ESC> <ESC>:
 inoremap <ESC> <ESC>:
 
 "Splitter "
-noremap s :action NextSplitter<CR>
-noremap S :action SplitVertically<CR>
-noremap <leader>s :action ChangeSplitOrientation<CR>
-noremap 5 :action Unsplit<CR>
+noremap g :action NextSplitter<CR>
+noremap G :action SplitVertically<CR>
+noremap <leader>g :action ChangeSplitOrientation<CR>
+noremap * :action Unsplit<CR>
 
-noremap k :action ShowBookmarks<CR>
-noremap K :action ToggleBookmarkWithMnemonic<CR>
-noremap - :action ToggleBookmark<CR>
+noremap s :action ShowBookmarks<CR>
+noremap S :action ToggleBookmarkWithMnemonic<CR>
+noremap 5 :action ToggleBookmark<CR>
 
 noremap <leader>v :action ToggleLineBreakpoint<CR>
 
