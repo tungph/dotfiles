@@ -208,6 +208,7 @@ alias vi='nvim'
 alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
+alias ee='exit'
 
 # utils #
 alias h='history'
@@ -227,6 +228,7 @@ alias count='ls -1 | wc -l'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
+alias e='vi'
 alias ec='vi ~/.dotfiles/config.zshrc'
 alias ez='vi ~/.zshrc'
 alias el="vi ~/.localrc"
