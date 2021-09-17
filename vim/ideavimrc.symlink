@@ -2,40 +2,71 @@ set ideajoin
 set ideamarks
 set multiple-cursors
 set highlightedyank
-set easymotion
 set NERDTree
 
 set incsearch
 set clipboard+=unnamed
 
-imap jk <Esc>
-
-
-nmap H :action Back<CR> 
-
+inoremap ss <Esc>
+inoremap aa <Esc>
+set timeoutlen=300
 
 let mapleader=" "
-vmap <leader> <ESC><leader>
+vnoremap <leader> <ESC><leader>
 
-nmap <leader>r :action RenameElement<CR>
-nmap <leader>d :action Debug<CR>
+"Undo and redo
+noremap l u
+noremap L <C-R>
+noremap a i
+noremap t f
+map <BS> ;
 
-nmap <leader>m :action ToggleBookmark<CR>
-nmap <leader>M :action ShowBookmarks<CR>
+"Movement
+noremap u k
+noremap U :action JumpToNextChange<CR>
+noremap e j
+noremap E :action JumpToNextChange<CR>
+noremap n h
+noremap i l
+noremap m :action EditorPreviousWordInDifferentHumpsMode<CR>
+noremap _ :action EditorPreviousWordInDifferentHumpsMode<CR>
+noremap ] :action EditorNextWordInDifferentHumpsMode<CR>
+noremap [ :action EditorForwardParagraph<CR>
+noremap ( :action EditorBackwardParagraph<CR>
+noremap W :action EditorLineEnd<CR>
+noremap M :action EditorLineStart<CR>
 
-nmap <leader>b :action ToggleLineBreakpoint<CR>
 
-nmap <leader>uu :action PublishGroup.Upload<CR>
-nmap <leader>ud :action PublishGroup.Download<CR>
-nmap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
+noremap h :action Back<CR>
+noremap H :action Forward<CR>
+noremap : :action JumpToLastChange<CR>
+noremap f u
+noremap F :action RecentFiles<CR>
+noremap o :action GotoImplementation<CR>
+noremap O :action FindUsages<CR>
 
-nmap ' :action NextSplitter<CR>
-nmap " :action NextSplitter<CR>
-nmap <leader>f :action HideAllWindows<CR>
+noremap R :action Replace<CR>
+noremap / :action Find<CR>
+noremap ^ :action FindInPath<CR>
+noremap ? :action FindUsagesInFile<CR>
+nnoremap <ESC> <ESC>:
+inoremap <ESC> <ESC>:
 
-nmap <leader>n <Plug>NextWholeOccurrence
-xmap <leader>n <Plug>NextWholeOccurrence
-nmap g<leader> <Plug>NextOccurrence
-xmap g<leader> <Plug>NextOccurrence
+"Splitter "
+noremap s :action NextSplitter<CR>
+noremap S :action SplitVertically<CR>
+noremap <leader>s :action ChangeSplitOrientation<CR>
+noremap 5 :action Unsplit<CR>
 
-nmap <leader>' :action ActivateTerminalToolWindow<CR>
+noremap k :action ShowBookmarks<CR>
+noremap K :action ToggleBookmarkWithMnemonic<CR>
+noremap - :action ToggleBookmark<CR>
+
+noremap <leader>v :action ToggleLineBreakpoint<CR>
+
+noremap <leader>uu :action PublishGroup.Upload<CR>
+noremap <leader>ud :action PublishGroup.Download<CR>
+noremap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
+
+noremap <leader><leader> :action HideAllWindows<CR>
+noremap <leader>t :action ActivateTerminalToolWindow<CR>

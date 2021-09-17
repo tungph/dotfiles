@@ -4,7 +4,7 @@ export ANTIBODY_HOME=~/Libary/antibody
 of() {
   [ "$@" = "." ] && open . && return 
 
-  [ $# -gt 0 ] && FILE="$(command ls -1F | fzy -q $@)" || FILE="$(command ls -1F | fzy)"
+  [ $# -gt 0 ] && FILE="$(find . -type f | fzy -q $@)" 
 
   [ "$FILE" != "" ] && open "$(echo $FILE | tr -d @)" || echo " >> Cancelled"
     
@@ -33,11 +33,14 @@ alias sshalps='ssh -i ~/.ssh/servers/ubuntu@34.208.151.226.pem ubuntu@34.208.151
 alias sshnissay='ssh shawn@54.71.34.95'
 alias sshfullocrdemo='ssh shawn@44.235.212.208'
 alias sshtohmatsu='ssh shawn@34.121.163.195'
+alias sshathenatest2='ssh -L8000:localhost:8000 ubuntu@52.10.109.159'
 
 alias sshgcpinstance='ssh -i ~/.ssh/id_rsa  tungph_hut_gmail_com@35.223.233.120'
 alias sshpersonalec2='ssh -i ~/.ssh/servers/personal_ec2.pem ubuntu@ec2-18-188-200-212.us-east-2.compute.amazonaws.com'
 
 alias ecrlogin='aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 533155507761.dkr.ecr.us-west-2.amazonaws.com'
+
+alias ey='vi ~/.config/yabai/yabairc'
 
 alias rl='. ~/.zshrc'
 

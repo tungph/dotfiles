@@ -14,7 +14,7 @@ path() {
 fa() {
   if [ $# -eq 1 ]; then
     # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs -I _ $@ _
+    ls -1tra | fzy | xargs $@
   else
     # shellcheck disable=SC2068
     ls -1tra | fzy | xargs -I _ $@
@@ -30,13 +30,9 @@ j() {
 
 # jum to a child-directory
 cdf() {
-  if [ $# -gt 0 ]; then
-    # shellcheck disable=SC2164
-    builtin cd $(find . -type d -iname "*$@*" | fzy)
-  else
-    # shellcheck disable=SC2164
-    builtin cd "$(find . -type d | fzy)"
-  fi
+
+  [ $# -gt 0 ] && TARGET_DIR="$(find . -type d | fzy -q "$@")" || TARGET_DIR="$(find . -type d | fzy)"
+  cd "$TARGET_DIR" || return
 
   ls
 }
@@ -206,7 +202,9 @@ alias fl='flutter'
 alias h='history'
 alias gr='ag --no-numbers --ignore-case'
 alias f="ls -1tra | grep -i"
+alias fac='fa | xclip'
 alias ff='fzf | xargs'
+alias ffc='ff | xclip'
 
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'
