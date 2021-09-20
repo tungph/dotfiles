@@ -10,18 +10,6 @@ of() {
     
 }
 
-# fuzzy search for the input argument
-s() {
-  if [ $# -eq 1 ]; then
-    # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs -r -t $@
-  elif [ $# -eq 0 ]; then
-    ls -1tra | fzy | xclip
-  else
-    # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs -r -t -I _ $@
-  fi
-}
 alias xc='exercism'
 alias dotc='charm ~/.dotfiles'
 alias excel='open -a "/Applications/Microsoft Excel.app"'

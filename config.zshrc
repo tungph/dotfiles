@@ -10,16 +10,12 @@ path() {
   echo -e ${PATH//:/\\n}
 }
 
-# fuzzy search for the input argument
 s() {
-  if [ $# -eq 1 ]; then
-    # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs -r -t $@
-  elif [ $# -eq 0 ]; then
+  if [ $# -eq 0 ]; then
     ls -1tra | fzy | xclip
   else
     # shellcheck disable=SC2068
-    ls -1tra | fzy | xargs -r -t -I _ $@
+    ls -1tra | ag $@
   fi
 }
 
@@ -202,20 +198,20 @@ fkil() {
 #### ALIASES #####
 
 # apps #
-alias e='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
+alias eva='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
 alias dot="~/.dotfiles/dot"
 alias vi='nvim'
 alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
-alias ee='exit'
+alias uu='exit'
+alias aa='exit'
 
 # utils #
 alias h='history'
+alias S='fzf | xclip'
+alias f='cd $(find . -maxdepth 1 -type d | fzy) && ls '
 alias gr='ag --no-numbers --ignore-case'
-alias f='fzf | xclip'
-alias F='fzf | xargs -rt0 '
-
 alias rl='dot pull && . ~/.zshrc'
 alias pi='package_installer'
 alias df='df -h .'
@@ -229,6 +225,7 @@ alias count='ls -1 | wc -l'
 # config #
 alias dotfiles='cd ~/.dotfiles'
 alias e='vi'
+alias E='vi $(fzf)'
 alias ec='vi ~/.dotfiles/config.zshrc'
 alias ez='vi ~/.zshrc'
 alias el="vi ~/.localrc"

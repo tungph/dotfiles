@@ -7,8 +7,8 @@ set NERDTree
 set incsearch
 set clipboard+=unnamed
 
-inoremap ss <Esc>
 inoremap aa <Esc>
+vnoremap aa <Esc>
 set timeoutlen=300
 
 let mapleader=" "
@@ -17,24 +17,24 @@ vnoremap <leader> <ESC><leader>
 "Undo and redo
 noremap l u
 noremap L <C-R>
-noremap a i
+noremap f i
+noremap F I
 noremap t f
-map <BS> ;
+noremap <BS> ;
 
 "Movement
 noremap u k
-noremap U :action JumpToNextChange<CR>
 noremap e j
-noremap E :action JumpToNextChange<CR>
-noremap n h
-noremap i l
-noremap m :action EditorPreviousWordInDifferentHumpsMode<CR>
-noremap _ :action EditorPreviousWordInDifferentHumpsMode<CR>
-noremap ] :action EditorNextWordInDifferentHumpsMode<CR>
+noremap n :action EditorPreviousWordInDifferentHumpsMode<CR>
+noremap i :action EditorNextWordInDifferentHumpsMode<CR>
+noremap U :action EditorCodeBlockStart<CR>
+noremap E :action EditorCodeBlockEnd<CR>
+noremap N ^
+noremap I $
+noremap _ h
+noremap ] l
 noremap [ :action EditorForwardParagraph<CR>
 noremap ( :action EditorBackwardParagraph<CR>
-noremap W :action EditorLineEnd<CR>
-noremap M :action EditorLineStart<CR>
 noremap $ gg
 noremap ) G
 
@@ -44,16 +44,16 @@ noremap M :action EditorLineStart<CR>
 noremap h :action Back<CR>
 noremap H :action Forward<CR>
 noremap : :action JumpToLastChange<CR>
-noremap f u
-noremap F :action RecentFiles<CR>
-noremap k :action GotoImplementation<CR>
-noremap K :action FindUsages<CR>
+nnoremap w :action GotoImplementation<CR>
+noremap W :action FindUsages<CR>
+noremap m :action Compare.SameVersion<CR>
+noremap M :action RecentFiles<CR>
 
 noremap R :action Replace<CR>
 noremap / :action Find<CR>
 noremap ^ :action FindInPath<CR>
 noremap ? :action FindUsagesInFile<CR>
-nnoremap <ESC> <ESC>:
+noremap <ESC> :
 inoremap <ESC> <ESC>:
 
 "Splitter "
@@ -66,6 +66,18 @@ noremap s :action ShowBookmarks<CR>
 noremap S :action ToggleBookmarkWithMnemonic<CR>
 noremap 5 :action ToggleBookmark<CR>
 
+nnoremap k :action StringManipulation.EditorPopupMenu<CR>
+noremap K :action SurroundWith<CR>
+noremap q :action QuickTypeDefinition<CR>
+
+noremap b :action EditorCloneCaretBelow<CR>
+noremap B :action EditorCloneCaretAbove<CR>
+
+noremap { :action ExpandRegionRecursively<CR>
+noremap } :action CollapseRegionRecursively<CR>
+noremap + :action ExpandRegion<CR>
+noremap - :action CollapseRegion<CR>
+
 noremap <leader>v :action ToggleLineBreakpoint<CR>
 
 noremap <leader>uu :action PublishGroup.Upload<CR>
@@ -74,3 +86,5 @@ noremap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
 
 noremap <leader><leader> :action HideAllWindows<CR>
 noremap <leader>t :action ActivateTerminalToolWindow<CR>
+noremap <leader>r <Esc>:so ~/.ideavimrc<CR>
+noremap <leader>e <Esc>:e ~/.ideavimrc<CR>
