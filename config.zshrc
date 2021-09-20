@@ -221,6 +221,8 @@ alias upload='~/.iterm2/it2ul'
 alias myip='curl ifconfig.me'
 alias jb='cd -'
 alias count='ls -1 | wc -l'
+alias a='zip -r'
+alias A='unzip'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
