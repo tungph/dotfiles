@@ -223,6 +223,9 @@ alias jb='cd -'
 alias count='ls -1 | wc -l'
 alias a='zip -r'
 alias A='unzip'
+alias inst='sudo apt install -y'
+alias top='btm'
+alias m='less'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
