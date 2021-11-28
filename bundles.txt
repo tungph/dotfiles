@@ -18,3 +18,4 @@ pipenv
 conda
 fzf
 dvc
+hstr

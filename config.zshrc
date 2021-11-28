@@ -63,7 +63,11 @@ del() {
     [ $# -gt 0 ] && rm -rf $@ || rm "$(ls -1tra | fzy)"
   else
     # shellcheck disable=SC2068
-    [ $# -gt 0 ] && trash -vF $@ || trash -vF "$(ls -1tra | fzy)"
+    if [ $# -gt 0 ]; then
+      trash -rfvi $@
+    else
+      trash -rfvi "$(ls -1tra | fzy)"
+    fi
   fi
 }
 
