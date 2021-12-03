@@ -60,13 +60,13 @@ man() {
 del() {
   if ! type "trash" >/dev/null; then
     # shellcheck disable=SC2068
-    [ $# -gt 0 ] && rm -rf $@ || rm "$(ls -1tra | fzy)"
+    [ $# -gt 0 ] && rm -rf $@ || rm "$(command ls -1rA | fzy)"
   else
     # shellcheck disable=SC2068
     if [ $# -gt 0 ]; then
-      trash -i $@
+      trash $@
     else
-      trash -i "$(ls -1tra | fzy)"
+      trash "$(command ls -1rA | fzy)"
     fi
   fi
 }
@@ -209,7 +209,7 @@ alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
 alias uu='exit'
-alias aa='exit'
+alias q='exit'
 
 # utils #
 alias h='history'

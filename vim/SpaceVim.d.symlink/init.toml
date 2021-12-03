@@ -12,7 +12,7 @@
   enable_statusline_mode = false
 
   relativenumber = false
-  guifont = "Hack Nerd Font Mono:h14"
+  guifont = "Jetbrains Mono:h14"
 
   enable_vimfiler_welcome = false
   bootstrap_after = 'myspacevim#after'
