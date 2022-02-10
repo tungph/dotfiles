@@ -7,91 +7,68 @@ set NERDTree
 set incsearch
 set clipboard+=unnamed
 
-inoremap uu <Esc>
-inoremap ss <Esc>:action ShowBookmarks<CR>
 set timeoutlen=300
 
+inoremap uu <ESC>
 let mapleader=" "
 vnoremap <leader> <ESC><leader>
+nnoremap <ESC> <ESC>:
 
-"Undo and redo
+
+
+" __ Movement __
+noremap U {
+noremap E }
+noremap n b
+noremap i w
+noremap u k
+noremap e j
+noremap N H
+noremap I L
+noremap ( <C-d>
+noremap [ <C-u>
+
+" __ remap hjkl __
+noremap h i
+noremap H I
+noremap j J
 noremap l u
 noremap L <C-R>
 
-noremap j J
+" __ splitter __
+noremap k :action NextSplitter<CR>
+"noremap K :action SplitVertically<CR>
+noremap <leader>k :action ChangeSplitOrientation<CR>
+noremap K :action Unsplit<CR>
 
-noremap h i
-noremap H I
+noremap m :action EditorMatchBrace<CR>
 
-nnoremap k :action StringManipulation.EditorPopupMenu<CR>
-noremap K :action SurroundWith<CR>
+" __ bookmark __ "
+noremap s :action ShowBookmarks<CR>
+noremap S :action ToggleBookmarkWithMnemonic<CR>
+noremap <leader>s :action ToggleBookmark<CR>
+
+
+noremap t :action RecentFiles<CR>
+noremap T :action JumpToLastChange<CR>
+noremap + :action ExpandRegionRecursively<CR>
+noremap - :action CollapseRegionRecursively<CR>
+
 noremap q :action QuickTypeDefinition<CR>
-nnoremap v :action EditorToggleStickySelection<CR>
 
 noremap b :action EditorCloneCaretBelow<CR>
 noremap B :action EditorCloneCaretAbove<CR>
 
-noremap { :action ExpandRegionRecursively<CR>
-noremap } :action CollapseRegionRecursively<CR>
-noremap + :action ExpandRegion<CR>
-noremap - :action CollapseRegion<CR>
-"Movement
-noremap u k
-noremap e j
-noremap n :action EditorPreviousWordInDifferentHumpsMode<CR>
-noremap i :action EditorNextWordInDifferentHumpsMode<CR>
-noremap U :action EditorCodeBlockStart<CR>
-noremap E :action EditorCodeBlockEnd<CR>
-noremap N ^
-noremap I $
-noremap _ h
-noremap ] l
-noremap [ :action EditorForwardParagraph<CR>
-noremap ( :action EditorBackwardParagraph<CR>
-noremap $ gg
-noremap ) G
-
-nnoremap dd dd
-nnoremap dw dw
-nnoremap db db
-nnoremap de de
-nnoremap dG dG
-nnoremap dgg dgg
-nnoremap dt df
-noremap t :action EditorMatchBrace<CR>
-noremap T :action EditorMatchBrace<CR>
-
-noremap b :action Back<CR>
-noremap B :action Forward<CR>
-
-nnoremap d :action GotoImplementation<CR>
-noremap D :action FindUsages<CR>
-
-noremap m :action JumpToLastChange<CR>
-noremap T :action RecentFiles<CR>
-
 noremap R :action Replace<CR>
-noremap f :action Find<CR>
-noremap F :action FindInPath<CR>
-noremap ' :action FindUsagesInFile<CR>
-noremap " :action FindUsages<CR>
+noremap / :action CommentByLineComment<CR>
 noremap * :action GotoNextElementUnderCaretUsage<CR>
 noremap 6 :action GotoPrevElementUnderCaretUsage<CR>
 
-noremap w :action EditorSelectWord<CR>
-noremap W :action EditorUnSelectWord<CR>
-
-"Splitter "
-noremap g :action NextSplitter<CR>
-noremap G :action SplitVertically<CR>
-noremap <leader>g :action ChangeSplitOrientation<CR>
-noremap * :action Unsplit<CR>
-
-noremap s :action ShowBookmarks<CR>
-noremap S :action ToggleBookmarkWithMnemonic<CR>
-noremap 5 :action ToggleBookmark<CR>
+" __ get back the useful command __ "
+noremap dt dt
 
 
+" __ leader prefix __ "
 noremap <leader>uu :action PublishGroup.Upload<CR>
 noremap <leader>ud :action PublishGroup.Download<CR>
 noremap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
@@ -101,6 +78,3 @@ noremap <leader>f :action HideAllWindows<CR>
 noremap <leader>t :action ActivateTerminalToolWindow<CR>
 noremap <leader>r <Esc>:so ~/.ideavimrc<CR>
 noremap <leader>e <Esc>:e ~/.ideavimrc<CR>
-
-noremap / :action Refactorings.QuickListPopupAction<CR>
-noremap ` :action Scratch.ShowFilesPopup<CR>

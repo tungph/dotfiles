@@ -10,29 +10,26 @@ path() {
   echo -e ${PATH//:/\\n}
 }
 
-s() {
-  if [ $# -eq 0 ]; then
-    ls -1tra | fzy | xclip
-  else
-    # shellcheck disable=SC2068
-    ls -1tra | ag $@
-  fi
-}
-
 # jump to a directory
-t() {
+u() {
   target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
   # shellcheck disable=SC2164
   cd "$target"
 }
 
 # jum to a child-directory
-tt() {
-  [ $# -gt 0 ] && TARGET_DIR="$(find . -type d | fzy -q "$@")" || TARGET_DIR="$(find . -type d | fzy)"
-  cd "$TARGET_DIR" || return
-
-  ls
+U() {
+  [ $# -gt 0 ] && cd $@ || cd "$(find . -type d -d 1 | fzy)" || return
 }
+
+uu() {
+  [ $# -gt 0 ] && cd $@ || cd "$(find . -type d | fzy)" || return
+}
+
+alias us='ls -lt'
+alias usa='ls -lta'
+alias ut='ls -lt | head'
+alias uta='ls -lta | head'
 
 # to long dont read
 tl() {
@@ -208,7 +205,6 @@ alias vi='nvim'
 alias v='bat'
 alias rp='realpath .'
 alias fl='flutter'
-alias uu='exit'
 alias q='exit'
 
 # utils #
@@ -265,3 +261,4 @@ alias cecre=conda_env_create
 alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)"'
 alias cedea='conda deactivate'
 alias cedel='conda remove --name "$(conda env list -q | cut -d " " -f 1 | fzy)" --all && conda clean --all'
+alias ceinst='conda install -c conda-forge -y'
