@@ -1,0 +1,10 @@
+[aws]
+symbol = "ﲳ "
+disabled = true
+
+[gcloud]
+symbol = "G "
+disabled = true
+
+[conda]
+symbol = "C "
