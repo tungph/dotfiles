@@ -1,7 +1,6 @@
 set ideajoin
 set ideamarks
 set multiple-cursors
-set highlightedyank
 set NERDTree
 
 set incsearch
@@ -12,8 +11,6 @@ set timeoutlen=300
 inoremap uu <ESC>
 let mapleader=" "
 vnoremap <leader> <ESC><leader>
-nnoremap <ESC> <ESC>:
-
 
 
 " __ Movement __
@@ -28,6 +25,10 @@ noremap I L
 noremap ( <C-d>
 noremap [ <C-u>
 
+noremap ) :action MethodDown<CR>
+noremap ] :action MethodUp<CR>
+
+
 " __ remap hjkl __
 noremap h i
 noremap H I
@@ -38,8 +39,8 @@ noremap L <C-R>
 " __ splitter __
 noremap k :action NextSplitter<CR>
 "noremap K :action SplitVertically<CR>
-noremap <leader>k :action ChangeSplitOrientation<CR>
-noremap K :action Unsplit<CR>
+noremap <leader>k :action Unsplit<CR>
+noremap K :action MoveEditorToOppositeTabGroup<CR>
 
 noremap m :action EditorMatchBrace<CR>
 
@@ -47,7 +48,6 @@ noremap m :action EditorMatchBrace<CR>
 noremap s :action ShowBookmarks<CR>
 noremap S :action ToggleBookmarkWithMnemonic<CR>
 noremap <leader>s :action ToggleBookmark<CR>
-
 
 noremap t :action RecentFiles<CR>
 noremap T :action JumpToLastChange<CR>
@@ -66,6 +66,10 @@ noremap 6 :action GotoPrevElementUnderCaretUsage<CR>
 
 " __ get back the useful command __ "
 noremap dt dt
+noremap vt vt
+vnoremap vt vt
+nnoremap <Tab> >>_
+vnoremap <Tab> >>_
 
 
 " __ leader prefix __ "

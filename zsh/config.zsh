@@ -10,7 +10,6 @@ autoload -U edit-command-line
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
-SAVEHIST=10000
 
 # don't nice background tasks
 setopt NO_BG_NICE
@@ -49,10 +48,10 @@ zle -N down-line-or-beginning-search
 zle -N edit-command-line
 
 # fuzzy find: start to type
-bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
-bindkey "$terminfo[kcud1]" down-line-or-beginning-search
-bindkey "$terminfo[cuu1]" up-line-or-beginning-search
-bindkey "$terminfo[cud1]" down-line-or-beginning-search
+#bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
+#bindkey "$terminfo[kcud1]" down-line-or-beginning-search
+#bindkey "$terminfo[cuu1]" up-line-or-beginning-search
+#bindkey "$terminfo[cud1]" down-line-or-beginning-search
 
 # backward and forward word with option+left/right
 bindkey '^[^[[D' backward-word
@@ -61,9 +60,9 @@ bindkey '^[^[[C' forward-word
 bindkey '^[f' forward-word
 
 # to to the beggining/end of line with fn+left/right or home/end
-bindkey "${terminfo[khome]}" beginning-of-line
+#bindkey "${terminfo[khome]}" beginning-of-line
 bindkey '^[[H' beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+#bindkey "${terminfo[kend]}" end-of-line
 bindkey '^[[F' end-of-line
 
 # delete char with backspaces and delete
