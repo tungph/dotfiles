@@ -1,5 +1,6 @@
 export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
+export VIRTUAL_ENV_DISABLE_PROMPT=true
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 # Enable vim mode
@@ -213,7 +214,8 @@ alias S='fzf | xclip'
 alias f='cd $(find . -maxdepth 1 -type d | fzy) && ls '
 alias gr='ag --no-numbers --ignore-case'
 alias rl='dot pull && . ~/.zshrc'
-alias pi='package_installer'
+alias pi='pip3 install'
+alias pi='pip3 install --no-dependencies'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias ccat='imgcat'
