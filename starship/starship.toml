@@ -6,3 +6,4 @@ disabled = true
 
 [conda]
 symbol = ""
+ignore_base=false

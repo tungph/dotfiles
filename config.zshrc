@@ -1,6 +1,5 @@
 export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
-export VIRTUAL_ENV_DISABLE_PROMPT=true
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 # Enable vim mode
@@ -260,7 +259,7 @@ alias au='./aurora'
 # pipenv + conda #
 alias p='poetry'
 alias cecre=conda_env_create
-alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)"'
+alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)" && eval "$(starship init zsh)"'
 alias cedea='conda deactivate'
 alias cedel='conda remove --name "$(conda env list -q | cut -d " " -f 1 | fzy)" --all && conda clean --all'
 alias ceinst='conda install -c conda-forge -y'
