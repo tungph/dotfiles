@@ -202,7 +202,7 @@ fkil() {
 alias eva='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
 alias dot="~/.dotfiles/dot"
 alias vi='nvim'
-alias v='bat'
+alias v='batcat'
 alias rp='realpath .'
 alias fl='flutter'
 alias q='exit'
