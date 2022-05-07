@@ -1,6 +1,7 @@
 set ideajoin
 set ideamarks
 set multiple-cursors
+set highlightedyank
 set NERDTree
 
 set incsearch
