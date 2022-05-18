@@ -19,4 +19,3 @@ conda
 fzf
 dvc
 hstr
-starship

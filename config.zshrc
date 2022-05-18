@@ -205,7 +205,7 @@ alias vi='nvim'
 alias v='batcat'
 alias rp='realpath .'
 alias fl='flutter'
-alias q='exit'
+alias e='exit'
 
 # utils #
 alias h='history'
@@ -214,7 +214,7 @@ alias f='cd $(find . -maxdepth 1 -type d | fzy) && ls '
 alias gr='ag --no-numbers --ignore-case'
 alias rl='dot pull && . ~/.zshrc'
 alias pi='pip3 install'
-alias pi='pip3 install --no-dependencies'
+alias pin='pip3 install --no-dependencies'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias ccat='imgcat'
@@ -230,8 +230,8 @@ alias m='less'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
-alias e='vi'
-alias E='vi $(fzf)'
+alias o='vi'
+alias O='vi $(fzf)'
 alias ec='vi ~/.dotfiles/config.zshrc'
 alias ez='vi ~/.zshrc'
 alias el="vi ~/.localrc"
@@ -259,7 +259,7 @@ alias au='./aurora'
 # pipenv + conda #
 alias p='poetry'
 alias cecre=conda_env_create
-alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)" && eval "$(starship init zsh)"'
+alias ceact='conda activate "$(conda env list -q | cut -d " " -f 1 | fzy)"'
 alias cedea='conda deactivate'
 alias cedel='conda remove --name "$(conda env list -q | cut -d " " -f 1 | fzy)" --all && conda clean --all'
 alias ceinst='conda install -c conda-forge -y'

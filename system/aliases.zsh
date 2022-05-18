@@ -6,8 +6,8 @@ else
 fi
 
 alias l="ls -1"
-alias la="ls -A"
-alias lt="ls -lh"
+alias S="ls -A"
+alias s="ls -lh"
 alias ll="ls -lSh"
 
 alias grep="grep --color=auto"
