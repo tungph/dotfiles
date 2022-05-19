@@ -225,7 +225,7 @@ alias count='ls -1 | wc -l'
 alias a='zip -r'
 alias A='unzip'
 alias inst='sudo apt install -y'
-alias top='btm'
+alias top='bottom'
 alias m='less'
 
 # config #
