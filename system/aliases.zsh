@@ -5,10 +5,8 @@ else
 	alias ls="ls -Ft --color"
 fi
 
-alias l="ls -1"
-alias S="ls -A"
-alias s="ls -lh"
-alias ll="ls -lSh"
+alias S="ls -lhta"
+alias s="ls -lht"
 
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"
