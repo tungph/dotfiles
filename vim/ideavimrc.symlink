@@ -6,6 +6,8 @@ set NERDTree
 
 set incsearch
 set clipboard+=unnamed
+set clipboard+=unnamedplus
+
 
 set timeoutlen=300
 

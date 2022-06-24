@@ -222,7 +222,7 @@ alias myip='curl ifconfig.me'
 alias jb='cd -'
 alias count='ls -1 | wc -l'
 alias inst='sudo apt install -y'
-alias top='bottom'
+alias top='btm'
 alias m='less'
 
 # config #
