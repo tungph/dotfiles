@@ -251,6 +251,7 @@ alias dpr='docker_prune'
 alias dsp='docker system prune -y'
 alias dl='docker logs'
 alias dlf='docker logs -f'
+alias drsc='docker rm $(docker ps --filter status=exited -q)'
 alias au='./aurora'
 
 # pipenv + conda #
