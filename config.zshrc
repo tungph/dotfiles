@@ -233,6 +233,7 @@ alias ec='vi ~/.dotfiles/config.zshrc'
 alias ez='vi ~/.zshrc'
 alias el="vi ~/.localrc"
 alias ev="vi ~/.SpaceVim.d/init.toml"
+alias evv='vi ~/.SpaceVim.d/autoload/myspacevim.vim'
 alias eg='vi ~/.gitconfig.local'
 alias et='vi ~/.tmux.conf'
 
