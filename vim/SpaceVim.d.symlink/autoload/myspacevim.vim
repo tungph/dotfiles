@@ -4,9 +4,7 @@ endfunction
 function! myspacevim#after() abort
     "Undo and redo
     noremap l u
-    noremap L <C-R>
-    noremap h i
-    noremap H I
+    noremap L U
 
     "Movement
     noremap u k
@@ -20,10 +18,11 @@ function! myspacevim#after() abort
 
     nnoremap <Esc> <Esc>:
 
-    "Splitter "
-    noremap kf <C-W>k
-    noremap ks <C-W>j
-    noremap kr <C-W>h
-    noremap kt <C-W>l
-    noremap K  :vsplit<CR>
+    "Get back the nuei keys
+    noremap h i
+    noremap H I
+    noremap k n
+    noremap K N
+    noremap j e
+
 endfunction
