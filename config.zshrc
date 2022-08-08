@@ -203,6 +203,7 @@ alias eva='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
 alias dot="~/.dotfiles/dot"
 alias vi='nvim'
 alias v='batcat'
+alias V='batcat $(fzf)'
 alias rp='realpath .'
 alias fl='flutter'
 alias e='exit'
