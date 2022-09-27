@@ -34,7 +34,7 @@
   name = "sudo"
 
 [[layers]]
-  name = "leaderf"
+  name = "telescope"
 
 [[layers]]
   name = 'lang#python'
@@ -54,4 +54,7 @@
 [[layers]]
   name = "tmux"
   enable = true
+
+[[layers]]
+  name = "tools"
 
