@@ -82,5 +82,5 @@ if test -d /usr/local/opt/fzf/shell; then
 	# shellcheck disable=SC1091
 	. /usr/local/opt/fzf/shell/key-bindings.zsh
 else
-	bindkey '^R' history-incremental-search-backward
+	bindkey '^E' history-incremental-search-backward
 fi

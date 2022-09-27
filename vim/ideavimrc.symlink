@@ -17,19 +17,17 @@ vnoremap <leader> <ESC><leader>
 
 
 " __ Movement __
-noremap U {
-noremap E }
 noremap n b
-noremap i w
 noremap u k
 noremap e j
-noremap N H
-noremap I L
-noremap ( <C-d>
-noremap [ <C-u>
+noremap i w
+noremap U gg
+noremap E G
+noremap N ^
+noremap I $
 
-noremap ) :action MethodDown<CR>
-noremap ] :action MethodUp<CR>
+noremap ( {
+noremap [ }
 
 
 " __ remap hjkl __

@@ -8,15 +8,13 @@ function! myspacevim#after() abort
 
     "Movement
     noremap u k
-    noremap U K
+    noremap U <C-u>
     noremap e j
-    noremap E J
+    noremap E <C-d>
     noremap n b
     noremap N H
     noremap i w
     noremap I L
-
-    nnoremap <Esc> <Esc>:
 
     "Get back the nuei keys
     noremap h i

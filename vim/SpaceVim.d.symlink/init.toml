@@ -5,13 +5,13 @@
   # Disable guicolors in basic mode, many terminal do not support 24bit
   # true colors
   enable_guicolors = true
-  statusline_separator = "arrow"
-  statusline_iseparator = "arrow"
+  statusline_separator = "nil"
+  statusline_iseparator = "bar"
   buffer_index_type = 4
   enable_tabline_filetype_icon = false
-  enable_statusline_mode = false
+  enable_statusline_mode = true
 
-  relativenumber = false
+  relativenumber = true
   guifont = "Jetbrains Mono:h14"
 
   enable_vimfiler_welcome = false
@@ -47,6 +47,9 @@
 [[layers]]
   name = 'git'
   enable = true
+
+[[layers]]
+  name = "VersionControl"
 
 [[layers]]
   name = "tmux"
