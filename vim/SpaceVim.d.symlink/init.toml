@@ -22,8 +22,8 @@
 
 [[layers]]
   name = 'autocomplete'
-  auto_completion_return_key_behavior = "complete"
-# auto_completion_tab_key_behavior = "smart"
+#auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
   name = 'shell'
@@ -35,10 +35,6 @@
 
 [[layers]]
   name = "telescope"
-
-[[layers]]
-  name = 'lang#python'
-  enable = true
 
 [[layers]]
   name = 'lang#markdown'
@@ -58,3 +54,14 @@
 [[layers]]
   name = "tools"
 
+[[layers]]
+  name = 'lang#python'
+  python_interpreter='python3'
+  python_file_head = ['']
+  enable_typeinfo=true
+  format_on_save=true
+  enabled_linters=['python3', 'pylint']
+
+[[layers]]
+  name = "lsp"
+  enabled_clients = ['pyright']
