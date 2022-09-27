@@ -55,6 +55,9 @@
   name = "tools"
 
 [[layers]]
+  name = 'lang#dockerfile'
+
+[[layers]]
   name = 'lang#python'
   python_interpreter='python3'
   python_file_head = ['']
