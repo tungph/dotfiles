@@ -66,5 +66,5 @@
   enabled_linters=['python3', 'pylint']
 
 [[layers]]
-  name = "lsp"
-  enabled_clients = ['pyright']
+  name = 'lsp'
+  enabled_clients=['pyright']
