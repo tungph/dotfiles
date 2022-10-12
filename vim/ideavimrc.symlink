@@ -8,12 +8,9 @@ set incsearch
 set clipboard+=unnamed
 set clipboard+=unnamedplus
 
-
 set timeoutlen=300
 
-inoremap uu <ESC>
 let mapleader=" "
-vnoremap <leader> <ESC><leader>
 
 
 " __ Movement __
@@ -26,16 +23,12 @@ noremap E G
 noremap N ^
 noremap I $
 
-noremap ( {
-noremap [ }
-
-
 " __ remap hjkl __
 noremap h i
 noremap H I
 noremap j J
 noremap l u
-noremap L <C-R>
+noremap L <C-r>
 
 " __ splitter __
 noremap k :action NextSplitter<CR>
@@ -81,5 +74,5 @@ noremap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
 noremap <leader><leader> <ESC>:
 noremap <leader>f :action HideAllWindows<CR>
 noremap <leader>t :action ActivateTerminalToolWindow<CR>
-noremap <leader>r <Esc>:so ~/.ideavimrc<CR>
+noremap <leader>r <ESC>:so ~/.ideavimrc<CR>
 noremap <leader>e <Esc>:e ~/.ideavimrc<CR>

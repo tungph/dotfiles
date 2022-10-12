@@ -4,7 +4,7 @@ endfunction
 function! myspacevim#after() abort
     "Undo and redo
     noremap l u
-    noremap L U
+    noremap L <C-r>
 
     "Movement
     noremap u k
@@ -12,9 +12,9 @@ function! myspacevim#after() abort
     noremap e j
     noremap E <C-d>
     noremap n b
-    noremap N H
+    noremap N 0
     noremap i w
-    noremap I L
+    noremap I $
 
     "Get back the nuei keys
     noremap h i

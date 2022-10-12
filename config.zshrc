@@ -125,23 +125,6 @@ slackme() {
   curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" "$WEBHOOK_URL"
 }
 
-# Extend the iterm 2 download utility it2dl
-download() {
-  if ! type it2dl >/dev/null; then
-    echo "it2dl does not found. Installing with $(pi it2)"
-  fi
-
-  IT2DL="$HOME/.iterm2/it2dl"
-  if [ $# -eq 1 ] && [ -d "$1" ]; then
-    ZIP_FILE="/tmp/$1.zip"
-    zip -r "$ZIP_FILE" "$1"
-    "$IT2DL" "$ZIP_FILE"
-    rm "$ZIP_FILE"
-  else
-    "$IT2DL" "$@"
-  fi
-}
-
 # Copy content of a file
 copy() {
   IT2COPY="$HOME/.iterm2/it2copy"
@@ -218,7 +201,6 @@ alias pin='pip3 install --no-dependencies'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias ccat='imgcat'
-alias upload='~/.iterm2/it2ul'
 alias myip='curl ifconfig.me'
 alias jb='cd -'
 alias count='ls -1 | wc -l'
