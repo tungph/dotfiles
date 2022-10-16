@@ -16,4 +16,3 @@ setuptools
 pipenv
 conda
 fzf
-dvc

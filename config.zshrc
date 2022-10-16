@@ -189,7 +189,7 @@ alias v='batcat -p'
 alias V='v $(fzf)'
 alias rp='realpath .'
 alias fl='flutter'
-alias e='exit'
+alias q='exit'
 
 # utils #
 alias h='history'
