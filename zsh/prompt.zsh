@@ -1,3 +1,2 @@
 #!/bin/zsh
-#PURE_PROMPT_SYMBOL="❯"
-export REPORTTIME=10
+eval "$(starship init zsh)"

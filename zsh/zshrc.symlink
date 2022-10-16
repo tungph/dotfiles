@@ -7,7 +7,7 @@ export DOTFILES="$HOME/.dotfiles"
 
 # your default editor
 export EDITOR='vim'
-export VEDITOR='code'
+export VEDITOR='neovide'
 
 # all of our zsh files
 typeset -U config_files

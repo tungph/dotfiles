@@ -12,7 +12,7 @@ path() {
 
 # jump to a directory
 u() {
-  target="$(z -l | fzy | awk -F ' ' '{print $NF}')"
+  target=$(z -l | fzy | awk '{$1=""}1' | sed 's/^[ \t]*//')
   # shellcheck disable=SC2164
   cd "$target"
 }
@@ -185,8 +185,8 @@ fkil() {
 alias eva='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
 alias dot="~/.dotfiles/dot"
 alias vi='nvim'
-alias v='batcat'
-alias V='batcat $(fzf)'
+alias v='batcat -p'
+alias V='v $(fzf)'
 alias rp='realpath .'
 alias fl='flutter'
 alias e='exit'

@@ -11,11 +11,9 @@ tldr
 tree
 tmux
 bat
-docker
 python3-pip
 setuptools
 pipenv
 conda
 fzf
 dvc
-hstr
