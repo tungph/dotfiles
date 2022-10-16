@@ -14,14 +14,22 @@ let mapleader=" "
 
 
 " __ Movement __
+" left
 noremap n b
-noremap u k
-noremap e j
-noremap i w
-noremap U gg
-noremap E G
 noremap N ^
+
+" up
+noremap u k
+noremap U gg
+
+" down
+noremap e j
+noremap i e
+
+" right
 noremap I $
+noremap E G
+
 
 " __ remap hjkl __
 noremap h i

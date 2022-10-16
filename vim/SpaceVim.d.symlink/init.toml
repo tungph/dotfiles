@@ -10,9 +10,10 @@
   buffer_index_type = 4
   enable_tabline_filetype_icon = false
   enable_statusline_mode = true
+  autoindent = true
 
   relativenumber = true
-  guifont = "Jetbrains Mono:h14"
+  guifont = "Jetbrains Mono:h10"
 
   enable_vimfiler_welcome = false
   bootstrap_after = 'myspacevim#after'

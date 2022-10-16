@@ -23,4 +23,17 @@ function! myspacevim#after() abort
     noremap K N
     noremap j e
 
+    " Put anything you want to happen only in Neovide here
+    if exists("g:neovide")
+        " set guifont=FiraCode\ Nerd\ Font\ Mono:h13
+        " set guifont=UbuntuMonoDerivativePowerline\ Nerd\ Font:h15
+        set guifont=Jetbrains\ Mono:h12
+
+        let g:neovide_remember_window_size = v:true
+
+        " toggle fullscreen
+        noremap <C-e> :let g:neovide_fullscreen = !g:neovide_fullscreen<CR>
+
+    endif
+
 endfunction
