@@ -13,15 +13,17 @@ function! myspacevim#after() abort
     noremap E <C-d>
     noremap n b
     noremap N 0
-    noremap i w
+    noremap i e
     noremap I $
 
-    "Get back the nuei keys
+    "Get back the mapped keys
     noremap h i
     noremap H I
     noremap k n
     noremap K N
     noremap j e
+
+    noremap dw daw
 
     " Put anything you want to happen only in Neovide here
     if exists("g:neovide")

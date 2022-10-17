@@ -22,7 +22,7 @@
   name = "default"
 
 [[layers]]
-name = "fzf"
+  name = "fzf"
 
 [[layers]]
   name = 'autocomplete'
