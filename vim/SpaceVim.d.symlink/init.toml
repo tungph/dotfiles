@@ -2,8 +2,6 @@
 [options]
   colorscheme = "SpaceVim"
   colorscheme_bg = "dark"
-  # Disable guicolors in basic mode, many terminal do not support 24bit
-  # true colors
   enable_guicolors = true
   statusline_separator = "nil"
   statusline_iseparator = "bar"
@@ -13,9 +11,9 @@
   autoindent = true
 
   relativenumber = true
-  guifont = "Jetbrains Mono:h10"
+  guifont = "Jetbrains Mono:h12"
 
-  enable_vimfiler_welcome = false
+  enable_vimfiler_welcome = true
   bootstrap_after = 'myspacevim#after'
 
 [[layers]]
@@ -26,8 +24,8 @@
 
 [[layers]]
   name = 'autocomplete'
-#auto_completion_return_key_behavior = "complete"
   auto_completion_tab_key_behavior = "smart"
+  enable = false
 
 [[layers]]
   name = 'shell'
@@ -42,18 +40,16 @@
 
 [[layers]]
   name = 'lang#markdown'
-  enable = true
+  enable = false
 
 [[layers]]
   name = 'git'
-  enable = true
 
 [[layers]]
   name = "VersionControl"
 
 [[layers]]
   name = "tmux"
-  enable = true
 
 [[layers]]
   name = "tools"
@@ -67,8 +63,8 @@
   python_file_head = ['']
   enable_typeinfo=true
   format_on_save=true
-  enabled_linters=['python3', 'pylint']
 
 [[layers]]
   name = 'lsp'
   enabled_clients=['pyright']
+
