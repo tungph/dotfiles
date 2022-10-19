@@ -68,7 +68,11 @@ noremap 6 :action GotoPrevElementUnderCaretUsage<CR>
 
 " __ get back the useful command __ "
 noremap dt dt
+noremap dw daw
+noremap ct ct
+noremap cw caw
 noremap vt vt
+noremap vw vaw
 vnoremap vt vt
 nnoremap <Tab> >>_
 vnoremap <Tab> >>_
