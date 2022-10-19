@@ -26,6 +26,15 @@ uu() {
   [ $# -gt 0 ] && cd $@ || cd "$(find . -type d | fzy)" || return
 }
 
+f() {
+  ls -1 | fzy
+}
+
+ff() {
+  find . | fzy
+}
+
+alias l='ls -1'
 alias us='ls -lt'
 alias usa='ls -lta'
 alias ut='ls -lt | head'
@@ -193,7 +202,6 @@ alias q='exit'
 
 # utils #
 alias h='history'
-alias f='cd $(find . -maxdepth 1 -type d | fzy) && ls '
 alias gr='ag --no-numbers --ignore-case'
 alias rl='dot pull && . ~/.zshrc'
 alias pi='pip3 install'
