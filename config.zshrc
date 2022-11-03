@@ -51,6 +51,18 @@ tl() {
   fi
 }
 
+# touch and edit a file
+e() {
+  if [ $# -eq 1 ]; then
+    echo creating file with name:"${@:1:1}"
+    # shellcheck disable=SC2068
+    command touch "${@:1:1}"
+    command nvim "${@:1:1}"
+  else
+    echo "Usage: e file_name_no_space"
+  fi
+}
+
 # better man
 man() {
   if [ $# -gt 1 ]; then

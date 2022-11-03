@@ -6,7 +6,7 @@ else
 fi
 
 alias S="ls -lhta"
-alias s="ls -lht | tail -n +2"
+alias s="ls -lht --color | tail -n +2"
 
 alias grep="grep --color=auto"
 alias duf="du -sh * | sort -hr"
