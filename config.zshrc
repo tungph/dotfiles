@@ -146,15 +146,6 @@ slackme() {
   curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$MESSAGE\"}" "$WEBHOOK_URL"
 }
 
-# Copy content of a file
-copy() {
-  IT2COPY="$HOME/.iterm2/it2copy"
-  IT2CHECK="$HOME/.iterm2/it2check"
-
-  # shellcheck disable=SC2015
-  "$IT2CHECK" && "$IT2COPY" "$@" || cat "$@" | xclip
-
-}
 
 # Create a new conda env
 conda_env_create() {
@@ -220,7 +211,6 @@ alias pi='pip3 install'
 alias pin='pip3 install --no-dependencies'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
-alias ccat='imgcat'
 alias myip='curl ifconfig.me'
 alias jb='cd -'
 alias count='ls -1 | wc -l'

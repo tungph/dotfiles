@@ -20,7 +20,7 @@ noremap N ^
 
 " up
 noremap u k
-noremap U gg
+noremap U <C-u>
 
 " down
 noremap e j
@@ -28,7 +28,7 @@ noremap i e
 
 " right
 noremap I $
-noremap E G
+noremap E <C-d>
 
 
 " __ remap hjkl __
@@ -52,7 +52,8 @@ noremap S :action ToggleBookmarkWithMnemonic<CR>
 noremap <leader>s :action ToggleBookmark<CR>
 
 noremap t :action RecentFiles<CR>
-noremap T :action JumpToLastChange<CR>
+noremap T :action RecentLocations<CR>
+"noremap T :action JumpToLastChange<CR>
 noremap + :action ExpandRegionRecursively<CR>
 noremap - :action CollapseRegionRecursively<CR>
 
