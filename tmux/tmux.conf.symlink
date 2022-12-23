@@ -8,11 +8,11 @@ unbind r
 bind r source-file ~/.tmux.conf \;
 
 # pane settings
-unbind space
-bind space split-window -h
+unbind h
+bind h split-window -v
 
-unbind b
-bind b split-window -v
+unbind v
+bind v split-window -h
 
 unbind enter
 bind enter resize-pane -Z

@@ -64,8 +64,8 @@ noremap B :action EditorCloneCaretAbove<CR>
 
 noremap R :action Replace<CR>
 noremap / :action CommentByLineComment<CR>
-noremap * :action GotoNextElementUnderCaretUsage<CR>
-noremap 6 :action GotoPrevElementUnderCaretUsage<CR>
+noremap [ :action GotoNextElementUnderCaretUsage<CR>
+noremap ( :action GotoPrevElementUnderCaretUsage<CR>
 
 " __ get back the useful command __ "
 noremap dt dt
