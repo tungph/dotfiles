@@ -42,10 +42,6 @@ unset config_files updated_at
 
 . "$DOTFILES/config.zshrc"
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-# shellcheck disable=SC1090
-[ -f ~/.localrc ] && . ~/.localrc
 
 # zprof
 
@@ -77,3 +73,8 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 export PATH="$HOME/.local/poetry/bin:$PATH"
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+# shellcheck disable=SC1090
+[ -f ~/.localrc ] && . ~/.localrc
