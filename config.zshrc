@@ -1,6 +1,8 @@
 export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
+export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
+
 
 # Enable vim mode
 bindkey -v
