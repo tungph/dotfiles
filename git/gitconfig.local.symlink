@@ -1,6 +1,6 @@
 [user]
   name = Shawn
-  email = shawn@cinnamon.is
+  email = shawn.dev.vn@gmail.com
 [difftool "vimdiff"]
 	cmd = vimdiff $LOCAL $REMOTE
 [alias]
@@ -24,8 +24,8 @@
 	excludesfile = ~/.gitignore
 	editor = nvim
 	compression = -1
-	autocrlf = false
-  eol = lf
+	autocrlf = true
+    eol = lf
 	whitespace = trailing-space,space-before-tab
 	precomposeunicode = true
 [apply]
@@ -33,20 +33,9 @@
 [help]
 	autocorrect = 1
 [merge]
-	tool = vimdiff 
-  conflictstyle = diff3
+	tool = vimdiff
+    conflictstyle = diff3
 [mergetool]
   prompt = false
 [diff]
-	tool = vimdiff 
-[difftool]
-	prompt = false
-[grep]
-	extendRegexp = true
-	lineNumber = true
-[push]
-	default = simple
-[submodule]
-	fetchJobs = 4
-[log]
-	showSignature = false
+	tool = vimdiff

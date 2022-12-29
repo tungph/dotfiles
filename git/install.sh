@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ -z "$(git config --global --get user.email)" ]; then
-  git config --global user.name "shawn"
-  git config --global user.email "shawn@cinnamon.is"
+  git config --global user.name "Shawn"
+  git config --global user.email "shawn.dev.vn@gmail.com"
 fi
 
 # Don't ask ssh password all the time
