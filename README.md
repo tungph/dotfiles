@@ -34,6 +34,7 @@ module
 
 Install with this command, but replace the repo with yours.
 ```shell script
+git config --global core.autocrlf input
 git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/dot init
 ```
 
