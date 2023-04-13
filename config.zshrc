@@ -1,6 +1,5 @@
 export PIPENV_SKIP_LOCK=true
 export POETRY_HOME="$HOME/.local/poetry"
-export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 
@@ -33,7 +32,16 @@ f() {
 }
 
 ff() {
-  find . | fzy
+  cd "$(find . | fzy)"
+}
+
+top() {
+    if ! command -v bpytop &> /dev/null
+    then
+        pip3 install byptop
+    fi
+
+    bpytop
 }
 
 alias l='ls -1'
@@ -201,8 +209,8 @@ alias dot="~/.dotfiles/dot"
 alias vi='nvim'
 alias v='batcat -p'
 alias V='v $(fzf)'
-alias rp='realpath .'
-alias fl='flutter'
+alias rp='realpath'
+alias ft='flutter'
 alias q='exit'
 alias py='python3'
 alias pi='pip3 install'
@@ -214,11 +222,8 @@ alias rl='dot pull && . ~/.zshrc'
 alias df='df -h .'
 alias op='sudo netstat -tulpn | grep LISTEN'
 alias myip='curl ifconfig.me'
-alias jb='cd -'
 alias count='ls -1 | wc -l'
-alias inst='sudo apt install -y'
-alias top='btm'
-alias m='less'
+alias ai='sudo apt install -y'
 
 # config #
 alias dotfiles='cd ~/.dotfiles'
@@ -248,7 +253,6 @@ alias dsp='docker system prune -y'
 alias dl='docker logs'
 alias dlf='docker logs -f'
 alias drsc='docker rm $(docker ps --filter status=exited -q)'
-alias au='./aurora'
 
 # pipenv + conda #
 alias p='poetry'

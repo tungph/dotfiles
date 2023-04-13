@@ -1,14 +1,15 @@
 set ideajoin
 set ideamarks
-set multiple-cursors
 set highlightedyank
-set NERDTree
+set surround
+set relativenumber
+set number
 
 set incsearch
 set clipboard+=unnamed
-set clipboard+=unnamedplus
 
-set timeoutlen=300
+set timeoutlen=250
+set scrolloff=8
 
 let mapleader=" "
 
@@ -33,14 +34,13 @@ noremap E <C-d>
 
 " __ remap hjkl __
 noremap h i
-noremap H I
 noremap j J
 noremap l u
 noremap L <C-r>
 
 " __ splitter __
 noremap k :action NextSplitter<CR>
-"noremap K :action SplitVertically<CR>
+noremap K :action SplitVertically<CR>
 noremap <leader>k :action Unsplit<CR>
 noremap K :action MoveEditorToOppositeTabGroup<CR>
 
@@ -51,11 +51,18 @@ noremap s :action ShowBookmarks<CR>
 noremap S :action ToggleBookmarkWithMnemonic<CR>
 noremap <leader>s :action ToggleBookmark<CR>
 
+
+" __ navigation __ "
 noremap t :action RecentFiles<CR>
-noremap T :action RecentLocations<CR>
-"noremap T :action JumpToLastChange<CR>
+"noremap T :action RecentLocations<CR>
+noremap T :action JumpToLastChange<CR>
 noremap + :action ExpandRegionRecursively<CR>
 noremap - :action CollapseRegionRecursively<CR>
+
+noremap _ :action Back<CR>
+noremap ] :action Forward<CR>
+noremap ( :action VcsShowPrevChangeMarker<CR>
+noremap [ :action VcsShowNextChangeMarker<CR>
 
 noremap q :action QuickTypeDefinition<CR>
 
@@ -64,27 +71,43 @@ noremap B :action EditorCloneCaretAbove<CR>
 
 noremap R :action Replace<CR>
 noremap / :action CommentByLineComment<CR>
-noremap [ :action GotoNextElementUnderCaretUsage<CR>
-noremap ( :action GotoPrevElementUnderCaretUsage<CR>
 
 " __ get back the useful command __ "
 noremap dt dt
+noremap dy dap
+
+
 noremap ct ct
-noremap cw caw
 noremap vt vt
-noremap vw vaw
 vnoremap vt vt
 nnoremap <Tab> >>_
 vnoremap <Tab> >>_
-
+noremap <leader>a <C-a>
 
 " __ leader prefix __ "
 noremap <leader>uu :action PublishGroup.Upload<CR>
 noremap <leader>ud :action PublishGroup.Download<CR>
 noremap <leader>ua :action WebDeployment.ToggleAutoUpload<CR>
 
-noremap <leader><leader> <ESC>:
+"noremap <leader><leader> ''
+noremap <leader><leader> :action NavbarPopupMenu<CR>
 noremap <leader>f :action HideAllWindows<CR>
-noremap <leader>t :action ActivateTerminalToolWindow<CR>
-noremap <leader>r <ESC>:so ~/.ideavimrc<CR>
+noremap <leader>s <ESC>:so ~/.ideavimrc<CR>
 noremap <leader>e <Esc>:e ~/.ideavimrc<CR>
+
+" __ Notes __ "
+" zc - close fold
+" zo - open fold
+" zM - close all folds recursively
+" zR - open all folds recursively
+
+noremap <leader>t zo
+noremap <leader>T zR
+noremap <leader>r zc
+noremap <leader>R zM
+
+
+
+" map others ide common tasks
+noremap <D-t> :action ChooseRunConfiguration<CR>
+noremap <D-i> :action SearchEverywhere<CR>

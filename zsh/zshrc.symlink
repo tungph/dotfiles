@@ -78,3 +78,10 @@ export PATH="$HOME/.local/poetry/bin:$PATH"
 # want in your public, versioned repo.
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
+
+# bun completions
+[ -s "/Users/shawn/.bun/_bun" ] && source "/Users/shawn/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
