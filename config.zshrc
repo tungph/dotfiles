@@ -253,6 +253,7 @@ alias dsp='docker system prune -y'
 alias dl='docker logs'
 alias dlf='docker logs -f'
 alias drsc='docker rm $(docker ps --filter status=exited -q)'
+alias dpc='docker ps --format `'{{.ID}} {{.Names}} \t{{.Ports}}\''
 
 # pipenv + conda #
 alias p='poetry'
