@@ -31,14 +31,6 @@ fail() {
 	exit
 }
 
-setup_gitconfig() {
-	info 'setup gitconfig'
-
-	# include the gitconfig.local file
-	git config --global include.path ~/.gitconfig.local
-	success 'gitconfig'
-}
-
 link_file() {
 	if [ -e "$2" ]; then
 		if [ "$(readlink "$2")" = "$1" ]; then
@@ -70,7 +62,6 @@ find_zsh() {
 	fi
 }
 
-setup_gitconfig
 install_dotfiles
 
 info "installing dependencies"
