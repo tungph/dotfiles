@@ -14,8 +14,11 @@ bind h split-window -v
 unbind v
 bind v split-window -h
 
-unbind enter
-bind enter resize-pane -Z
+unbind y
+bind y resize-pane -Z
+
+unbind i
+bind i resize-pane -Z
 
 # enable mouse scrolling
 set -g mouse on

@@ -214,6 +214,7 @@ alias ft='flutter'
 alias q='exit'
 alias py='python3'
 alias pi='pip3 install'
+alias pir='pip3 install -r requirements.txt'
 
 # utils #
 alias h='history'
