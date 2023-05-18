@@ -16,3 +16,4 @@ setuptools
 pipenv
 conda
 fzf
+net-tools
