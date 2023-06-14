@@ -268,4 +268,4 @@ alias ts='tmux ls'
 alias ta='tmux attach -t "$(tmux ls | fzy | cut -d ":" -f 1)"'
 alias t=ts
 alias tnew='tmux new-session -s'
-alias tkill='tmux kill-session -t'
+alias tkill='tmux kill-session -t "$(tmux ls | fzy | cut -d ":" -f 1)"'
