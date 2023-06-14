@@ -262,3 +262,10 @@ alias ceact='conda activate "$(conda env list -q | tail -n +3 | cut -d " " -f 1 
 alias cedea='conda deactivate'
 alias cedel='conda remove --name "$(conda env list -q | tail -n +3 | cut -d " " -f 1 | fzy)" --all && conda clean --all'
 alias ceinst='conda install -c conda-forge -y'
+
+# tmux #
+alias ts='tmux ls'
+alias ta='tmux attach -t "$(tmux ls | fzy | cut -d ":" -f 1)"'
+alias t=ts
+alias tnew='tmux new-session -s'
+alias tkill='tmux kill-session -t'

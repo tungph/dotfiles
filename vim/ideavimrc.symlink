@@ -111,3 +111,8 @@ noremap <leader>R zM
 " map others ide common tasks
 noremap <D-t> :action ChooseRunConfiguration<CR>
 noremap <D-i> :action SearchEverywhere<CR>
+noremap <D-u> :action MethodUp<CR>
+noremap <D-e> :action MethodDown<CR>
+noremap <D-o> :action ActivateTerminalToolWindow<CR>
+noremap <D-space> :action QuickJavaDoc<CR>
+noremap <D-enter> :action GotoNextError<CR>
