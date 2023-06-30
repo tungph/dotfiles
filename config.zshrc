@@ -204,9 +204,9 @@ fkil() {
 # view file with bat or
 v() {
   if [ $# -eq 0 ]; then
-    batcat -p  $(find . -type f | fzy)
+    batcat -p  $(ls -1 | fzy)
   else
-    batcat -p $@ || batcat -p $(find . -type f | fzy)
+    batcat -p $@
   fi
 }
 
@@ -222,6 +222,7 @@ alias q='exit'
 alias py='python3'
 alias pi='pip3 install'
 alias pir='pip3 install -r requirements.txt'
+alias vv='v $(fzf)'
 
 # utils #
 alias h='history'
