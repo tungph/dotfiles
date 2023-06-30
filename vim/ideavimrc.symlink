@@ -56,8 +56,6 @@ noremap <leader>s :action ToggleBookmark<CR>
 noremap t :action RecentFiles<CR>
 "noremap T :action RecentLocations<CR>
 noremap T :action JumpToLastChange<CR>
-noremap + :action ExpandRegionRecursively<CR>
-noremap - :action CollapseRegionRecursively<CR>
 
 noremap _ :action Back<CR>
 noremap ] :action Forward<CR>
@@ -95,17 +93,11 @@ noremap <leader>f :action HideAllWindows<CR>
 noremap <leader>s <ESC>:so ~/.ideavimrc<CR>
 noremap <leader>e <Esc>:e ~/.ideavimrc<CR>
 
-" __ Notes __ "
-" zc - close fold
-" zo - open fold
-" zM - close all folds recursively
-" zR - open all folds recursively
-
-noremap <leader>t zo
-noremap <leader>T zR
-noremap <leader>r zc
-noremap <leader>R zM
-
+" Folding
+noremap zn :action CollapseRegion<CR>
+noremap zu :action CollapseRegionRecursively<CR>
+noremap zi :action ExpandRegion<CR>
+noremap ze :action ExpandRegionRecursively<CR>
 
 
 " map others ide common tasks

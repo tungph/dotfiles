@@ -201,14 +201,21 @@ fkil() {
   fi
 }
 
+# view file with bat or
+v() {
+  if [ $# -eq 0 ]; then
+    batcat -p  $(find . -type f | fzy)
+  else
+    batcat -p $@ || batcat -p $(find . -type f | fzy)
+  fi
+}
+
 #### ALIASES #####
 
 # apps #
 alias eva='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
 alias dot="~/.dotfiles/dot"
 alias vi='nvim'
-alias v='batcat -p'
-alias V='v $(fzf)'
 alias rp='realpath'
 alias ft='flutter'
 alias q='exit'
