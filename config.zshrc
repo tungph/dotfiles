@@ -1,5 +1,4 @@
 export PIPENV_SKIP_LOCK=true
-export POETRY_HOME="$HOME/.local/poetry"
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 
@@ -204,9 +203,9 @@ fkil() {
 # view file with bat or
 v() {
   if [ $# -eq 0 ]; then
-    batcat -p  $(ls -1 | fzy)
+    bat -p  $(ls -1 | fzy)
   else
-    batcat -p $@
+    bat -p $@
   fi
 }
 
@@ -222,6 +221,7 @@ alias q='exit'
 alias py='python3'
 alias pi='pip3 install'
 alias pir='pip3 install -r requirements.txt'
+alias piru='pip3 install --upgrade -r requirements.txt'
 alias vv='v $(fzf)'
 
 # utils #
