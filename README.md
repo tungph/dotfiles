@@ -54,3 +54,4 @@ git clone -q https://github.com/tungph/dotfiles.git ~/.dotfiles && ~/.dotfiles/d
 The philosophy and a lot of settings were copied from [Carlos' dotfiles](https://github.com/caarlos0/dotfiles).
 
 test
+test 2
