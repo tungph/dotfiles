@@ -247,7 +247,7 @@ alias eg='vi ~/.gitconfig'
 alias et='vi ~/.tmux.conf'
 
 # docker #
-alias dc='docker-compose'
+alias dc='docker compose'
 alias dcd='dc down'
 alias dcl='dc logs'
 alias dclf='dcl -f'
