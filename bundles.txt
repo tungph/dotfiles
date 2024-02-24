@@ -13,7 +13,6 @@ tmux
 bat
 python3-pip
 setuptools
-pipenv
 conda
 fzf
 net-tools

@@ -2,9 +2,6 @@ export PIPENV_SKIP_LOCK=true
 export PATH="/usr/local/sbin:$PATH:$POETRY_HOME/bin:$HOME/.local/bin"
 
 
-# Enable vim mode
-bindkey -v
-
 #### FUNCTIONS ##### print out $PATH
 path() {
   echo -e ${PATH//:/\\n}
@@ -49,16 +46,6 @@ alias usa='ls -lta'
 alias ut='ls -lt | head'
 alias uta='ls -lta | head'
 
-# to long dont read
-tl() {
-  if [ $# -gt 1 ]; then
-    # shellcheck disable=SC2068
-    tldr "${@:1:1}" | ag -C 1 ${@:2}
-  else
-    # shellcheck disable=SC2068
-    tldr $@
-  fi
-}
 
 # touch and edit a file
 e() {
