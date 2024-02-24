@@ -11,8 +11,6 @@ tldr
 tree
 tmux
 bat
-python3-pip
-setuptools
 conda
 fzf
 net-tools
